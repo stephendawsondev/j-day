@@ -1,4 +1,8 @@
-<h1 align="center"><strong>👨‍🔧👨🏻‍🔧👸🏼🍄🐲 Retro Quest 🐲🍄👸🏼👨🏻‍🔧👨‍🔧</strong></h1>
+<h1 align="center">
+<strong>
+👨‍🔧👨🏻‍🔧👸🏼🍄🐲 Retro Quest 🐲🍄👸🏼👨🏻‍🔧👨‍🔧
+</strong>
+</h1>
 
 ![Summer of Code Banner](https://res.cloudinary.com/djdefbnij/image/upload/v1690795830/FB9845D5-2359-4863-B550-E76853BCFEC7-1_cmkyvh.jpg)
 
