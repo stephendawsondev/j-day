@@ -1,10 +1,9 @@
 ---
 name: User story issue template
 about: The standard user story issue template for the project
-title: ''
+title: "User story - <brief description of story>"
 labels: user story
-assignees: ''
-
+assignees: ""
 ---
 
 ### Story
