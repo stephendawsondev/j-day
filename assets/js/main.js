@@ -1,5 +1,5 @@
 import generateScenes from "./scenes.js";
-import spawnEnemy from "./enemy.js";
+import { spawnBasicEnemy, spawnTerminatorEnemy } from "./enemy.js";
 
 // initialize kaboom context
 kaboom({
@@ -28,11 +28,14 @@ loadRoot("../../public/scene_background_images/");
 loadSprite("instructions-page", "instructions.png");
 
 spawnEnemy(300, 300);
+const player = add([rect(40, 40), area(), pos(20, 20), color(RED), "player"]);
+
+spawnBasicEnemy(300, 300);
+spawnTerminatorEnemy(player);
 
 generateScenes();
 
 go("welcome");
 
-spawnEnemy(300, 300);
 // canvas focus enables user keyboard input register
 canvas.focus();
