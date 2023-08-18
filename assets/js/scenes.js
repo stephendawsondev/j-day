@@ -5,7 +5,7 @@
     // add welcome screen
     scene("welcome", () => {
       const welcomeBackground = add([
-        sprite("welcome-background"),
+        sprite("welcome-page"),
         pos(0, 0),
         origin("topleft"),
         scale(1),
@@ -30,7 +30,7 @@
     // add instructions
     scene("instructions", () => {
       const instructionsBackground = add([
-        sprite("instructions-background"),
+        sprite("instructions-page"),
         pos(0, 0),
         origin("topleft"),
         scale(1),

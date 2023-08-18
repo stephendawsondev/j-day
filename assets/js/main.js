@@ -11,8 +11,8 @@ kaboom({
 });
 
 loadRoot("../../public/scene_background_images/");
-loadSprite("welcome-background", "welcome.png");
-loadSprite("instructions-background", "instructions.png");
+loadSprite("welcome-page", "welcome.png");
+loadSprite("instructions-page", "instructions.png");
 
 
 generateScenes();
