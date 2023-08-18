@@ -34,15 +34,6 @@ const generateScenes = () => {
       area(),
       "instructions-text",
     ]);
-    const quitText = add([
-      text("Quit"),
-      color(YELLOW),
-      pos(width() / 4, height() / 2 + 200),
-      scale(0.5),
-      origin("center"),
-      area(),
-      "quit-text",
-    ]);
 
     onClick("start-text", () => {
       play("menu_select", { loop: false, volume: 1.0})
@@ -54,11 +45,6 @@ const generateScenes = () => {
     onClick("instructions-text", () => {
       play("menu_select", { loop: false, volume: 1.0 })
       go("instructions");
-    });
-
-    onClick("quit-text", () => {
-      play("menu_select", { loop: false, volume: 1.0 })
-      go("quit");
     });
 
     onKeyDown("enter", () => {
