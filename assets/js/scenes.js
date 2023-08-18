@@ -8,7 +8,7 @@ const generateFloorTiles = () => {
         positionY += 32;
       }
       add([
-        sprite("background-main-tile"),
+        sprite("background_main_tile"),
         pos(positionX, positionY),
         scale(1),
         layer("bg"),
