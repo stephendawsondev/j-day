@@ -13,6 +13,11 @@ kaboom({
 
 loadRoot("../../public/sprites/");
 loadSprite("background_tile", "background_main_tile.png");
+loadSprite("sarah_l", "Sarah.png");
+loadSprite("sarah_r", "Sarah_r.png");
+loadSprite("sarah_b", "Sarah_back.png");
+loadSprite("john", "John.png");
+loadSprite("terminator", "Terminator.png");
 
 loadRoot("../../public/sounds/");
 loadSound("death_sound", "death.wav");
@@ -26,12 +31,6 @@ loadSound("menu_select", "menu_select.wav");
 loadRoot("../../public/scene_background_images/");
 loadSprite("game_over", "game_over_background.png");
 loadSprite("welcome_page", "welcome_img.png");
-
-loadRoot("../../public/scene_background_images/");
-loadSprite("instructions_page", "instructions.png");
-loadSprite("game_over_background","game_over_background.png");
-loadSprite("welcome_page", "welcome_img.png")
-
 
 generateScenes();
 
