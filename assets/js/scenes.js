@@ -5,10 +5,10 @@ const generateScenes = () => {
   // add welcome screen
   scene("welcome", () => {
     const welcomeBackground = add([
-      sprite("welcome"),
+      sprite("welcome_page"),
       pos(0, 0),
       origin("topleft"),
-      scale(1),
+      scale(4),
     ]);
     const startText = add([
       text("Start Game"),
