@@ -1,3 +1,5 @@
+import { spawnBasicEnemy, spawnTerminatorEnemy } from "./enemy.js";
+
 /**
  * Generates the scenes for the game - called by go("sceneName")
  */
@@ -37,9 +39,9 @@ const generateScenes = () => {
       area(),
       "quit-text",
     ]);
-    
+
     onClick("start-text", () => {
-      go("game", {score: 0, livesLeft: 3 });
+      go("game", { score: 0, livesLeft: 3 });
     });
 
     onClick("instructions-text", () => {
@@ -80,7 +82,7 @@ const generateScenes = () => {
   });
 
   // add the game scene
-  scene("game", ({ timeLeft, score, livesLeft }) => {
+  scene("game", ({ score, livesLeft }) => {
     layers(["bg", "game", "ui"], "game");
 
     // add background tiles
@@ -93,7 +95,7 @@ const generateScenes = () => {
           positionY += 34;
         }
         add([
-          sprite("background-floor-tile"),
+          sprite("background_tile"),
           pos(positionX, positionY),
           scale(1),
           layer("bg"),
@@ -104,7 +106,22 @@ const generateScenes = () => {
     };
 
     generateFloorTiles();
-   
+
+    // spawn player as placeholder
+    const player = add([
+      rect(40, 40),
+      area(),
+      pos(20, 20),
+      color(RED),
+      "player",
+    ]);
+
+    // spawn basic enemy example
+    spawnBasicEnemy(300, 300);
+
+    // spawn terminator example
+    spawnTerminatorEnemy(player);
+
     // display score
     add([
       text(`Score:${score}`),
@@ -131,8 +148,7 @@ const generateScenes = () => {
       origin("topleft"),
       scale(1),
       layer("bg"),
-      kaboom.audio.play("game_over", { loop: false, volume: 0.5 })
-
+      kaboom.audio.play("game_over", { loop: false, volume: 0.5 }),
     ]);
 
     // display score
@@ -155,7 +171,7 @@ const generateScenes = () => {
     ]);
 
     onClick("play-again-text", () => {
-      go("game", {score: 0, livesLeft: 3 });
+      go("game", { score: 0, livesLeft: 3 });
     });
   });
 };
