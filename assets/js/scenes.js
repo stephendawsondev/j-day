@@ -1,6 +1,7 @@
 /**
  * Generates the scenes for the game - called by go("sceneName")
  */
+
 const generateScenes = () => {
   // add welcome screen
   scene("welcome", () => {
@@ -10,6 +11,9 @@ const generateScenes = () => {
       origin("topleft"),
       scale(4),
     ]);
+
+    const introMusic = play("intro_music", { loop: true, volume: 0.4 });
+
     const startText = add([
       text("Start Game"),
       color(YELLOW),
@@ -39,18 +43,24 @@ const generateScenes = () => {
     ]);
     
     onClick("start-text", () => {
+      play("menu_select", { loop: false, volume: 1.0})
+      introMusic.stop()
       go("game", {score: 0, livesLeft: 3 });
+      
     });
 
     onClick("instructions-text", () => {
+      play("menu_select", { loop: false, volume: 1.0 })
       go("instructions");
     });
 
     onClick("quit-text", () => {
+      play("menu_select", { loop: false, volume: 1.0 })
       go("quit");
     });
 
     onKeyDown("enter", () => {
+      play("menu_select", { loop: false, volume: 0.5 })
       go("game", { score: 0, livesLeft: 3 });
     });
   });
@@ -58,7 +68,7 @@ const generateScenes = () => {
   // add instructions screen
   scene("instructions", () => {
     const instructionsBackground = add([
-      sprite("instructions"),
+      sprite("instructions_page"),
       pos(0, 0),
       origin("topleft"),
       scale(1),
@@ -75,6 +85,7 @@ const generateScenes = () => {
     ]);
 
     onClick("back", () => {
+      
       go("welcome");
     });
   });
@@ -83,6 +94,8 @@ const generateScenes = () => {
   scene("game", ({ timeLeft, score, livesLeft }) => {
     layers(["bg", "game", "ui"], "game");
 
+    const mainMusic = play("main_music", { loop: true, volume: 0.4 });
+
     // add background tiles
     const generateFloorTiles = () => {
       let positionX = 0;
@@ -90,16 +103,16 @@ const generateScenes = () => {
       for (let i = 0; i < width(); i++) {
         if (positionX > width()) {
           positionX = 0;
-          positionY += 34;
+          positionY += 30;
         }
         add([
-          sprite("background-floor-tile"),
+          sprite("background_tile1"),
           pos(positionX, positionY),
           scale(1),
           layer("bg"),
         ]);
 
-        positionX += 34;
+        positionX += 30;
       }
     };
 
@@ -131,7 +144,8 @@ const generateScenes = () => {
       origin("topleft"),
       scale(1),
       layer("bg"),
-      kaboom.audio.play("game_over", { loop: false, volume: 0.5 })
+      play("game_over", { loop: false, volume: 0.5 })
+
 
     ]);
 
