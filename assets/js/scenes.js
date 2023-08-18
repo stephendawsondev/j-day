@@ -94,7 +94,7 @@ const generateScenes = () => {
           positionY += 30;
         }
         add([
-          sprite("background_tile1"),
+          sprite("background_tile"),
           pos(positionX, positionY),
           scale(1),
           layer("bg"),
