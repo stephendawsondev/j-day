@@ -5,10 +5,10 @@ const generateScenes = () => {
   // add welcome screen
   scene("welcome", () => {
     const welcomeBackground = add([
-      sprite("welcome"),
+      sprite("welcome_page"),
       pos(0, 0),
       origin("topleft"),
-      scale(1),
+      scale(4),
     ]);
     const startText = add([
       text("Start Game"),
@@ -28,13 +28,26 @@ const generateScenes = () => {
       area(),
       "instructions-text",
     ]);
-
+    const quitText = add([
+      text("Quit"),
+      color(YELLOW),
+      pos(width() / 4, height() / 2 + 200),
+      scale(0.5),
+      origin("center"),
+      area(),
+      "quit-text",
+    ]);
+    
     onClick("start-text", () => {
       go("game", {score: 0, livesLeft: 3 });
     });
 
     onClick("instructions-text", () => {
       go("instructions");
+    });
+
+    onClick("quit-text", () => {
+      go("quit");
     });
 
     onKeyDown("enter", () => {

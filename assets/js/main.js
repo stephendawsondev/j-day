@@ -29,11 +29,12 @@ loadSound("menu_select", "menu_select.wav");
 loadRoot("../../public/scene_background_images/");
 loadSprite("instructions-page", "instructions.png");
 loadSprite("game_over","game_over_background.png");
+loadSprite("welcome_page", "welcome_img.png")
 
 
 generateScenes();
 
-go("instructions");
+go("welcome");
 
 // canvas focus enables user keyboard input register
 canvas.focus();
