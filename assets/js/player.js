@@ -28,6 +28,7 @@ export const spawnPlayer = () => {
 
   onKeyDown("down", () => {
     player.move(0, speed);
+    player.use(sprite("sarah_l"));
   });
 
   return player;
