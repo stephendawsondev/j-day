@@ -28,7 +28,10 @@ loadSprite("game_over", "game_over_background.png");
 loadSprite("welcome_page", "welcome_img.png");
 
 loadRoot("../../public/scene_background_images/");
-loadSprite("instructions-page", "instructions.png");
+loadSprite("instructions_page", "instructions.png");
+loadSprite("game_over_background","game_over_background.png");
+loadSprite("welcome_page", "welcome_img.png")
+
 
 generateScenes();
 
