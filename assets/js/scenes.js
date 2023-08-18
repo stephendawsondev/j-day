@@ -1,3 +1,5 @@
+import { spawnBasicEnemy, spawnTerminatorEnemy } from "./enemy.js";
+
 /**
  * Generates the scenes for the game - called by go("sceneName")
  */
@@ -41,12 +43,12 @@ const generateScenes = () => {
       area(),
       "quit-text",
     ]);
-    
+
     onClick("start-text", () => {
       play("menu_select", { loop: false, volume: 1.0})
       introMusic.stop()
-      go("game", {score: 0, livesLeft: 3 });
-      
+      go("game", { score: 0, livesLeft: 3 });
+     
     });
 
     onClick("instructions-text", () => {
@@ -91,7 +93,7 @@ const generateScenes = () => {
   });
 
   // add the game scene
-  scene("game", ({ timeLeft, score, livesLeft }) => {
+  scene("game", ({ score, livesLeft }) => {
     layers(["bg", "game", "ui"], "game");
 
     const mainMusic = play("main_music", { loop: true, volume: 0.4 });
@@ -117,7 +119,22 @@ const generateScenes = () => {
     };
 
     generateFloorTiles();
-   
+
+    // spawn player as placeholder
+    const player = add([
+      rect(40, 40),
+      area(),
+      pos(20, 20),
+      color(RED),
+      "player",
+    ]);
+
+    // spawn basic enemy example
+    spawnBasicEnemy(300, 300);
+
+    // spawn terminator example
+    spawnTerminatorEnemy(player);
+
     // display score
     add([
       text(`Score:${score}`),
@@ -145,8 +162,6 @@ const generateScenes = () => {
       scale(1),
       layer("bg"),
       play("game_over", { loop: false, volume: 0.5 })
-
-
     ]);
 
     // display score
@@ -169,7 +184,7 @@ const generateScenes = () => {
     ]);
 
     onClick("play-again-text", () => {
-      go("game", {score: 0, livesLeft: 3 });
+      go("game", { score: 0, livesLeft: 3 });
     });
   });
 };
