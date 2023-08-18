@@ -1,6 +1,8 @@
+import generateScenes from "./scenes.js";
+
 // initialize kaboom context
 kaboom({
-  background: [255, 153, 51],
+  background: [255, 0, 0],
   width: 800,
   height: 600,
   canvas: document.getElementById("game-canvas"),
@@ -22,6 +24,14 @@ loadSound("powerup_sound","powerup.wav");
 loadRoot("scene_background_images")
 loadSprite("game_over","game_over_background.png")
 
+
+loadRoot("../../public/scene_background_images/");
+loadSprite("instructions-page", "instructions.png");
+
+
+generateScenes();
+
+go("instructions");
 
 // canvas focus enables user keyboard input register
 canvas.focus();
