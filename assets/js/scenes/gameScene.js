@@ -142,53 +142,47 @@ const createGameScene = () => {
     };
 
     generateWallTiles();
-
-    /** 
-
-    const generateDoorTiles = () => {
-      const tileWidth = 34;
-      const tileHeight = 32;
-      const screenHeight = 600;
-      const screenWidth = 800;
+    const animFrames = [
+      "arcade_1",
+      "arcade_2",
+      "arcade_3",
+      "arcade_4",
+      "arcade_5",
+      "arcade_6",
+      "arcade_7",
+      "arcade_8",
+      "arcade_9",
+      "arcade_10",
+      "arcade_11",
+      "arcade_12",
+      "arcade_13",
+      "arcade_14",
+      "arcade_15",
+      "arcade_16",
+    ];
     
-      // Center tile coordinates
-      const centerTiles = [
-        { x: 400, y: 0 },
-        { x: 432, y: 0 },
-        { x: 336, y: screenHeight - tileHeight },
-        { x: 432, y: screenHeight - tileHeight },
-        { x: 0, y: 272 },
-        { x: 0, y: 368 },
-        { x: screenWidth - tileWidth, y: 272 },
-        { x: screenWidth - tileWidth, y: 368 }
-      ];
+ 
+    const animatedObject = add([
+      sprite(animFrames[0]),
+      pos(80, 80),
+      scale(1),
+      layer("game"),
+    ]);
     
-      // Generate the door tiles
-      for (const coord of centerTiles) {
-        let doorSprite = "door_tile"; // Default sprite for center tiles
-        let rotation = 0; // No rotation by default
+    // Function to update animation frames
+    function updateAnimation() {
+      let currentFrameIndex = animFrames.indexOf(animatedObject.frame);
+      currentFrameIndex = (currentFrameIndex + 1) % animFrames.length;
+      animatedObject.use(animFrames[currentFrameIndex]);
+    }
     
-        // Handle side borders with rotation and different sprite
-        if (coord.x === 0 || coord.x === screenWidth - tileWidth) {
-          doorSprite = "door_tile"; // Sprite for side tiles
-          rotation = coord.y === 272 ? Math.PI / 2 : -Math.PI / 2; // Rotate 90 degrees clockwise or counterclockwise
-        }
+    // Update animation frames every 0.2 seconds
+    action(() => {
+      every(0.2, updateAnimation);
+    });
+  
     
-        add([
-          sprite(doorSprite),
-          pos(coord.x, coord.y),
-          scale(1),
-          rotate(rotation), // Apply rotation
-          layer("bg"),
-        ]);
-      }
-    };
     
-    generateDoorTiles();
-    */
-
-    // Generate tiles for doors
-
     // spawn player as placeholder
     const player = spawnPlayer();
     // const player = add([
