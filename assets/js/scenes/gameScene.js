@@ -165,7 +165,7 @@ const createGameScene = () => {
     const animatedObject = add([
       sprite(animFrames[0]),
       pos(80, 80),
-      scale(1),
+      scale(2),
       layer("game"),
     ]);
     
@@ -180,6 +180,34 @@ const createGameScene = () => {
     action(() => {
       every(0.2, updateAnimation);
     });
+    
+    const objectarea = [
+      { x: 400, y: 400, spriteName: "burger" },
+      { x: 200, y: 300, spriteName: "hotdog" },
+      { x: 600, y: 10, spriteName: "pink_neon"},
+      { x: 200, y: 10, spriteName: "green_neon"},
+      { x: 600, y: 34, spriteName: "pinball"},
+      { x: 650, y: 34, spriteName: "pinball"},
+      { x: 700, y: 34, spriteName: "pinball"},
+
+      // Add more objects as needed
+    ];
+    
+    for (const obj of objectarea) {
+      add([
+        sprite(obj.spriteName),
+        pos(obj.x, obj.y),
+        scale(1),
+        layer("bg"),
+      ]);
+    }
+
+
+      
+
+    
+
+
   
     
     

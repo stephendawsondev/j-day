@@ -36,6 +36,11 @@ loadSprite("arcade_13","arcade13.png")
 loadSprite("arcade_14","arcade14.png")
 loadSprite("arcade_15","arcade15.png")
 loadSprite("arcade_16","arcade16.png")
+loadSprite("burger", "burger_pixels.png")
+loadSprite("pinball","pinballtemplate.png")
+loadSprite("hotdog","hotdog_pixels.png")
+loadSprite("pink_neon", "pink_neon.png")
+loadSprite("green_neon","green_neon.png")
 
 // Load character sprites
 loadSprite("sarah_l", "Sarah.png");
