@@ -32,8 +32,6 @@ const generateScenes = () => {
       });
     });
 
-  const introMusic = play("intro_music", { loop: true, volume: 0.4 });
-
   // add welcome screen
   scene("welcome", () => {
     const welcomeBackground = add([
