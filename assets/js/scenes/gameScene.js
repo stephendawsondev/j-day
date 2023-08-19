@@ -6,7 +6,7 @@ const spawnPoints = [
   { x: 450, y: 520 },
   { x: 720, y: 290 },
   { x: 450, y: 40 },
-  { x: 40, y: 290 }
+  { x: 40, y: 290 },
 ];
 const randomIndex = Math.floor(Math.random() * spawnPoints.length);
 const randomSpawnPoint = spawnPoints[randomIndex];
@@ -170,72 +170,54 @@ const createGameScene = () => {
       "arcade_15",
       "arcade_16",
     ];
-    
- 
+
     const animatedObject = add([
       sprite(animFrames[0]),
       pos(80, 80),
       scale(2),
       layer("game"),
     ]);
-    
+
     // Function to update animation frames
     function updateAnimation() {
       let currentFrameIndex = animFrames.indexOf(animatedObject.frame);
       currentFrameIndex = (currentFrameIndex + 1) % animFrames.length;
       animatedObject.use(animFrames[currentFrameIndex]);
     }
-    
+
     // Update animation frames every 0.2 seconds
     action(() => {
       every(0.2, updateAnimation);
     });
-    
+
     const objectarea = [
       { x: 400, y: 400, spriteName: "burger" },
       { x: 200, y: 300, spriteName: "hotdog" },
-      { x: 600, y: 10, spriteName: "pink_neon"},
-      { x: 200, y: 10, spriteName: "green_neon"},
-      { x: 600, y: 34, spriteName: "pinball"},
-      { x: 650, y: 34, spriteName: "pinball"},
-      { x: 700, y: 34, spriteName: "pinball"},
+      { x: 600, y: 10, spriteName: "pink_neon" },
+      { x: 200, y: 10, spriteName: "green_neon" },
+      { x: 600, y: 34, spriteName: "pinball" },
+      { x: 650, y: 34, spriteName: "pinball" },
+      { x: 700, y: 34, spriteName: "pinball" },
 
       // Add more objects as needed
     ];
-    
+
     for (const obj of objectarea) {
-      add([
-        sprite(obj.spriteName),
-        pos(obj.x, obj.y),
-        scale(1),
-        layer("bg"),
-      ]);
+      add([sprite(obj.spriteName), pos(obj.x, obj.y), scale(1), layer("bg")]);
     }
 
-
-      
-
-    
-
-
-  
-    
-    
     // spawn player as placeholder
-    const player = spawnPlayer();
-    // const player = add([
-    //   rect(40, 40),
-    //   area(),
-    //   pos(20, 20),
-    //   color(RED),
-    //   "player",
-    // ]);
+    var player = spawnPlayer(enemy, terminator);
 
     // spawn basic enemy example
-    spawnBasicEnemy(randomSpawnPoint.x, randomSpawnPoint.y, player);
+    var enemy = spawnBasicEnemy(randomSpawnPoint.x, randomSpawnPoint.y, player);
 
     // spawn terminator example
-    spawnTerminatorEnemy(randomSpawnPoint.x, randomSpawnPoint.y, player);
+    var terminator = spawnTerminatorEnemy(
+      randomSpawnPoint.x,
+      randomSpawnPoint.y,
+      player
+    );
 
     // display score
     add([
