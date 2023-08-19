@@ -4,7 +4,8 @@ const spawnPlayer = () => {
     area(),
     scale(1.5),
     // position in the centre, accounting for the size of the sprite
-    pos(width() / 2 - 64, height() / 2 - 64),
+    pos(width() / 2, height() / 2),
+    origin("center"),
     "sarah",
   ]);
 
