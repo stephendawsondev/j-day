@@ -161,11 +161,12 @@ const generateScenes = () => {
     
       // Generate tiles along the top border (excluding specific columns)
       for (let x = tileWidth; x < screenWidth - tileWidth; x += tileWidth) {
-        if (![tileWidth * 10, tileWidth * 11, tileWidth * 12, tileWidth * 13].includes(x)) {
+        if (x !== tileWidth * 12 && x !== tileWidth * 13 && x !== tileWidth * 14 && x !== tileWidth * 15) {
           add([
             sprite("wall_tile"),
             pos(x, 0),
             scale(1),
+            area({ width: tileWidth, height: tileHeight }), 
             layer("bg"),
           ]);
         }
@@ -173,11 +174,12 @@ const generateScenes = () => {
     
       // Generate tiles along the bottom border (excluding specific columns)
       for (let x = tileWidth; x < screenWidth - tileWidth; x += tileWidth) {
-        if (![tileWidth * 10, tileWidth * 11, tileWidth * 12, tileWidth * 13].includes(x)) {
+        if (x !== tileWidth * 12 && x !== tileWidth * 13 && x !== tileWidth * 14 && x !== tileWidth * 15) {
           add([
             sprite("wall_tile"),
             pos(x, screenHeight - tileHeight),
             scale(1),
+            area({ width: tileWidth, height: tileHeight }), 
             layer("bg"),
           ]);
         }
@@ -185,11 +187,12 @@ const generateScenes = () => {
     
       // Generate tiles along the left border (excluding specific rows)
       for (let y = tileHeight; y < screenHeight - tileHeight; y += tileHeight) {
-        if (![tileHeight * 6, tileHeight * 7, tileHeight * 8, tileHeight * 9].includes(y)) {
+        if (y !== tileHeight * 7 && y !== tileHeight * 8 && y !== tileHeight * 9 && y !== tileHeight * 10) {
           add([
             sprite("wall_tile"),
             pos(0, y),
             scale(1),
+            area({ width: tileWidth, height: tileHeight }),
             layer("bg"),
           ]);
         }
@@ -197,11 +200,12 @@ const generateScenes = () => {
     
       // Generate tiles along the right border (excluding specific rows)
       for (let y = tileHeight; y < screenHeight - tileHeight; y += tileHeight) {
-        if (![tileHeight * 6, tileHeight * 7, tileHeight * 8, tileHeight * 9].includes(y)) {
+        if (y !== tileHeight * 7 && y !== tileHeight * 8 && y !== tileHeight * 9 && y !== tileHeight * 10) {
           add([
             sprite("wall_tile"),
             pos(screenWidth - tileWidth, y),
             scale(1),
+            area({ width: tileWidth, height: tileHeight }), 
             layer("bg"),
           ]);
         }
@@ -212,6 +216,7 @@ const generateScenes = () => {
         sprite("wall_tile"),
         pos(0, 0),
         scale(1),
+        area({ width: tileWidth, height: tileHeight }), 
         layer("bg"),
       ]);
     
@@ -219,13 +224,14 @@ const generateScenes = () => {
         sprite("wall_tile"),
         pos(screenWidth - tileWidth, 0),
         scale(1),
-        layer("bg"),
+        area({ width: tileWidth, height: tileHeight }),
       ]);
     
       add([
         sprite("wall_tile"),
         pos(0, screenHeight - tileHeight),
         scale(1),
+        area({ width: tileWidth, height: tileHeight }), 
         layer("bg"),
       ]);
     
@@ -233,11 +239,13 @@ const generateScenes = () => {
         sprite("wall_tile"),
         pos(screenWidth - tileWidth, screenHeight - tileHeight),
         scale(1),
+        area({ width: tileWidth, height: tileHeight }), 
         layer("bg"),
       ]);
     };
     
     generateWallTiles();
+    
     
 
     
