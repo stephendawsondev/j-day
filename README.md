@@ -41,7 +41,8 @@ The goal section provides a concise summary of the main objective or purpose of 
 
 ## Controls
 
-Describe briefly how the player controls the game.
+On starting the game the player can use either WSAD or the arrow keys to move the character around the screen all while avoiding enemies and enemy fire.
+Spacebar fires a projectile in the direction the player is facing.
 
 ## Tech
 
