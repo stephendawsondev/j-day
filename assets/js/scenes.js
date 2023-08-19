@@ -5,6 +5,9 @@ import { spawnPlayer } from "./player.js";
  */
 
 const generateScenes = () => {
+
+  const introMusic = play("intro_music", { loop: true, volume: 0.4 });
+  
   // add welcome screen
   scene("welcome", () => {
     const welcomeBackground = add([
@@ -13,8 +16,6 @@ const generateScenes = () => {
       origin("topleft"),
       scale(4),
     ]);
-
-    const introMusic = play("intro_music", { loop: true, volume: 0.4 });
 
     const startText = add([
       text("Start Game"),
@@ -34,6 +35,15 @@ const generateScenes = () => {
       area(),
       "instructions-text",
     ]);
+    const musicText = add([
+      text("Toggle Music"),
+      color(YELLOW),
+      pos(width() / 4, height() / 2 + 200),
+      scale(0.5),
+      origin("center"),
+      area(),
+      "music-text",
+    ]);
 
     onClick("start-text", () => {
       play("menu_select", { loop: false, volume: 1.0 });
@@ -44,6 +54,15 @@ const generateScenes = () => {
     onClick("instructions-text", () => {
       play("menu_select", { loop: false, volume: 1.0 });
       go("instructions");
+    });
+
+    onClick("music-text", () => {
+      if (introMusic.isPaused()) {
+        introMusic.play();
+      } else {
+        introMusic.pause();
+      };
+     
     });
 
     onKeyDown("enter", () => {
@@ -72,6 +91,7 @@ const generateScenes = () => {
     ]);
 
     onClick("back", () => {
+      play("menu_select", { loop: false, volume: 1.0 })
       go("welcome");
     });
   });
