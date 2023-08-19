@@ -1,18 +1,16 @@
 <h1 align="center">
 <strong>
-👨‍🔧👨🏻‍🔧👸🏼🍄🐲 Retro Quest 🐲🍄👸🏼👨🏻‍🔧👨‍🔧
+Judgement Day
 </strong>
 </h1>
 
-![Summer of Code Banner](https://res.cloudinary.com/djdefbnij/image/upload/v1690795830/FB9845D5-2359-4863-B550-E76853BCFEC7-1_cmkyvh.jpg)
+![Judgement Day Home screen Banner](./assets/images/readme_images/j-day_banner.png)
 
 # SUBMISSION
 
 ## Deployment
 
-#### _(please note, your team must also include the deployed links in the usual submission in Hackapp)_
-
-This project is deployed and can be accessed at [http://your-deployed-link.com](http://your-deployed-link.com).
+This project is deployed and can be accessed at [https://stephendawsondev.github.io/j-day/](https://stephendawsondev.github.io/j-day/).
 
 ## Criteria
 
@@ -28,7 +26,7 @@ In this section, we will briefly discuss how our team addressed the applicable c
 
 ## Intro
 
-One or two paragraphs providing an overview of our project
+A retro game based on the Terminator franchise. A top down shooter game with interactive enemies, difficulty progression and arcade style music and game sounds. Using solely the kaboom.js framework to implement various functions and colliding objects that combines to give the user a unique game play as well as a nostalgic experience.
 
 ## Goal
 
