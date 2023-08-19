@@ -63,7 +63,9 @@ const spawnPlayer = () => {
   const BULLET_SPEED = 400;
 
   onKeyPress("space", () => {
-    spawnBullet(player.pos);
+    if (player.exists()) {
+      spawnBullet(player.pos);
+    }
   });
 
   function spawnBullet(bulletpos) {
