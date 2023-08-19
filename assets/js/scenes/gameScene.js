@@ -252,6 +252,21 @@ const createGameScene = () => {
       layer("ui"),
       scale(0.4),
     ]);
+
+    // Pause
+    let paused = false;
+
+    onKeyDown("p", () => {
+      if (paused == false) {
+        mainMusic.stop();
+        debug.paused=true
+        paused = true;
+      } else {
+        mainMusic.play();
+        debug.paused=false
+        paused = false;
+      }
+    });
   });
 };
 
