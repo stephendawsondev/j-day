@@ -1,10 +1,13 @@
 import { spawnBasicEnemy, spawnTerminatorEnemy } from "./enemy.js";
-
+import { spawnPlayer } from "./player.js";
 /**
  * Generates the scenes for the game - called by go("sceneName")
  */
 
 const generateScenes = () => {
+
+  const introMusic = play("intro_music", { loop: true, volume: 0.4 });
+  
   // add welcome screen
   scene("welcome", () => {
     const welcomeBackground = add([
@@ -13,8 +16,6 @@ const generateScenes = () => {
       origin("topleft"),
       scale(4),
     ]);
-
-    const introMusic = play("intro_music", { loop: true, volume: 0.4 });
 
     const startText = add([
       text("Start Game"),
@@ -34,21 +35,38 @@ const generateScenes = () => {
       area(),
       "instructions-text",
     ]);
+    const musicText = add([
+      text("Toggle Music"),
+      color(YELLOW),
+      pos(width() / 4, height() / 2 + 200),
+      scale(0.5),
+      origin("center"),
+      area(),
+      "music-text",
+    ]);
 
     onClick("start-text", () => {
-      play("menu_select", { loop: false, volume: 1.0})
-      introMusic.stop()
+      play("menu_select", { loop: false, volume: 1.0 });
+      introMusic.stop();
       go("game", { score: 0, livesLeft: 3 });
-     
     });
 
     onClick("instructions-text", () => {
-      play("menu_select", { loop: false, volume: 1.0 })
+      play("menu_select", { loop: false, volume: 1.0 });
       go("instructions");
     });
 
+    onClick("music-text", () => {
+      if (introMusic.isPaused()) {
+        introMusic.play();
+      } else {
+        introMusic.pause();
+      };
+     
+    });
+
     onKeyDown("enter", () => {
-      play("menu_select", { loop: false, volume: 0.5 })
+      play("menu_select", { loop: false, volume: 0.5 });
       go("game", { score: 0, livesLeft: 3 });
     });
   });
@@ -73,7 +91,7 @@ const generateScenes = () => {
     ]);
 
     onClick("back", () => {
-      
+      play("menu_select", { loop: false, volume: 1.0 })
       go("welcome");
     });
   });
@@ -107,13 +125,14 @@ const generateScenes = () => {
     generateFloorTiles();
 
     // spawn player as placeholder
-    const player = add([
-      rect(40, 40),
-      area(),
-      pos(20, 20),
-      color(RED),
-      "player",
-    ]);
+    const player = spawnPlayer();
+    // const player = add([
+    //   rect(40, 40),
+    //   area(),
+    //   pos(20, 20),
+    //   color(RED),
+    //   "player",
+    // ]);
 
     // spawn basic enemy example
     spawnBasicEnemy(300, 300);
@@ -147,7 +166,7 @@ const generateScenes = () => {
       origin("topleft"),
       scale(1),
       layer("bg"),
-      play("game_over", { loop: false, volume: 0.5 })
+      play("game_over", { loop: false, volume: 0.5 }),
     ]);
 
     // display score
