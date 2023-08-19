@@ -3,7 +3,8 @@ const spawnPlayer = () => {
     sprite("sarah_l"),
     area(),
     scale(1.5),
-    pos(0, 20),
+    // position in the centre, accounting for the size of the sprite
+    pos(width() / 2 - 64, height() / 2 - 64),
     "sarah",
   ]);
 
@@ -21,7 +22,7 @@ const spawnPlayer = () => {
     if (player.pos.x > 0) {
       player.use(sprite("sarah_l"));
       player.move(-speed, 0);
-      facingR = false
+      facingR = false;
     }
   });
 
