@@ -12,6 +12,8 @@ kaboom({
 
 loadRoot("../../public/scene_background_images/");
 loadSprite("instructions-page", "instructions.png");
+loadSprite("game-page", "game.png");
+loadSprite("quit-page", "game_over.png");
 
 
 generateScenes();
