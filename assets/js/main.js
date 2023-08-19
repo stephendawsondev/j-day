@@ -25,16 +25,16 @@ loadSprite("pinball", "pinballtemplate.png");
 loadSprite("hotdog", "hotdog_pixels.png");
 loadSprite("pink_neon", "pink_neon.png");
 loadSprite("green_neon", "green_neon.png");
-loadSprite("arcade_machine1","arcade_machine1.png");
-loadSprite("arcade_machine2","arcade_machine2.png");
-loadSprite("arcade_machine3","arcade_machine3.png");
-loadSprite("table","table.png");
-loadSprite("chair_left_side","chair_left_side.png");
-loadSprite("chair_right_side","chair_right_side.png");
-loadSprite("pizza","pizza_pixels.png");
-loadSprite("mug","mug_pixels.png");
-loadSprite("standing_table","standing_table.png");
-loadSprite("can","can_pixels.png");
+loadSprite("arcade_machine1", "arcade_machine1.png");
+loadSprite("arcade_machine2", "arcade_machine2.png");
+loadSprite("arcade_machine3", "arcade_machine3.png");
+loadSprite("table", "table.png");
+loadSprite("chair_left_side", "chair_left_side.png");
+loadSprite("chair_right_side", "chair_right_side.png");
+loadSprite("pizza", "pizza_pixels.png");
+loadSprite("mug", "mug_pixels.png");
+loadSprite("standing_table", "standing_table.png");
+loadSprite("can", "can_pixels.png");
 
 // Load character sprites
 loadSprite("sarah_l", "Sarah.png");
@@ -55,7 +55,6 @@ loadSound("main_music", "main.wav");
 loadSound("menu_select", "menu_select.wav");
 loadSound("shoot", "gun_sound_effect.wav");
 loadSound("death", "death.wav");
-
 
 //load scene sprites
 loadRoot(`${relUrl}/scene_background_images/`);
