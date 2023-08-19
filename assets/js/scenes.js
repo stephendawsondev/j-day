@@ -19,9 +19,12 @@ const generateScenes = () => {
     const introMusic = play("intro_music", { loop: true, volume: 0.4 });
 
     const musicText = add([
-      text("Toggle Music"),
+      text("Toggle Music", {
+        size: 30,
+        font: "sink"
+       }),
       color(YELLOW),
-      pos(width() / 1, height() / 8),
+      pos(650, 480),
       scale(0.5),
       origin("center"),
       area(),
@@ -30,7 +33,7 @@ const generateScenes = () => {
     
     const heading = add([
      text("Terminal8tors", {
-      size: 48,
+      size: 70,
       font: "sinko"
      }),
       color(GREEN),
