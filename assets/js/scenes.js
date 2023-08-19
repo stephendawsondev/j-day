@@ -4,7 +4,8 @@ import { spawnPlayer } from "./player.js";
  * Generates the scenes for the game - called by go("sceneName")
  */
 
- const generateScenes = () => {    
+
+const generateScenes = () => {    
     // add instructions
     scene("instructions", () => {
       const instructionsBackground = add([
@@ -32,7 +33,7 @@ import { spawnPlayer } from "./player.js";
     });
 
   const introMusic = play("intro_music", { loop: true, volume: 0.4 });
-  
+
   // add welcome screen
   scene("welcome", () => {
     const welcomeBackground = add([
@@ -45,22 +46,34 @@ import { spawnPlayer } from "./player.js";
     const introMusic = play("intro_music", { loop: true, volume: 0.4 });
 
     const musicText = add([
-      text("Toggle Music"),
+      text("Toggle Music", {
+        size: 30,
+        font: "sink"
+       }),
       color(YELLOW),
-      pos(width() / 4, height() / 2 + 200),
+      pos(650, 480),
       scale(0.5),
       origin("center"),
       area(),
       "music-text",
     ]);
-
-   
+    
+    const heading = add([
+     text("Terminal8tors", {
+      size: 70,
+      font: "sinko"
+     }),
+      color(GREEN),
+      pos(24, 24),
+    ]);
+  
     function addButton(txt, p, f) {
       const btn = add([
         text(txt, {
           size: 48,
           font: "apl386o",
         }),
+        
         pos(p),
         area({ cursor: "pointer" }),
         scale(1),
@@ -80,7 +93,7 @@ import { spawnPlayer } from "./player.js";
           btn.scale = vec2(1.2);
         } else {
           btn.scale = vec2(1);
-          btn.color = rgb();
+          btn.color = rgb(255,255,0);
         }
       });
     }
@@ -101,8 +114,7 @@ import { spawnPlayer } from "./player.js";
         introMusic.play();
       } else {
         introMusic.pause();
-      };
-     
+      }
     });
     // reset cursor to default at frame start for easier cursor management
     onUpdate(() => cursor("default"));
