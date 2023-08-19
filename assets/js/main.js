@@ -10,7 +10,6 @@ kaboom({
 });
 
 const rootUrl = window.location.href;
-
 const relUrl = rootUrl.includes("github.io")
   ? "../../j-day/public"
   : "../../public";
@@ -41,9 +40,9 @@ loadSound("menu_select", "menu_select.wav");
 
 
 loadRoot(`${relUrl}/scene_background_images/`);
-loadSprite("instructions_page", "instructions.png");
-loadSprite("game_over_background", "game_over_background.png");
-loadSprite("welcome_page", "welcome_img.png");
+loadSprite("instructions-page", "instructions.png");
+loadSprite("game-page", "game.png");
+loadSprite("quit-page", "game_over.png");
 
 generateScenes();
 

@@ -4,7 +4,32 @@ import { spawnPlayer } from "./player.js";
  * Generates the scenes for the game - called by go("sceneName")
  */
 
-const generateScenes = () => {
+ const generateScenes = () => {    
+    // add instructions
+    scene("instructions", () => {
+      const instructionsBackground = add([
+        sprite("instructions-page"),
+        pos(0, 0),
+        origin("topleft"),
+        scale(1.2),
+        "start-game"
+      ]);
+
+      // start game button
+      const startButton = add([
+        text("Play"),
+        color(YELLOW),
+        pos(600, 500),
+        origin("topleft"),
+        scale(1),
+        area(),
+        "play"
+      ]);
+
+      onClick("play", () => {
+        go("game");
+      });
+    });
 
   const introMusic = play("intro_music", { loop: true, volume: 0.4 });
   
@@ -40,6 +65,7 @@ const generateScenes = () => {
         area({ cursor: "pointer" }),
         scale(1),
       ]);
+
 
       btn.onClick(f);
 
@@ -84,31 +110,6 @@ const generateScenes = () => {
     onKeyDown("enter", () => {
       play("menu_select", { loop: false, volume: 0.5 });
       go("game", { score: 0, livesLeft: 3 });
-    });
-  });
-
-  // add instructions screen
-  scene("instructions", () => {
-    const instructionsBackground = add([
-      sprite("instructions_page"),
-      pos(0, 0),
-      origin("topleft"),
-      scale(1),
-    ]);
-
-    add([
-      text("Go back"),
-      pos(600, 550),
-      color(YELLOW),
-      scale(0.5),
-      origin("left"),
-      area(),
-      "back",
-    ]);
-
-    onClick("back", () => {
-      play("menu_select", { loop: false, volume: 1.0 })
-      go("welcome");
     });
   });
 
