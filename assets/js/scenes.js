@@ -40,7 +40,7 @@ const generateScenes = () => {
       sprite("welcome_page"),
       pos(0, 0),
       origin("topleft"),
-      scale(4),
+      scale(3.6),
     ]);
 
     const introMusic = play("intro_music", { loop: true, volume: 0.4 });
@@ -48,8 +48,8 @@ const generateScenes = () => {
     const musicText = add([
       text("Toggle Music", {
         size: 30,
-        font: "sink"
-       }),
+        font: "sink",
+      }),
       color(YELLOW),
       pos(650, 480),
       scale(0.5),
@@ -57,23 +57,23 @@ const generateScenes = () => {
       area(),
       "music-text",
     ]);
-    
+
     const heading = add([
-     text("Terminal8tors", {
-      size: 70,
-      font: "sinko"
-     }),
-      color(GREEN),
-      pos(24, 24),
+      text("Judgement Day", {
+        size: 65,
+        font: "sinko",
+      }),
+      color(rgb(138, 43, 226)),
+      pos(40, 24),
     ]);
-  
+
     function addButton(txt, p, f) {
       const btn = add([
         text(txt, {
           size: 48,
           font: "apl386o",
         }),
-        
+
         pos(p),
         area({ cursor: "pointer" }),
         scale(1),
@@ -93,7 +93,7 @@ const generateScenes = () => {
           btn.scale = vec2(1.2);
         } else {
           btn.scale = vec2(1);
-          btn.color = rgb(255,255,0);
+          btn.color = rgb(255, 255, 0);
         }
       });
     }
