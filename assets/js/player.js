@@ -3,7 +3,7 @@ const spawnPlayer = (enemy, terminator) => {
   console.log(enemy);
   const player = add([
     sprite("sarah_l"),
-    area(),
+    area(scale(0.6)),
     scale(1.5),
     // position in the centre
     pos(width() / 2, height() / 2),
@@ -85,7 +85,8 @@ const spawnPlayer = (enemy, terminator) => {
     }
     //add bullet
     add([
-      rect(7, 7),
+      sprite("bullet_yellow"),
+      scale(0.3),
       pos(bulletpos),
       origin("center"),
       color(255, 255, 255),
