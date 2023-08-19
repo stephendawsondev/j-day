@@ -28,8 +28,8 @@ loadSprite("sarah_b", "Sarah_back.png");
 loadSprite("john", "John.png");
 loadSprite("terminator", "Terminator.png");
 
-loadRoot(`${relUrl}/sounds/`);
 //load sounds
+loadRoot(`${relUrl}/sounds/`);
 loadSound("death_sound", "death.wav");
 loadSound("hurt_sound", "hit_hurt.wav");
 loadSound("life_pickup", "life_pickup.wav");
@@ -39,12 +39,10 @@ loadSound("main_music", "main.wav");
 loadSound("menu_select", "menu_select.wav");
 
 //load scene sprites
-
-
 loadRoot(`${relUrl}/scene_background_images/`);
+loadSprite("welcome_page", "welcome_img.png");
 loadSprite("instructions-page", "instructions.png");
-loadSprite("game-page", "game.png");
-loadSprite("quit-page", "game_over.png");
+loadSprite("game_over", "game_over_background.png");
 
 
 generateScenes();
