@@ -134,7 +134,7 @@ const generateScenes = () => {
     // add background tiles
     const generateFloorTiles = () => {
       let positionX = 0;
-      let positionY = 32;
+      let positionY = 0;
       for (let i = 0; i < width(); i++) {
         if (positionX > width()) {
           positionX = 0;
@@ -153,52 +153,58 @@ const generateScenes = () => {
 
     generateFloorTiles();
 
-    //Generate tiles for walls
-
     const generateWallTiles = () => {
       const tileWidth = 34;
       const tileHeight = 34;
       const screenWidth = 800;
       const screenHeight = 600;
     
-      // Generate tiles along the top border
-      for (let x = 0; x < screenWidth; x += tileWidth) {
-        add([
-          sprite("wall_tile"),
-          pos(x, 0),
-          scale(1),
-          layer("bg"),
-        ]);
+      // Generate tiles along the top border (excluding specific columns)
+      for (let x = tileWidth; x < screenWidth - tileWidth; x += tileWidth) {
+        if (![tileWidth * 10, tileWidth * 11, tileWidth * 12, tileWidth * 13].includes(x)) {
+          add([
+            sprite("wall_tile"),
+            pos(x, 0),
+            scale(1),
+            layer("bg"),
+          ]);
+        }
       }
     
-      // Generate tiles along the bottom border
-      for (let x = 0; x < screenWidth; x += tileWidth) {
-        add([
-          sprite("wall_tile"),
-          pos(x, screenHeight - tileHeight),
-          scale(1),
-          layer("bg"),
-        ]);
+      // Generate tiles along the bottom border (excluding specific columns)
+      for (let x = tileWidth; x < screenWidth - tileWidth; x += tileWidth) {
+        if (![tileWidth * 10, tileWidth * 11, tileWidth * 12, tileWidth * 13].includes(x)) {
+          add([
+            sprite("wall_tile"),
+            pos(x, screenHeight - tileHeight),
+            scale(1),
+            layer("bg"),
+          ]);
+        }
       }
     
-      // Generate tiles along the left border
+      // Generate tiles along the left border (excluding specific rows)
       for (let y = tileHeight; y < screenHeight - tileHeight; y += tileHeight) {
-        add([
-          sprite("wall_tile"),
-          pos(0, y),
-          scale(1),
-          layer("bg"),
-        ]);
+        if (![tileHeight * 6, tileHeight * 7, tileHeight * 8, tileHeight * 9].includes(y)) {
+          add([
+            sprite("wall_tile"),
+            pos(0, y),
+            scale(1),
+            layer("bg"),
+          ]);
+        }
       }
     
-      // Generate tiles along the right border
+      // Generate tiles along the right border (excluding specific rows)
       for (let y = tileHeight; y < screenHeight - tileHeight; y += tileHeight) {
-        add([
-          sprite("wall_tile"),
-          pos(screenWidth - tileWidth, y),
-          scale(1),
-          layer("bg"),
-        ]);
+        if (![tileHeight * 6, tileHeight * 7, tileHeight * 8, tileHeight * 9].includes(y)) {
+          add([
+            sprite("wall_tile"),
+            pos(screenWidth - tileWidth, y),
+            scale(1),
+            layer("bg"),
+          ]);
+        }
       }
     
       // Generate tiles at the corners
@@ -233,8 +239,9 @@ const generateScenes = () => {
     
     generateWallTiles();
     
+
     
-  generateWallTiles();
+    
    /** 
 
     const generateDoorTiles = () => {
