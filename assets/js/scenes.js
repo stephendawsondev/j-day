@@ -4,6 +4,15 @@ import { spawnPlayer } from "./player.js";
  * Generates the scenes for the game - called by go("sceneName")
  */
 
+// Spawn points for basic enemies
+const spawnPoints = [
+  { x: 450, y: 520 },
+  { x: 720, y: 290 },
+  { x: 450, y: 40 },
+  { x: 40, y: 290 }
+];
+const randomIndex = Math.floor(Math.random() * spawnPoints.length);
+const randomSpawnPoint = spawnPoints[randomIndex];
 
 const generateScenes = () => {    
     // add instructions
@@ -311,10 +320,10 @@ const generateScenes = () => {
     // ]);
 
     // spawn basic enemy example
-    spawnBasicEnemy(300, 300);
+    spawnBasicEnemy(randomSpawnPoint.x, randomSpawnPoint.y, player);
 
     // spawn terminator example
-    spawnTerminatorEnemy(player);
+    spawnTerminatorEnemy(randomSpawnPoint.x, randomSpawnPoint.y, player);
 
     // display score
     add([
