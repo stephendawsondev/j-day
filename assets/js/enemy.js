@@ -2,53 +2,44 @@
  * creates an enemy object - the function is
  * imported and called in the main.js file
  */
-const spawnBasicEnemy = (randX, randY) => {
+const spawnBasicEnemy = (spawnX, spawnY, player) => {
   const enemy = add([
     rect(40, 40), // placeholder until we have a sprite
     color(GREEN), // colour of the box until we have a sprite
-    pos(randX, randY),
-    "enemy", // tagged with enemy to reference later on
+    pos(spawnX, spawnY),
+    area(),
+    "enemy" // tagged with enemy to reference later on
   ]);
 
+
   // set the initial enemy speed
-  let enemyXSpeed = 75;
-  let enemyYSpeed = 75;
-
+  const enemySpeed = 30;
+  
   // add randomness to enemy movement
-  enemy.onUpdate(() => {
-    let randDir = rand() * 10 >= 5 ? rand() * 10 : rand() * -10; // generate random number for shifting position slightly so we don't have to change the speed
-
-    // if the enemy hits the edge of the screen, reverse the direction
-    if (
-      (enemy.pos.x + 40 > width() && enemyXSpeed > 0) ||
-      (enemy.pos.x <= 0 && enemyXSpeed < 0)
-    ) {
-      enemyXSpeed = -enemyXSpeed;
-      enemy.pos.y = enemy.pos.y + randDir;
+  enemy.onUpdate(() => { 
+    const movementDirection = player.pos.sub(enemy.pos).unit();
+    if (player.exists()) {
+      enemy.move(movementDirection.scale(enemySpeed));
     }
-    if (
-      (enemy.pos.y > height() - 40 && enemyYSpeed > 0) ||
-      (enemy.pos.y < 0 && enemyYSpeed < 0)
-    ) {
-      enemyYSpeed = -enemyYSpeed;
-      enemy.pos.x = enemy.pos.x + randDir;
-    }
+  });
 
-    enemy.move(enemyXSpeed, enemyYSpeed);
+  player.onCollide("enemy", (enemy) => {
+      destroy(player)
+      addKaboom(enemy.pos);
   });
 
   return enemy;
 };
 
 // Code taken from https://2000.kaboomjs.com/play?demo=ai
-const spawnTerminatorEnemy = (player) => {
-  const ENEMY_SPEED = 160;
-  const BULLET_SPEED = 700;
+const spawnTerminatorEnemy = (spawnX, spawnY, player) => {
+  const ENEMY_SPEED = 10; //160
+  const BULLET_SPEED = 0; //700
 
   const enemy = add([
     rect(40, 80), // placeholder until we have a sprite
     color(BLUE), // colour of the box until we have a sprite
-    pos(width() - 80, height() - 80),
+    pos(spawnX, spawnY),
     origin("center"),
     // This enemy cycle between 3 states, and start from "idle" state
     state("move", ["idle", "attack", "move"]),
@@ -116,3 +107,4 @@ const spawnTerminatorEnemy = (player) => {
 
 // export the function so we have access to it in main.js
 export { spawnBasicEnemy, spawnTerminatorEnemy };
+
