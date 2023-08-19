@@ -14,10 +14,12 @@ const relUrl = rootUrl.includes("github.io")
   ? "../../j-day/public"
   : "../../public";
 
-/* Kyle added sprite import */
+/* Scence design objects*/
 
 loadRoot(`${relUrl}/sprites/`);
-loadSprite("background_tile", "background_main_tile.png");
+loadSprite("background_tile", "arcade_carpet.png");
+loadSprite("wall_tile", "wall_tile.png")
+loadSprite("door_tile", "door_pixels.png")
 
 // Load character sprites
 loadSprite("sarah_l", "Sarah.png");
@@ -43,6 +45,7 @@ loadRoot(`${relUrl}/scene_background_images/`);
 loadSprite("instructions-page", "instructions.png");
 loadSprite("game-page", "game.png");
 loadSprite("quit-page", "game_over.png");
+
 
 generateScenes();
 
