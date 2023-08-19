@@ -63,7 +63,7 @@ We would like to give credit to the following individuals, organizations, and re
    Design/ Frontend / Documentation
   - **Sasan Tazayoni** - [GitHub](https://github.com/SasanTazayoni), [LinkedIn](https://www.linkedin.com/in/sasan-tazayoni/)
    Design/ Frontend / Documentation
-  - **Nazek** - [GitHub](https://github.com/), [LinkedIn](https://www.linkedin.com/in/)
+  - **Nazek** - [GitHub](https://github.com/Nazek-Altayeb), [LinkedIn](https://www.linkedin.com/in/nazek-a-altayeb/)
    Design/ Frontend / Documentation
   - **Mohamed Ayman** - [GitHub](https://github.com/moabdelbasset), [LinkedIn](https://www.linkedin.com/in/mohamed-ayman-b29b5b66/)
    Design/ Frontend / Documentation
