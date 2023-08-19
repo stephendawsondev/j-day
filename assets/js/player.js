@@ -1,9 +1,11 @@
-const spawnPlayer = () => {
+const spawnPlayer = (enemy, terminator) => {
+  console.log(terminator);
+  console.log(enemy);
   const player = add([
     sprite("sarah_l"),
     area(),
     scale(1.5),
-    // position in the centre, accounting for the size of the sprite
+    // position in the centre
     pos(width() / 2, height() / 2),
     origin("center"),
     "sarah",
@@ -63,6 +65,7 @@ const spawnPlayer = () => {
   //player shooting
   const BULLET_SPEED = 400;
 
+  //shooting function
   onKeyPress("space", () => {
     if (player.exists()) {
       spawnBullet(player.pos);
@@ -71,24 +74,23 @@ const spawnPlayer = () => {
 
   function spawnBullet(bulletpos) {
     // set up starting point for bullets depending on direction
-
     if (current_direction == directions.LEFT) {
-      bulletpos = bulletpos.add(0, 50);
+      bulletpos = bulletpos.add(-30, 10);
     } else if (current_direction == directions.RIGHT) {
-      bulletpos = bulletpos.add(70, 50);
-    } else if (current_direction == directions.UP) {
       bulletpos = bulletpos.add(30, 10);
+    } else if (current_direction == directions.UP) {
+      bulletpos = bulletpos.add(0, -30);
     } else if (current_direction == directions.DOWN) {
-      bulletpos = bulletpos.add(30, 80);
+      bulletpos = bulletpos.add(0, 30);
     }
-
+    //add bullet
     add([
       rect(7, 7),
       pos(bulletpos),
       origin("center"),
       color(255, 255, 255),
       area(),
-      "bullet",
+      "playerBullet",
       {
         bulletSpeed:
           current_direction == directions.LEFT ||
@@ -104,7 +106,7 @@ const spawnPlayer = () => {
   //   detune: rand(-1200, 1200),
   // });
 
-  onUpdate("bullet", (b) => {
+  onUpdate("playerBullet", (b) => {
     if (
       current_direction === directions.LEFT ||
       current_direction === directions.RIGHT
@@ -119,11 +121,19 @@ const spawnPlayer = () => {
     }
   });
 
-  // enemy.onCollide("bullet", (bullet) => {
-  //   destroy(bullet);
-  //   destroy(enemy);
-  //   addKaboom(bullet.pos);
-  // });
+  // Destroy enemies
+  onCollide("enemy", "playerBullet", (enemy, playerBullet) => {
+    destroy(playerBullet);
+    destroy(enemy);
+    addKaboom(playerBullet.pos);
+  });
+
+  // Destroy terminator
+  onCollide("terminator", "playerBullet", (terminator, playerBullet) => {
+    destroy(playerBullet);
+    destroy(terminator);
+    addKaboom(playerBullet.pos);
+  });
 
   return player;
 };
