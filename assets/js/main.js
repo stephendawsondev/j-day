@@ -9,12 +9,18 @@ kaboom({
   scale: 1,
 });
 
+const rootUrl = window.location.href;
+
+const relUrl = rootUrl.includes("github.io")
+  ? "../../j-day/public"
+  : "../../public";
+
 /* Kyle added sprite import */
 
-loadRoot("../../public/sprites/");
+loadRoot(`${relUrl}/sprites/`);
 loadSprite("background_tile", "background_main_tile.png");
 
-loadRoot("../../public/sounds/");
+loadRoot(`${relUrl}/sounds/`);
 loadSound("death_sound", "death.wav");
 loadSound("hurt_sound", "hit_hurt.wav");
 loadSound("life_pickup", "life_pickup.wav");
@@ -23,15 +29,14 @@ loadSound("intro_music", "intro.wav");
 loadSound("main_music", "main.wav");
 loadSound("menu_select", "menu_select.wav");
 
-loadRoot("../../public/scene_background_images/");
+loadRoot(`${relUrl}/scene_background_images/`);
 loadSprite("game_over", "game_over_background.png");
 loadSprite("welcome_page", "welcome_img.png");
 
-loadRoot("../../public/scene_background_images/");
+loadRoot(`${relUrl}/scene_background_images/`);
 loadSprite("instructions_page", "instructions.png");
-loadSprite("game_over_background","game_over_background.png");
-loadSprite("welcome_page", "welcome_img.png")
-
+loadSprite("game_over_background", "game_over_background.png");
+loadSprite("welcome_page", "welcome_img.png");
 
 generateScenes();
 
