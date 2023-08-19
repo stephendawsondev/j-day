@@ -51,3 +51,19 @@ In the tech section, we provide information about the technology stack, dependen
 ## Credits
 
 We would like to give credit to the following individuals, organizations, and resources that have contributed to the project or provided inspiration:
+- **Thank you to all the team members for the hard work and cooperation.**
+
+  - **Stephen Dawson** - [GitHub](https://github.com/stephendawsondev), [LinkedIn](https://www.linkedin.com/in/sdstephendawson/), [URL](http://www.stephendawson.ie)
+  Scrum Master/ Frontend / Documentation
+  - **Kyle Clow** - [GitHub](https://github.com/KTC96), [LinkedIn](https://www.linkedin.com/in/kyle-clow-43471b130/)
+  Design/ Frontend / Documentation
+  - **Karolina Cisek-Ndlovu** - [GitHub](https://github.com/Koko-66), [LinkedIn](https://www.linkedin.com/in/k-c-n/)
+  Design/ Frontend / Documentation
+  - **Adam Gilroy** - [GitHub](https://github.com/adamgilroy22), [LinkedIn](https://www.linkedin.com/in/adamgilroy22/)
+   Design/ Frontend / Documentation
+  - **Mark Young** - [GitHub](https://github.com/Markyjay), [LinkedIn](https://www.linkedin.com/in/mark-young-4a90ab15/)
+   Design/ Frontend / Documentation
+  - **Sasan Tazayoni** - [GitHub](https://github.com/SasanTazayoni), [LinkedIn](https://www.linkedin.com/in/sasan-tazayoni/)
+   Design/ Frontend / Documentation
+  - **Nazek** - [GitHub](https://github.com/), [LinkedIn](https://www.linkedin.com/in/)
+   Design/ Frontend / Documentation
