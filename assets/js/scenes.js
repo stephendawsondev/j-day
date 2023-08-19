@@ -5,9 +5,8 @@ import { spawnPlayer } from "./player.js";
  */
 
 const generateScenes = () => {
-
   const introMusic = play("intro_music", { loop: true, volume: 0.4 });
-  
+
   // add welcome screen
   scene("welcome", () => {
     const welcomeBackground = add([
@@ -22,20 +21,29 @@ const generateScenes = () => {
     const musicText = add([
       text("Toggle Music"),
       color(YELLOW),
-      pos(width() / 4, height() / 2 + 200),
+      pos(width() / 1, height() / 8),
       scale(0.5),
       origin("center"),
       area(),
       "music-text",
     ]);
-
-   
+    
+    const heading = add([
+     text("Terminal8tors", {
+      size: 48,
+      font: "sinko"
+     }),
+      color(GREEN),
+      pos(24, 24),
+    ]);
+  
     function addButton(txt, p, f) {
       const btn = add([
         text(txt, {
           size: 48,
           font: "apl386o",
         }),
+        
         pos(p),
         area({ cursor: "pointer" }),
         scale(1),
@@ -54,7 +62,7 @@ const generateScenes = () => {
           btn.scale = vec2(1.2);
         } else {
           btn.scale = vec2(1);
-          btn.color = rgb();
+          btn.color = rgb(255,255,0);
         }
       });
     }
@@ -75,8 +83,7 @@ const generateScenes = () => {
         introMusic.play();
       } else {
         introMusic.pause();
-      };
-     
+      }
     });
     // reset cursor to default at frame start for easier cursor management
     onUpdate(() => cursor("default"));
@@ -107,7 +114,7 @@ const generateScenes = () => {
     ]);
 
     onClick("back", () => {
-      play("menu_select", { loop: false, volume: 1.0 })
+      play("menu_select", { loop: false, volume: 1.0 });
       go("welcome");
     });
   });
