@@ -233,6 +233,7 @@ const createGameScene = () => {
         livesLeft--
         checkIfDead(livesLeft);
         addKaboom(enemy.pos);
+        destroy(enemy);
       });
     };
 
