@@ -11,18 +11,7 @@ const createWelcomeScene = () => {
       scale(3.6),
     ]);
 
-    const musicText = add([
-      text("Toggle Music", {
-        size: 30,
-        font: "sink",
-      }),
-      color(YELLOW),
-      pos(650, 480),
-      scale(0.5),
-      origin("center"),
-      area(),
-      "music-text",
-    ]);
+   
 
     const heading = add([
       text("Judgement Day", {
@@ -31,6 +20,15 @@ const createWelcomeScene = () => {
       }),
       color(rgb(138, 43, 226)),
       pos(40, 24),
+    ]);
+
+     const audioToggle = add([
+      sprite("audio_on"),
+      pos(650, 480),
+      scale(1),
+      origin("center"),
+      area(),
+      "audio",
     ]);
 
     function addButton(txt, p, f) {
@@ -74,11 +72,13 @@ const createWelcomeScene = () => {
       go("instructions");
     });
 
-    onClick("music-text", () => {
+    onClick("audio", () => {
       if (isIntroMusicPaused) {
+        audioToggle.use(sprite("audio_on"));
         introMusic.play();
       } else {
         introMusic.pause();
+        audioToggle.use(sprite("audio_off"));
       }
       isIntroMusicPaused = !isIntroMusicPaused; // Toggle the variable
     });
