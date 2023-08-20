@@ -89,7 +89,8 @@ The criteria suggested an old school emulator game with retro neon style appeara
   ![Welcome Page](assets/images/readme_images/welcomepage.png)
 
   * Instructions Page - sourced from https://www.radiotimes.com/technology/gaming/terminator-survival-project-release-date/
-  ![Instructions Page](assets/images/readme_images/instructionsbg.png)
+
+    ![Instructions Page](assets/images/readme_images/instructionsbg.png)
 
   * Game Over page - sourced from https://news.sky.com/story/terminator-and-other-sci-fi-films-blamed-for-publics-concerns-about-ai-12895427
   
