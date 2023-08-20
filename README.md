@@ -143,25 +143,27 @@ www.figma.com - Figma is a cloud-based design and prototyping tool that is widel
 
 ![Languages](assets/images/readme_images/Languages.PNG)
 
-## Frameworks, libraries and programs used
+## Programs Used
 
-### Frameworks
+### Version Control
 
 * [Github](https://github.com/) used to host repository.
 * [Github pages](https://pages.github.com/) used to deploy the website.
+
+### Code Editors
+
 * [Codeanywhere](https://app.codeanywhere.com/) used to develop project and organise version control.
 * [Gitpod](https://gitpod.io/) used to develop project and organise version control.
 * [VScode](https://code.visualstudio.com/) free and open-source code editor and customizable tool for writing code.
 
 ### Libraries
 
-* [VScode](https://code.visualstudio.com/) free and open-source code editor and customizable tool for writing code.
 * [Pixelart](https://www.pixelart.com/) used to design sprites.
 * [StackOverflow](https://stackoverflow.com/) used to problem solve and deal with queries.
-
-### Programs
-
 * [ChatGPT](https://chat.openai.com/) used to generate placeholder text and to verify code.
+
+### Communications
+
 * [Slack](https://slack.com/intl/en-ie/) a widely-used cloud-based communication and collaboration platform designed to facilitate efficient communication and teamwork within organizations, teams, and communities.
 
 
