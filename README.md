@@ -72,6 +72,11 @@ The criteria suggested an old school emulator game with retro neon style appeara
 
 ## Imagery
 
+* Team Logo 
+  * Logo - Designed using https://www.canva.com 
+  
+  ![Team Logo](assets/images/readme_images/Terminal8tors.png)
+
 * Background Images
   * Welcome page - sourced from https://www.pxfuel.com/en/query?q=terminator+for+android
   ![Welcome Page](assets/images/readme_images/welcomepage.png)
@@ -80,7 +85,26 @@ The criteria suggested an old school emulator game with retro neon style appeara
   ![Instructions Page](assets/images/readme_images/instructionsbg.png)
 
   * Game Over page - sourced from https://news.sky.com/story/terminator-and-other-sci-fi-films-blamed-for-publics-concerns-about-ai-12895427
-  ![Game Over Page](assets/images/readme_images/gameover.png)
+  
+    ![Game Over Page](assets/images/readme_images/gameover.png)
+
+* Pixel Art
+  * The pixel art was designed using https://www.pixilart.com/draw 
+
+  ![John Conner](assets/images/readme_images/John.png)
+  ![Sarah Conner](assets/images/readme_images/Sarah.png)
+  ![Terminator](assets/images/readme_images/Terminator.png)
+
+  ![Arcade Machine 1](assets/images/readme_images/arcade_machine1.png)
+  ![Arcade Machine 2](assets/images/readme_images/arcade_machine2.png)
+  ![Arcade Machine 3](assets/images/readme_images/arcade_machine3.png)
+  ![Pinball Machine](assets/images/readme_images/pinballtemplate.png)
+
+  ![Arcade Carpet](assets/images/readme_images/arcade_carpet.png)
+  
+
+
+
 
 
 ## Controls
