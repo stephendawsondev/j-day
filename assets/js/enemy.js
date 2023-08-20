@@ -8,15 +8,14 @@ const spawnBasicEnemy = (spawnX, spawnY, player) => {
     color(GREEN), // colour of the box until we have a sprite
     pos(spawnX, spawnY),
     area(),
-    "enemy" // tagged with enemy to reference later on
+    "enemy", // tagged with enemy to reference later on
   ]);
-
 
   // set the initial enemy speed
   const enemySpeed = 30;
-  
+
   // add randomness to enemy movement
-  enemy.onUpdate(() => { 
+  enemy.onUpdate(() => {
     const movementDirection = player.pos.sub(enemy.pos).unit();
     if (player.exists()) {
       enemy.move(movementDirection.scale(enemySpeed));
@@ -24,8 +23,8 @@ const spawnBasicEnemy = (spawnX, spawnY, player) => {
   });
 
   player.onCollide("enemy", (enemy) => {
-      destroy(player)
-      addKaboom(enemy.pos);
+    destroy(player);
+    addKaboom(enemy.pos);
   });
 
   return enemy;
@@ -39,10 +38,12 @@ const spawnTerminatorEnemy = (spawnX, spawnY, player) => {
   const enemy = add([
     rect(40, 80), // placeholder until we have a sprite
     color(BLUE), // colour of the box until we have a sprite
+    area(),
     pos(spawnX, spawnY),
     origin("center"),
     // This enemy cycle between 3 states, and start from "idle" state
     state("move", ["idle", "attack", "move"]),
+    "enemy",
   ]);
 
   // Run the callback once every time we enter "idle" state.
