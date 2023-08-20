@@ -228,7 +228,10 @@ const createGameScene = () => {
         }
       });
 
+      // Colliding with enemy gives damage and makes us disappear
       player.onCollide("enemy", (enemy) => {
+        livesLeft -= 1
+        checkIfDead(livesLeft);
         destroy(player);
         addKaboom(enemy.pos);
       });
@@ -245,8 +248,10 @@ const createGameScene = () => {
 
     // Handle collisions
 
-    // Taking a bullet makes us disappear
+    // Taking a bullet gives damage and makes us disappear
     player.onCollide("bullet", (bullet) => {
+      livesLeft -= 1
+      checkIfDead(livesLeft);
       destroy(bullet);
       destroy(player);
       addKaboom(bullet.pos);
@@ -275,7 +280,7 @@ const createGameScene = () => {
     ]);
 
     // Display lives remaining
-    add([
+    let lifeCount = add([
       text(`Lives left:${livesLeft}`),
       pos(width() * 0.3, 0),
       layer("ui"),
@@ -313,11 +318,16 @@ const createGameScene = () => {
       scale(0.4),
     ]);
 
-    // Game Over if lives hit 0
-    if (livesLeft == 0) {
-      mainMusic.stop();
-      go("game_over_scene", { final_score: `${score}` });
-    }
+    // Function to check if the user has 0 lives
+    const checkIfDead = (livesLeft) => {
+      // Game Over if lives hit 0
+      if (livesLeft <= 0) {
+        mainMusic.stop();
+        go("game_over_scene", { final_score: `${score}` });
+      } else {
+        lifeCount.text= `Lives left:${livesLeft}`
+      }
+    };
   });
 };
 
