@@ -1,28 +1,20 @@
 import { spawnBasicEnemy, spawnTerminatorEnemy } from "../enemy.js";
-import { spawnPlayer } from "../player.js";
-
-
-
-// Spawn points for basic enemies
-const spawnPoints = [
-  { x: 450, y: 520 },
-  { x: 720, y: 290 },
-  { x: 450, y: 40 },
-  { x: 40, y: 290 },
-];
-const randomIndex = Math.floor(Math.random() * spawnPoints.length);
-const randomSpawnPoint = spawnPoints[randomIndex];
+import { spawnPlayer, spawnPlayerBullet } from "../player.js";
 
 const createGameScene = () => {
   // add the game scene
 
-  
-  return scene("game", ({ score, livesLeft }) => {
+
+  return scene("game", ({ score, livesLeft, isIntroMusicPaused, isMainMusicPaused}) => {
     layers(["bg", "game", "ui"], "game");
 
     const mainMusic = play("main_music", { loop: true, volume: 0.4 });
-    
-    
+
+    if (isIntroMusicPaused) {
+      mainMusic.pause();
+    } else if (isMainMusicPaused) {
+      mainMusic.pause();
+    }
 
     // add background tiles
     const generateFloorTiles = () => {
@@ -45,8 +37,6 @@ const createGameScene = () => {
     };
 
     generateFloorTiles();
-
-    
 
     const generateWallTiles = () => {
       const tileWidth = 34;
@@ -168,32 +158,27 @@ const createGameScene = () => {
       { x: 650, y: 34, spriteName: "pinball" },
       { x: 700, y: 34, spriteName: "pinball" },
       { x: 34, y: 15, spriteName: "arcade_machine1", scale: 1.2 },
-      { x: 84, y: 15, spriteName: "arcade_machine2" , scale: 1.2 },
-      { x: 134, y: 15, spriteName: "arcade_machine3", scale: 1.2  },
+      { x: 84, y: 15, spriteName: "arcade_machine2", scale: 1.2 },
+      { x: 134, y: 15, spriteName: "arcade_machine3", scale: 1.2 },
       { x: 205, y: 450, spriteName: "table" },
       { x: 180, y: 450, spriteName: "chair_left_side" },
       { x: 180, y: 480, spriteName: "chair_left_side" },
       { x: 255, y: 450, spriteName: "chair_right_side" },
       { x: 255, y: 480, spriteName: "chair_right_side" },
-      { x: 230, y: 485, spriteName: "pizza" , scale: 0.6},
-      { x: 230, y: 460, spriteName: "burger" , scale: 0.6},
+      { x: 230, y: 485, spriteName: "pizza", scale: 0.6 },
+      { x: 230, y: 460, spriteName: "burger", scale: 0.6 },
       { x: 210, y: 470, spriteName: "mug", scale: 0.6 },
-      { x: 650, y: 460, spriteName: "standing_table", scale:1.4},
-      { x: 655, y: 455, spriteName: "can", scale: 0.6},
-      { x: 680, y: 465, spriteName: "can", scale: 0.6},
+      { x: 650, y: 460, spriteName: "standing_table", scale: 1.4 },
+      { x: 655, y: 455, spriteName: "can", scale: 0.6 },
+      { x: 680, y: 465, spriteName: "can", scale: 0.6 },
       { x: 300, y: 60, spriteName: "table" },
       { x: 275, y: 60, spriteName: "chair_left_side" },
       { x: 275, y: 90, spriteName: "chair_left_side" },
       { x: 350, y: 60, spriteName: "chair_right_side" },
       { x: 350, y: 90, spriteName: "chair_right_side" },
-      { x: 310, y: 65, spriteName: "pizza" , scale: 0.6},
-      { x: 325, y: 100, spriteName: "pizza" , scale: 0.6},
+      { x: 310, y: 65, spriteName: "pizza", scale: 0.6 },
+      { x: 325, y: 100, spriteName: "pizza", scale: 0.6 },
       { x: 305, y: 90, spriteName: "can", scale: 0.6 },
-      
-
-
-
-     
     ];
 
     for (const obj of objectarea) {
@@ -205,19 +190,82 @@ const createGameScene = () => {
       ]);
     }
 
-    // spawn player as placeholder
-    var player = spawnPlayer(enemy, terminator);
+    // Spawn points for basic enemies and terminator
+    const spawnPoints = [
+      { x: 450, y: 520 },
+      { x: 720, y: 290 },
+      { x: 450, y: 40 },
+      { x: 40, y: 290 },
+    ];
 
-    // spawn basic enemy example
-    var enemy = spawnBasicEnemy(randomSpawnPoint.x, randomSpawnPoint.y, player);
+    const randomIndexTerminator = Math.floor(
+      Math.random() * spawnPoints.length
+    );
+
+    // spawn player
+    const player = spawnPlayer(spawnPlayerBullet);
+
+
+    const spawnEnemy = () => {
+      if (!player.exists()) {
+        clearInterval(spawnInterval);
+      }
+      let randomIndexEnemy = Math.floor(Math.random() * spawnPoints.length);
+
+      // set the initial enemy speed
+      const enemySpeed = 30;
+
+      const enemy = spawnBasicEnemy(
+        spawnPoints[randomIndexEnemy].x,
+        spawnPoints[randomIndexEnemy].y
+      );
+
+      // add randomness to enemy movement
+      enemy.onUpdate(() => {
+        const movementDirection = player.pos.sub(enemy.pos).unit();
+        if (player.exists()) {
+          enemy.move(movementDirection.scale(enemySpeed));
+        }
+      });
+
+      player.onCollide("enemy", (enemy) => {
+        destroy(player);
+        addKaboom(enemy.pos);
+      });
+    };
+
+    const spawnInterval = setInterval(spawnEnemy, 1500);
 
     // spawn terminator example
-    var terminator = spawnTerminatorEnemy(
-      randomSpawnPoint.x,
-      randomSpawnPoint.y,
+    const terminator = spawnTerminatorEnemy(
+      spawnPoints[randomIndexTerminator].x,
+      spawnPoints[randomIndexTerminator].y,
       player
     );
 
+    // Handle collisions
+
+    // Taking a bullet makes us disappear
+    player.onCollide("bullet", (bullet) => {
+      destroy(bullet);
+      destroy(player);
+      addKaboom(bullet.pos);
+    });
+
+    // Destroy enemies
+    onCollide("enemy", "playerBullet", (enemy, playerBullet) => {
+      destroy(playerBullet);
+      destroy(enemy);
+      addKaboom(playerBullet.pos);
+    });
+
+    // Destroy terminator
+    onCollide("terminator", "playerBullet", (terminator, playerBullet) => {
+      destroy(playerBullet);
+      destroy(terminator);
+      addKaboom(playerBullet.pos);
+    });
+    
     // display score
     add([
       text(`Score:${score}`),
@@ -241,23 +289,18 @@ const createGameScene = () => {
     });
 
     // Display Quit Game Text
-    add([
-      text("Esc: Quit"),
-      pos(width() * 0.8, 0),
-      layer("ui"),
-      scale(0.4),
-    ]);
+    add([text("Esc: Quit"), pos(width() * 0.8, 0), layer("ui"), scale(0.4)]);
 
     // Toggle game music
-    let muted = false
+    let muted = false;
 
     onKeyDown("m", () => {
       if (muted == false) {
         mainMusic.pause();
-        muted = true
+        muted = true;
       } else {
         mainMusic.play();
-        muted = false
+        muted = false;
       }
     });
 
@@ -269,6 +312,12 @@ const createGameScene = () => {
       layer("ui"),
       scale(0.4),
     ]);
+
+    // Game Over if lives hit 0
+    if (livesLeft == 0) {
+      mainMusic.stop();
+      go("game_over_scene", { final_score: `${score}` });
+    }
   });
 };
 

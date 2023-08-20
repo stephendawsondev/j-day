@@ -39,12 +39,19 @@ The goal of this project is to produce a retro emulator game following the crite
 ## User Stories
 
 * As a user, I want to be able to see the overall theme of the game from the welcome page.
-* As a user, I want to be able to easily access the instructions on how to play the game. 
-* As a user, I want to be able to toggle the sound incase I find the volume to be too low or too high.
+    * The welcome page captures the over all theme and criteria, Retro style background, retro style neon flashing font.
+* As a user, I want to be able to easily access the instructions on how to play the game.
+    * The instructions are clear and concise and the background is inline with the theme of the game.
+* As a user, I want to be able to toggle the music/sound incase I find the volume to be too low or too high.
+    * A toggle button was added to the welcome page for easy access to volume control.
 * As a user, I want to be able to see the details of the game such as my score and lives.
+    * 
 * As a user, I want to be able to easily move around the scene and feel there is a progression in difficulty.
+    *
 * As a user, I want to be able to feel a sense of achievement such as high score or end level boss fights.
+    * Due to time constraints the team found it would be easier to achieve a high score rather than multiple levels and boss fights. This is a feature that could be implemented in future iterations.
 * As a user, I want to be able to pause and resume or quit the game if i so wish.
+    * To pause the game was too difficult to implement in the given time. 
 
 ## Design
 
@@ -74,7 +81,7 @@ The criteria suggested an old school emulator game with retro neon style appeara
 
 * Team Logo 
   * Logo - Designed using https://www.canva.com 
-  
+
   ![Team Logo](assets/images/readme_images/Terminal8tors.png)
 
 * Background Images
@@ -82,6 +89,7 @@ The criteria suggested an old school emulator game with retro neon style appeara
   ![Welcome Page](assets/images/readme_images/welcomepage.png)
 
   * Instructions Page - sourced from https://www.radiotimes.com/technology/gaming/terminator-survival-project-release-date/
+
   ![Instructions Page](assets/images/readme_images/instructionsbg.png)
 
   * Game Over page - sourced from https://news.sky.com/story/terminator-and-other-sci-fi-films-blamed-for-publics-concerns-about-ai-12895427
@@ -95,16 +103,18 @@ The criteria suggested an old school emulator game with retro neon style appeara
   ![Sarah Conner](assets/images/readme_images/Sarah.png)
   ![Terminator](assets/images/readme_images/Terminator.png)
 
+
+  * The arcades and pinball machine was designed using a picture template from a google search
+
   ![Arcade Machine 1](assets/images/readme_images/arcade_machine1.png)
   ![Arcade Machine 2](assets/images/readme_images/arcade_machine2.png)
   ![Arcade Machine 3](assets/images/readme_images/arcade_machine3.png)
   ![Pinball Machine](assets/images/readme_images/pinballtemplate.png)
 
+
+  * The carpet is similar to old style arcade amusement park carpets.
+
   ![Arcade Carpet](assets/images/readme_images/arcade_carpet.png)
-  
-
-
-
 
 
 ## Controls
@@ -118,15 +128,47 @@ On starting the game the player will use W, S, A and D to move the character aro
 | S      | Move Down   |
 | D      | Move Right  |
 | Space  | Fire        |
+| M      | Toggle Music|
 
+## Wireframes
+
+www.figma.com - Figma is a cloud-based design and prototyping tool that is widely used for creating user interfaces (UI) and user experience (UX) designs. 
+
+![Figma Mock-up](assets/images/readme_images/figmamockup.PNG)
 
 ## Tech
 
-In the tech section, we provide information about the technology stack, dependencies, and any technical details related to the project.
+* HTML5
+* CSS3
+* JavaScript
+* Kaboom.js
+
+![Languages](assets/images/readme_images/Languages.PNG)
+
+## Frameworks, libraries and programs used
+
+### Frameworks
+
+* [Github](https://github.com/) used to host repository.
+* [Github pages](https://pages.github.com/) used to deploy the website.
+* [Codeanywhere](https://app.codeanywhere.com/) used to develop project and organise version control.
+* [Gitpod](https://gitpod.io/) used to develop project and organise version control.
+* [VScode](https://code.visualstudio.com/) free and open-source code editor and customizable tool for writing code.
+
+### Libraries
+
+* [VScode](https://code.visualstudio.com/) free and open-source code editor and customizable tool for writing code.
+* [Pixelart](https://www.pixelart.com/) used to design sprites.
+* [StackOverflow](https://stackoverflow.com/) used to problem solve and deal with queries.
+
+### Programs
+
+* [ChatGPT](https://chat.openai.com/) used to generate placeholder text and to verify code.
+* [Slack](https://slack.com/intl/en-ie/) a widely-used cloud-based communication and collaboration platform designed to facilitate efficient communication and teamwork within organizations, teams, and communities.
+
 
 ## Credits
 
-We would like to give credit to the following individuals, organizations, and resources that have contributed to the project or provided inspiration:
 - **Thank you to all the team members for the hard work and cooperation.**
 
   - **Stephen Dawson** - [GitHub](https://github.com/stephendawsondev), [LinkedIn](https://www.linkedin.com/in/sdstephendawson/), [URL](http://www.stephendawson.ie)
@@ -144,6 +186,4 @@ We would like to give credit to the following individuals, organizations, and re
   - **Nazek** - [GitHub](https://github.com/Nazek-Altayeb), [LinkedIn](https://www.linkedin.com/in/nazek-a-altayeb/)
    Design/ Frontend / Documentation
   - **Mohamed Ayman** - [GitHub](https://github.com/moabdelbasset), [LinkedIn](https://www.linkedin.com/in/mohamed-ayman-b29b5b66/)
-   Design/ Frontend / Documentation
-  - **Rachael** - [GitHub](https://github.com/), [LinkedIn](https://www.linkedin.com/in/)
    Design/ Frontend / Documentation
