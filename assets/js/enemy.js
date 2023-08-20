@@ -18,7 +18,7 @@ const spawnBasicEnemy = (spawnX, spawnY) => {
 
 // Code taken from https://2000.kaboomjs.com/play?demo=ai
 const spawnTerminatorEnemy = (spawnX, spawnY, player) => {
-  const ENEMY_SPEED = 10; //160
+  const ENEMY_SPEED = 50; //160
   const BULLET_SPEED = 100; //700
 
   const enemy = add([
