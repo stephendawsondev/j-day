@@ -209,7 +209,9 @@ const createGameScene = () => {
     const spawnEnemy = () => {
       if (!player.exists()) {
         clearInterval(spawnInterval);
+        return;
       }
+
       let randomIndexEnemy = Math.floor(Math.random() * spawnPoints.length);
 
       // set the initial enemy speed
