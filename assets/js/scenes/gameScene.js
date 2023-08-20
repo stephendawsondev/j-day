@@ -170,57 +170,42 @@ const createGameScene = () => {
       "arcade_15",
       "arcade_16",
     ];
-    
- 
+
     const animatedObject = add([
       sprite(animFrames[0]),
       pos(80, 80),
       scale(2),
       layer("game"),
     ]);
-    
+
     // Function to update animation frames
     function updateAnimation() {
       let currentFrameIndex = animFrames.indexOf(animatedObject.frame);
       currentFrameIndex = (currentFrameIndex + 1) % animFrames.length;
       animatedObject.use(animFrames[currentFrameIndex]);
     }
-    
+
     // Update animation frames every 0.2 seconds
     action(() => {
       every(0.2, updateAnimation);
     });
-    
+
     const objectarea = [
       { x: 400, y: 400, spriteName: "burger" },
       { x: 200, y: 300, spriteName: "hotdog" },
-      { x: 600, y: 10, spriteName: "pink_neon"},
-      { x: 200, y: 10, spriteName: "green_neon"},
-      { x: 600, y: 34, spriteName: "pinball"},
-      { x: 650, y: 34, spriteName: "pinball"},
-      { x: 700, y: 34, spriteName: "pinball"},
+      { x: 600, y: 10, spriteName: "pink_neon" },
+      { x: 200, y: 10, spriteName: "green_neon" },
+      { x: 600, y: 34, spriteName: "pinball" },
+      { x: 650, y: 34, spriteName: "pinball" },
+      { x: 700, y: 34, spriteName: "pinball" },
 
       // Add more objects as needed
     ];
-    
+
     for (const obj of objectarea) {
-      add([
-        sprite(obj.spriteName),
-        pos(obj.x, obj.y),
-        scale(1),
-        layer("bg"),
-      ]);
+      add([sprite(obj.spriteName), pos(obj.x, obj.y), scale(1), layer("bg")]);
     }
 
-
-      
-
-    
-
-
-  
-    
-    
     // spawn player as placeholder
     const player = spawnPlayer();
     // const player = add([
@@ -253,19 +238,10 @@ const createGameScene = () => {
       scale(0.4),
     ]);
 
-    // Pause
-    let paused = false;
-
-    onKeyDown("p", () => {
-      if (paused == false) {
-        mainMusic.stop();
-        debug.paused=true
-        paused = true;
-      } else {
-        mainMusic.play();
-        debug.paused=false
-        paused = false;
-      }
+    // Quit Game
+    onKeyDown("escape", () => {
+      mainMusic.stop();
+      go("welcome");
     });
   });
 };
