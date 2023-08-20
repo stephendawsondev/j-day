@@ -83,7 +83,7 @@ const createWelcomeScene = () => {
       isIntroMusicPaused = !isIntroMusicPaused; // Toggle the variable
     });
 
-    onKeyDown("enter", () => {
+    onKeyPress("enter", () => {
       if (isIntroMusicPaused) {
         isMainMusicPaused = true; // Pause main music only if intro music was paused
       }

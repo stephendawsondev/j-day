@@ -63,7 +63,7 @@ const createGameOverScene = () => {
     // Toggle scene music
     let muted = false;
 
-    onKeyDown("m", () => {
+    onKeyPress("m", () => {
       if (muted == false) {
         gameOverMusic.pause();
         muted = true;
@@ -76,7 +76,7 @@ const createGameOverScene = () => {
     // reset cursor to default at frame start for easier cursor management
     onUpdate(() => cursor("default"));
 
-    onKeyDown("enter", () => {
+    onKeyPress("enter", () => {
       play("menu_select", { loop: false, volume: 0.5 });
       gameOverMusic.pause();
       go("game", { score: 0, livesLeft: 3 });
