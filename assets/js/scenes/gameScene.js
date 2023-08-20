@@ -4,10 +4,15 @@ import { spawnPlayer } from "../player.js";
 const createGameScene = () => {
   // add the game scene
 
-  return scene("game", ({ score, livesLeft }) => {
+
+  return scene("game", ({ score, livesLeft, isIntroMusicPaused}) => {
     layers(["bg", "game", "ui"], "game");
 
     const mainMusic = play("main_music", { loop: true, volume: 0.4 });
+
+    if (isIntroMusicPaused) {
+      mainMusic.pause();
+    }
 
     // add background tiles
     const generateFloorTiles = () => {

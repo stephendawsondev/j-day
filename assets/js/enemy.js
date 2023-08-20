@@ -10,7 +10,7 @@ const spawnBasicEnemy = (spawnX, spawnY) => {
     area(),
     "enemy", // tagged with enemy to reference later on
   ]);
-
+  
   return enemy;
 };
 
