@@ -50,13 +50,13 @@ const createGameOverScene = () => {
 
     addButton("Try Again", vec2(80, 500), () => {
       play("menu_select", { loop: false, volume: 1.0 });
-      gameOverMusic.stop();
+      gameOverMusic.pause();
       go("game", { score: 0, livesLeft: 3 });
     });
 
     addButton("Quit", vec2(550, 500), () => {
       play("menu_select", { loop: false, volume: 1.0 });
-      gameOverMusic.stop();
+      gameOverMusic.pause();
       go("welcome");
     });
 
