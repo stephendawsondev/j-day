@@ -3,7 +3,7 @@
  * imported and called in the main.js file
  */
 const spawnBasicEnemy = (spawnX, spawnY) => {
-  const sprites = ["enemy", "enemy_r", "enemy_b"];
+  const sprites = ["enemy_l", "enemy_r", "enemy_b"];
 
   const enemy = add([
     sprite(sprites[randi(0, 3)]),
@@ -19,7 +19,7 @@ const spawnBasicEnemy = (spawnX, spawnY) => {
 // Code taken from https://2000.kaboomjs.com/play?demo=ai
 const spawnTerminatorEnemy = (spawnX, spawnY, player) => {
   const ENEMY_SPEED = 10; //160
-  const BULLET_SPEED = 30; //700
+  const BULLET_SPEED = 100; //700
 
   const enemy = add([
     sprite("terminator"), // placeholder until we have a sprite
