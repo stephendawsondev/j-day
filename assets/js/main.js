@@ -53,6 +53,9 @@ loadSound("powerup_sound", "powerup.wav");
 loadSound("intro_music", "intro.wav");
 loadSound("main_music", "main.wav");
 loadSound("menu_select", "menu_select.wav");
+loadSound("shoot", "gun_sound_effect.wav");
+loadSound("death", "death.wav");
+
 
 //load scene sprites
 loadRoot(`${relUrl}/scene_background_images/`);
