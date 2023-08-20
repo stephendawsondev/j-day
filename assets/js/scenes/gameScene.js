@@ -1,16 +1,6 @@
 import { spawnBasicEnemy, spawnTerminatorEnemy } from "../enemy.js";
 import { spawnPlayer } from "../player.js";
 
-// Spawn points for basic enemies and terminator
-const spawnPoints = [
-  { x: 450, y: 520 },
-  { x: 720, y: 290 },
-  { x: 450, y: 40 },
-  { x: 40, y: 290 },
-];
-
-const randomIndexTerminator = Math.floor(Math.random() * spawnPoints.length);
-
 const createGameScene = () => {
   // add the game scene
 
@@ -202,6 +192,16 @@ const createGameScene = () => {
         layer("bg"),
       ]);
     }
+
+    // Spawn points for basic enemies and terminator
+    const spawnPoints = [
+      { x: 450, y: 520 },
+      { x: 720, y: 290 },
+      { x: 450, y: 40 },
+      { x: 40, y: 290 },
+    ];
+
+const randomIndexTerminator = Math.floor(Math.random() * spawnPoints.length);
 
     // spawn player
     var player = spawnPlayer(enemy, terminator);
