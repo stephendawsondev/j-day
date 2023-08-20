@@ -26,21 +26,53 @@ In this section, we will briefly discuss how our team addressed the applicable c
 
 ## Intro
 
-A retro game based on the Terminator franchise. A top down shooter game with interactive enemies, difficulty progression and arcade style music and game sounds. Using solely the kaboom.js framework to implement various functions and colliding objects that combines to give the user a unique game play as well as a nostalgic experience.
+A retro game based on the Terminator franchise. A top down shooter game with interactive enemies, difficulty progression, arcade style music and game sounds. Using solely the kaboom.js framework to implement various functions and colliding objects that combines to give the user a unique game play as well as nostalgic experience.
 
 ## Goal
 
-The goal section provides a concise summary of the main objective or purpose of the project or software described in this README. It addresses the following aspects:
+The goal of this project is to produce a retro emulator game following the criteria set out by the hackathon facilitators and incorporating the hard work, skills and abilities of each team member while enjoying the process of learning to develop new and unique software.
 
-- ➡️ Problem Statement
-- ➡️ Objective(s)
-- ➡️ Target Audience
-- ➡️ Benefits
+- ➡️ To organise a group of strangers with varying abilities to join together to create an emulator type retro game from scratch using a new language and modern techniques.
+- ➡️ The game will be disigned using a JavaScript frame work called Kaboom. It will be new to most of the team but will be a benificial learning curve for all involved.
+- ➡️ The game will be aimed toward people born in or brought up in the 70s and 80s who fondly remember playing old emulator games on arcade machines in seaside amusement parks and any fans of the terminator franchise who grew up following the story behind John and Sarah Connor in their timeless battle against SkyNet.
+
+## User Stories
+
+* As a user, I want to be able to see the overall theme of the game from the welcome page.
+* As a user, I want to be able to easily access the instructions on how to play the game. 
+* As a user, I want to be able to toggle the sound incase I find the volume to be too low or too high.
+* As a user, I want to be able to see the details of the game such as my score and lives.
+* As a user, I want to be able to easily move around the scene and feel there is a progression in difficulty.
+* As a user, I want to be able to feel a sense of achievement such as high score or end level boss fights.
+* As a user, I want to be able to pause and resume or quit the game if i so wish.
+
+## Design
+
+The criteria suggested an old school emulator game with retro neon style appearance. 
+
+Visual Design - Pixel Art Graphics: Emulate the retro arcade feel with pixel art graphics, using a limited color palette to mimic the visual style of old-school games.
+Level Design - Arcade Amusement Environment: An urban environment that depicts an amuesment arcade park to provide even more nostalgia.
+Audio Design - Retro Sound Effects: Use sound effects inspired by classic arcade games, such as pew-pew laser sounds and explosive booms and the famous Wilhelm death scream.
+Color Design - Retro Neon Color: Incorporate many dark colors to entrench the apocolyptic scenario but apply neon colors such as yellow and bright purple to align with the criteria and arcade theme.
+Gameplay Design - Top down shooter: Design the game as a view of top down shooter, where players control a resistance fighter from above battling against waves of terminator enemies.
+
+## Typography
+
+Kaboom.js has built in font, apl386, apl386o, sink, sinko
+
 
 ## Controls
 
-On starting the game the player can use either WSAD or the arrow keys to move the character around the screen all while avoiding enemies and enemy fire.
-Spacebar fires a projectile in the direction the player is facing.
+On starting the game the player will use W, S, A and D to move the character around the screen all while avoiding enemies and enemy fire. Spacebar fires a projectile in the direction the player is facing.
+
+| Button | Action      |
+| ------ | ----------- |
+| W      | Move Up     |
+| A      | Move Left   |
+| S      | Move Down   |
+| D      | Move Right  |
+| Space  | Fire        |
+
 
 ## Tech
 
@@ -63,7 +95,7 @@ We would like to give credit to the following individuals, organizations, and re
    Design/ Frontend / Documentation
   - **Sasan Tazayoni** - [GitHub](https://github.com/SasanTazayoni), [LinkedIn](https://www.linkedin.com/in/sasan-tazayoni/)
    Design/ Frontend / Documentation
-  - **Nazek** - [GitHub](https://github.com/), [LinkedIn](https://www.linkedin.com/in/)
+  - **Nazek** - [GitHub](https://github.com/Nazek-Altayeb), [LinkedIn](https://www.linkedin.com/in/nazek-a-altayeb/)
    Design/ Frontend / Documentation
   - **Mohamed Ayman** - [GitHub](https://github.com/moabdelbasset), [LinkedIn](https://www.linkedin.com/in/mohamed-ayman-b29b5b66/)
    Design/ Frontend / Documentation
