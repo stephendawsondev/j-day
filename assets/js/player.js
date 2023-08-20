@@ -6,8 +6,6 @@ const directions = {
 };
 
 const spawnPlayer = (enemy, terminator, spawnBullet) => {
-  console.log(terminator);
-  console.log(enemy);
   const player = add([
     sprite("sarah_l"),
     area(scale(0.6)),
@@ -27,7 +25,11 @@ const spawnPlayer = (enemy, terminator, spawnBullet) => {
   // correct avatar when moving down
   let facingR = false;
 
-  let current_direction = directions.LEFT;
+  let currentDirection = directions.LEFT;
+
+  function updatateCurrentDirection(direction) {
+    currentDirection = direction;
+  }
 
   // Define keyboard keys for the player movements
   onKeyDown("a", () => {
@@ -35,7 +37,7 @@ const spawnPlayer = (enemy, terminator, spawnBullet) => {
       player.use(sprite("sarah_l"));
       player.move(-speed, 0);
       facingR = false;
-      current_direction = directions.LEFT;
+      updatateCurrentDirection(directions.LEFT);
     }
   });
 
@@ -44,7 +46,7 @@ const spawnPlayer = (enemy, terminator, spawnBullet) => {
       player.use(sprite("sarah_r"));
       player.move(speed, 0);
       facingR = true;
-      current_direction = directions.RIGHT;
+      updatateCurrentDirection(directions.RIGHT);
     }
   });
 
@@ -52,22 +54,22 @@ const spawnPlayer = (enemy, terminator, spawnBullet) => {
     if (player.pos.y > 20) {
       player.use(sprite("sarah_b"));
       player.move(0, -speed);
-      current_direction = directions.UP;
+      updatateCurrentDirection(directions.UP);
     }
   });
 
   onKeyDown("s", () => {
     if (player.pos.y <= height() - PLAYER_HEIGHT) player.move(0, speed);
     facingR ? player.use(sprite("sarah_r")) : player.use(sprite("sarah_l"));
-    current_direction = directions.DOWN;
+    updatateCurrentDirection(directions.DOWN);
   });
 
-  // onUpdate("sarah", () => console.log(current_direction));
+  // onUpdate("sarah", () => console.log(currentDirection));
 
   //shooting function
   onKeyPress("space", () => {
     if (player.exists()) {
-      spawnBullet(player.pos, current_direction);
+      spawnBullet(player.pos, currentDirection);
     }
   });
 
@@ -88,19 +90,20 @@ const spawnPlayer = (enemy, terminator, spawnBullet) => {
   return player;
 };
 
-function spawnPlayerBullet(bulletpos, current_direction) {
+function spawnPlayerBullet(bulletpos, currentDirection) {
   //player shooting
   const BULLET_SPEED = 400;
   // set up starting point for bullets depending on direction
-  if (current_direction == directions.LEFT) {
+  if (currentDirection == directions.LEFT) {
     bulletpos = bulletpos.add(-30, 10);
-  } else if (current_direction == directions.RIGHT) {
+  } else if (currentDirection == directions.RIGHT) {
     bulletpos = bulletpos.add(30, 10);
-  } else if (current_direction == directions.UP) {
+  } else if (currentDirection == directions.UP) {
     bulletpos = bulletpos.add(0, -30);
-  } else if (current_direction == directions.DOWN) {
+  } else if (currentDirection == directions.DOWN) {
     bulletpos = bulletpos.add(0, 30);
   }
+
   //add bullet
   add([
     sprite("bullet_yellow"),
@@ -113,25 +116,26 @@ function spawnPlayerBullet(bulletpos, current_direction) {
     "playerBullet",
     {
       bulletSpeed:
-        current_direction == directions.LEFT ||
-        current_direction == directions.UP
+        currentDirection === directions.LEFT ||
+        currentDirection === directions.UP
           ? -1 * BULLET_SPEED
           : BULLET_SPEED,
     },
   ]);
   onUpdate("playerBullet", (b) => {
     if (
-      current_direction === directions.LEFT ||
-      current_direction === directions.RIGHT
+      currentDirection === directions.LEFT ||
+      currentDirection === directions.RIGHT
     ) {
       b.move(b.bulletSpeed, 0);
     } else {
       b.move(0, b.bulletSpeed);
     }
 
-    // if (b.pos.x < 0 || b.pos.x > width()) {
-    //   destroy(b);
-    // }
+    // check if bullets get removed
+    if (cleanup()) {
+      console.log("bullets removed");
+    }
   });
 }
 
