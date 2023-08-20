@@ -100,6 +100,7 @@ const spawnTerminatorEnemy = (spawnX, spawnY, player) => {
 
   // Taking a bullet makes us disappear
   player.onCollide("bullet", (bullet) => {
+    
     destroy(bullet);
     destroy(player);
     addKaboom(bullet.pos);

@@ -69,6 +69,10 @@ const spawnPlayer = (enemy, terminator) => {
   onKeyPress("space", () => {
     if (player.exists()) {
       spawnBullet(player.pos);
+      play("shoot", {
+        volume: 0.2,
+        detune: rand(-1200, 1200),
+        });
     }
   });
 
@@ -102,10 +106,7 @@ const spawnPlayer = (enemy, terminator) => {
     ]);
   }
 
-  // play("shoot", {
-  //   volume: 0.2,
-  //   detune: rand(-1200, 1200),
-  // });
+ 
 
   onUpdate("playerBullet", (b) => {
     if (
