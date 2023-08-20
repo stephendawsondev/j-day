@@ -1,4 +1,11 @@
-const spawnPlayer = (enemy, terminator) => {
+const directions = {
+  LEFT: "left",
+  RIGHT: "right",
+  UP: "up",
+  DOWN: "down",
+};
+
+const spawnPlayer = (enemy, terminator, spawnBullet) => {
   console.log(terminator);
   console.log(enemy);
   const player = add([
@@ -19,12 +26,7 @@ const spawnPlayer = (enemy, terminator) => {
   // variable to store player direction to select
   // correct avatar when moving down
   let facingR = false;
-  const directions = {
-    LEFT: "left",
-    RIGHT: "right",
-    UP: "up",
-    DOWN: "down",
-  };
+
   let current_direction = directions.LEFT;
 
   // Define keyboard keys for the player movements
@@ -62,63 +64,10 @@ const spawnPlayer = (enemy, terminator) => {
 
   // onUpdate("sarah", () => console.log(current_direction));
 
-  //player shooting
-  const BULLET_SPEED = 400;
-
   //shooting function
   onKeyPress("space", () => {
     if (player.exists()) {
-      spawnBullet(player.pos);
-    }
-  });
-
-  function spawnBullet(bulletpos) {
-    // set up starting point for bullets depending on direction
-    if (current_direction == directions.LEFT) {
-      bulletpos = bulletpos.add(-30, 10);
-    } else if (current_direction == directions.RIGHT) {
-      bulletpos = bulletpos.add(30, 10);
-    } else if (current_direction == directions.UP) {
-      bulletpos = bulletpos.add(0, -30);
-    } else if (current_direction == directions.DOWN) {
-      bulletpos = bulletpos.add(0, 30);
-    }
-    //add bullet
-    add([
-      sprite("bullet_yellow"),
-      scale(0.3),
-      pos(bulletpos),
-      origin("center"),
-      color(255, 255, 255),
-      area(),
-      "playerBullet",
-      {
-        bulletSpeed:
-          current_direction == directions.LEFT ||
-          current_direction == directions.UP
-            ? -1 * BULLET_SPEED
-            : BULLET_SPEED,
-      },
-    ]);
-  }
-
-  // play("shoot", {
-  //   volume: 0.2,
-  //   detune: rand(-1200, 1200),
-  // });
-
-  onUpdate("playerBullet", (b) => {
-    if (
-      current_direction === directions.LEFT ||
-      current_direction === directions.RIGHT
-    ) {
-      b.move(b.bulletSpeed, 0);
-    } else {
-      b.move(0, b.bulletSpeed);
-    }
-
-    if (b.pos.x < 0 || b.pos.x > width()) {
-      destroy(b);
+      spawnBullet(player.pos, current_direction);
     }
   });
 
@@ -139,4 +88,56 @@ const spawnPlayer = (enemy, terminator) => {
   return player;
 };
 
-export { spawnPlayer };
+function spawnPlayerBullet(bulletpos, current_direction) {
+  //player shooting
+  const BULLET_SPEED = 400;
+  // set up starting point for bullets depending on direction
+  if (current_direction == directions.LEFT) {
+    bulletpos = bulletpos.add(-30, 10);
+  } else if (current_direction == directions.RIGHT) {
+    bulletpos = bulletpos.add(30, 10);
+  } else if (current_direction == directions.UP) {
+    bulletpos = bulletpos.add(0, -30);
+  } else if (current_direction == directions.DOWN) {
+    bulletpos = bulletpos.add(0, 30);
+  }
+  //add bullet
+  add([
+    sprite("bullet_yellow"),
+    scale(0.3),
+    pos(bulletpos),
+    origin("center"),
+    color(255, 255, 255),
+    cleanup(),
+    area(),
+    "playerBullet",
+    {
+      bulletSpeed:
+        current_direction == directions.LEFT ||
+        current_direction == directions.UP
+          ? -1 * BULLET_SPEED
+          : BULLET_SPEED,
+    },
+  ]);
+  onUpdate("playerBullet", (b) => {
+    if (
+      current_direction === directions.LEFT ||
+      current_direction === directions.RIGHT
+    ) {
+      b.move(b.bulletSpeed, 0);
+    } else {
+      b.move(0, b.bulletSpeed);
+    }
+
+    // if (b.pos.x < 0 || b.pos.x > width()) {
+    //   destroy(b);
+    // }
+  });
+}
+
+// play("shoot", {
+//   volume: 0.2,
+//   detune: rand(-1200, 1200),
+// });
+
+export { spawnPlayer, spawnPlayerBullet };

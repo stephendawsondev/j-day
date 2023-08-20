@@ -1,5 +1,5 @@
 import { spawnBasicEnemy, spawnTerminatorEnemy } from "../enemy.js";
-import { spawnPlayer } from "../player.js";
+import { spawnPlayer, spawnPlayerBullet } from "../player.js";
 
 // Spawn points for basic enemies
 const spawnPoints = [
@@ -207,7 +207,7 @@ const createGameScene = () => {
     }
 
     // spawn player as placeholder
-    var player = spawnPlayer(enemy, terminator);
+    var player = spawnPlayer(enemy, terminator, spawnPlayerBullet);
 
     // spawn basic enemy example
     var enemy = spawnBasicEnemy(randomSpawnPoint.x, randomSpawnPoint.y, player);
