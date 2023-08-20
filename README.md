@@ -74,7 +74,7 @@ The criteria suggested an old school emulator game with retro neon style appeara
 
 * Team Logo 
   * Logo - Designed using https://www.canva.com 
-  
+
   ![Team Logo](assets/images/readme_images/Terminal8tors.png)
 
 * Background Images
@@ -95,16 +95,16 @@ The criteria suggested an old school emulator game with retro neon style appeara
   ![Sarah Conner](assets/images/readme_images/Sarah.png)
   ![Terminator](assets/images/readme_images/Terminator.png)
 
+  * The arcades and pinball machine was designed using a picture template from a google search
+
   ![Arcade Machine 1](assets/images/readme_images/arcade_machine1.png)
   ![Arcade Machine 2](assets/images/readme_images/arcade_machine2.png)
   ![Arcade Machine 3](assets/images/readme_images/arcade_machine3.png)
   ![Pinball Machine](assets/images/readme_images/pinballtemplate.png)
 
+  * The carpet is similar to old style arcade amusement park carpets.
+
   ![Arcade Carpet](assets/images/readme_images/arcade_carpet.png)
-  
-
-
-
 
 
 ## Controls
@@ -118,11 +118,22 @@ On starting the game the player will use W, S, A and D to move the character aro
 | S      | Move Down   |
 | D      | Move Right  |
 | Space  | Fire        |
+| M      | Toggle Music|
 
+## Wireframes
+
+The Wireframe used to design the mockup for the game was www.figma.com 
+
+![Figma Mock-up](assets/images/readme_images/figmamockup.PNG)
 
 ## Tech
 
-In the tech section, we provide information about the technology stack, dependencies, and any technical details related to the project.
+* HTML5
+* CSS3
+* JavaScript
+* Kaboom.js
+
+![Languages](assets/images/readme_images/Languages.PNG)
 
 ## Credits
 
@@ -144,6 +155,4 @@ We would like to give credit to the following individuals, organizations, and re
   - **Nazek** - [GitHub](https://github.com/Nazek-Altayeb), [LinkedIn](https://www.linkedin.com/in/nazek-a-altayeb/)
    Design/ Frontend / Documentation
   - **Mohamed Ayman** - [GitHub](https://github.com/moabdelbasset), [LinkedIn](https://www.linkedin.com/in/mohamed-ayman-b29b5b66/)
-   Design/ Frontend / Documentation
-  - **Rachael** - [GitHub](https://github.com/), [LinkedIn](https://www.linkedin.com/in/)
    Design/ Frontend / Documentation
