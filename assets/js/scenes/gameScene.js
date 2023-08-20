@@ -5,7 +5,7 @@ const createGameScene = () => {
   // add the game scene
 
 
-  return scene("game", ({ score, livesLeft, isIntroMusicPaused}) => {
+  return scene("game", ({ score, livesLeft, isIntroMusicPaused, isMainMusicPaused}) => {
     layers(["bg", "game", "ui"], "game");
 
     const mainMusic = play("main_music", { loop: true, volume: 0.4 });
@@ -205,7 +205,7 @@ const createGameScene = () => {
     // spawn player
     const player = spawnPlayer();
 
-    // spawn basic enemy example
+
     const spawnEnemy = () => {
       if (!player.exists()) {
         clearInterval(spawnInterval);
@@ -236,8 +236,6 @@ const createGameScene = () => {
 
     const spawnInterval = setInterval(spawnEnemy, 1500);
 
-    // const spawnInterval = setInterval(spawnEnemy, 1500);
-
     // spawn terminator example
     const terminator = spawnTerminatorEnemy(
       spawnPoints[randomIndexTerminator].x,
@@ -267,7 +265,7 @@ const createGameScene = () => {
       destroy(terminator);
       addKaboom(playerBullet.pos);
     });
-
+    
     // display score
     add([
       text(`Score:${score}`),

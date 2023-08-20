@@ -41,7 +41,7 @@ const spawnTerminatorEnemy = (spawnX, spawnY, player) => {
   // When we enter "attack" state, we fire a bullet, and enter "move" state after 1 sec
   enemy.onStateEnter("attack", async () => {
     // Don't do anything if player doesn't exist anymore
-    if (player.exists()) {
+    if (player.exists() && enemy.exists()) {
       const dir = player.pos.sub(enemy.pos).unit();
 
       add([
