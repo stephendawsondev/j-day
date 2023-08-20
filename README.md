@@ -67,7 +67,8 @@ The criteria suggested an old school emulator game with retro neon style appeara
 
 ## Typography
 
-Kaboom.js has built in font apl386, apl386o, sink, sinko
+- The font chosen for the welcome page was picked from Kaboom.js as it has built in font apl386 and it has a very emulator appearance.
+- The font chosen for the instructions page was picked to be a yellow "Comic-Sans MS" to be clear and stand out to the player. 
 
 ## Imagery
 
