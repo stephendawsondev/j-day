@@ -53,6 +53,8 @@ The goal of this project is to produce a retro emulator game following the crite
 * As a user, I want to be able to pause and resume or quit the game if i so wish.
     * To pause the game was too difficult to implement in the given time. 
 
+<br>![Project Board](assets/images/readme_images/projectboard.png)
+
 ## Design
 
 The criteria suggested an old school emulator game with retro neon style appearance. 
