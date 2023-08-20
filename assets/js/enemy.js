@@ -23,6 +23,9 @@ const spawnBasicEnemy = (spawnX, spawnY, player) => {
   });
 
   player.onCollide("enemy", (enemy) => {
+    play("death", {
+      volume: 0.2,
+      });
     destroy(player);
     addKaboom(enemy.pos);
   });
