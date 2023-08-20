@@ -7,7 +7,6 @@ const directions = {
 // set variable to prevent all bullets updaingin the onUpdate function
 let bulletUpdateSet = false;
 
-
 //Create player
 const spawnPlayer = (spawnBullet) => {
   const player = add([
@@ -112,17 +111,13 @@ function spawnPlayerBullet(bulletpos, currentDirection) {
   if (!bulletUpdateSet) {
     onUpdate("playerBullet", (b) => {
       b.move(b.velocity.x, b.velocity.y);
-      if (cleanup()) {
-        console.log("bullets removed");
-      }
+      play("shoot", {
+        volume: 0.1,
+        detune: rand(-1200, 1200),
+      });
     });
     bulletUpdateSet = true;
   }
 }
-
-// play("shoot", {
-//   volume: 0.2,
-//   detune: rand(-1200, 1200),
-// });
 
 export { spawnPlayer, spawnPlayerBullet };
