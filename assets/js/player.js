@@ -76,7 +76,9 @@ const spawnPlayer = (spawnBullet) => {
 
   return player;
 };
-
+// has to be outside of player function to prevent bullet position updating along with
+// update to the player's position, which causes the bullet to change position following
+// player after spawining
 function spawnPlayerBullet(bulletpos, currentDirection) {
   //player shooting
   const BULLET_SPEED = 400;
