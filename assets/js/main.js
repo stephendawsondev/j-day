@@ -59,6 +59,7 @@ loadSound("powerup_sound", "powerup.wav");
 loadSound("intro_music", "intro.wav");
 loadSound("main_music", "main.wav");
 loadSound("menu_select", "menu_select.wav");
+loadSound("game_over_music", "game_over.wav");
 
 //load scene sprites
 loadRoot(`${relUrl}/scene_background_images/`);
