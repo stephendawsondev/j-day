@@ -142,6 +142,17 @@ The Wireframe used to design the mockup for the game was www.figma.com
 
 ![Languages](assets/images/readme_images/Languages.PNG)
 
+## Frameworks, libraries and programs used
+
+* [Github](https://github.com/) used to host repository.
+* [Codeanywhere](https://app.codeanywhere.com/) used to develop project and organise version control.
+* [Gitpod](https://gitpod.io/) used to develop project and organise version control.
+* [Github pages](https://pages.github.com/) used to deploy the website.
+* [VScode](https://code.visualstudio.com/) free and open-source code editor and customizable tool for writing code.
+* [Pixelart](https://www.pixelart.com/) used to design sprites.
+* [ChatGPT](https://chat.openai.com/) used to generate placeholder text and to verify code.
+* [StackOverflow](https://stackoverflow.com/) used to problem solve and deal with queries.
+
 ## Credits
 
 We would like to give credit to the following individuals, organizations, and resources that have contributed to the project or provided inspiration:
