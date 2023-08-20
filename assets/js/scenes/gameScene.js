@@ -1,17 +1,15 @@
 import { spawnBasicEnemy, spawnTerminatorEnemy } from "../enemy.js";
 import { spawnPlayer } from "../player.js";
 
-
-
-// Spawn points for basic enemies
+// Spawn points for basic enemies and terminator
 const spawnPoints = [
   { x: 450, y: 520 },
   { x: 720, y: 290 },
   { x: 450, y: 40 },
   { x: 40, y: 290 },
 ];
-const randomIndex = Math.floor(Math.random() * spawnPoints.length);
-const randomSpawnPoint = spawnPoints[randomIndex];
+
+const randomIndexTerminator = Math.floor(Math.random() * spawnPoints.length);
 
 const createGameScene = () => {
   // add the game scene
@@ -205,19 +203,24 @@ const createGameScene = () => {
       ]);
     }
 
-    // spawn player as placeholder
+    // spawn player
     var player = spawnPlayer(enemy, terminator);
 
     // spawn basic enemy example
-    var enemy = spawnBasicEnemy(randomSpawnPoint.x, randomSpawnPoint.y, player);
+    const spawnEnemy = () => {
+      let randomIndexEnemy = Math.floor(Math.random() * spawnPoints.length);
+      var enemy = spawnBasicEnemy(spawnPoints[randomIndexEnemy].x, spawnPoints[randomIndexEnemy].y, player);
+     
+      if (!player.exists()) {
+        clearInterval(spawnInterval);
+      }
+    };
+
+    const spawnInterval = setInterval(spawnEnemy, 1500);
 
     // spawn terminator example
-    var terminator = spawnTerminatorEnemy(
-      randomSpawnPoint.x,
-      randomSpawnPoint.y,
-      player
-    );
-
+    var terminator = spawnTerminatorEnemy(spawnPoints[randomIndexTerminator].x, spawnPoints[randomIndexTerminator].y, player);
+    
     // display score
     add([
       text(`Score:${score}`),
