@@ -3,9 +3,11 @@
  * imported and called in the main.js file
  */
 const spawnBasicEnemy = (spawnX, spawnY) => {
+  const sprites = ["enemy", "enemy_r", "enemy_b"];
+
   const enemy = add([
-    rect(40, 40), // placeholder until we have a sprite
-    color(GREEN), // colour of the box until we have a sprite
+    sprite(sprites[randi(0, 3)]),
+    scale(1.7),
     pos(spawnX, spawnY),
     area(),
     "enemy", // tagged with enemy to reference later on
