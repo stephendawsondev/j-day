@@ -39,12 +39,19 @@ The goal of this project is to produce a retro emulator game following the crite
 ## User Stories
 
 * As a user, I want to be able to see the overall theme of the game from the welcome page.
-* As a user, I want to be able to easily access the instructions on how to play the game. 
-* As a user, I want to be able to toggle the sound incase I find the volume to be too low or too high.
+    * The welcome page captures the over all theme and criteria, Retro style background, retro style neon flashing font.
+* As a user, I want to be able to easily access the instructions on how to play the game.
+    * The instructions are clear and concise and the background is inline with the theme of the game.
+* As a user, I want to be able to toggle the music/sound incase I find the volume to be too low or too high.
+    * A toggle button was added to the welcome page for easy access to volume control.
 * As a user, I want to be able to see the details of the game such as my score and lives.
+    * 
 * As a user, I want to be able to easily move around the scene and feel there is a progression in difficulty.
+    *
 * As a user, I want to be able to feel a sense of achievement such as high score or end level boss fights.
+    * Due to time constraints the team found it would be easier to achieve a high score rather than multiple levels and boss fights. This is a feature that could be implemented in future iterations.
 * As a user, I want to be able to pause and resume or quit the game if i so wish.
+    * To pause the game was too difficult to implement in the given time. 
 
 ## Design
 
