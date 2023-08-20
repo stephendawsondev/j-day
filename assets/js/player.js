@@ -128,6 +128,7 @@ const spawnPlayer = (enemy, terminator) => {
     destroy(playerBullet);
     destroy(enemy);
     addKaboom(playerBullet.pos);
+    () => updateScore(10);
   });
 
   // Destroy terminator
@@ -135,6 +136,7 @@ const spawnPlayer = (enemy, terminator) => {
     destroy(playerBullet);
     destroy(terminator);
     addKaboom(playerBullet.pos);
+    () => updateScore(10);
   });
 
   return player;

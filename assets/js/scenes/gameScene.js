@@ -205,8 +205,15 @@ const createGameScene = () => {
       ]);
     }
 
+    //Update score
+    let scoreText;
+    const updateScore = (amount) => {
+    score += amount;
+    scoreText.text = `Score: ${score}`;
+    };
+
     // spawn player as placeholder
-    var player = spawnPlayer(enemy, terminator);
+    var player = spawnPlayer(enemy, terminator, updateScore);
 
     // spawn basic enemy example
     var enemy = spawnBasicEnemy(randomSpawnPoint.x, randomSpawnPoint.y, player);
@@ -269,6 +276,7 @@ const createGameScene = () => {
       layer("ui"),
       scale(0.4),
     ]);
+
   });
 };
 
