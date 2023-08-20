@@ -4,7 +4,11 @@ const directions = {
   UP: "up",
   DOWN: "down",
 };
+// set variable to prevent all bullets updaingin the onUpdate function
+let bulletUpdateSet = false;
 
+
+//Create player
 const spawnPlayer = (enemy, terminator, spawnBullet) => {
   const player = add([
     sprite("sarah_l"),
@@ -64,9 +68,7 @@ const spawnPlayer = (enemy, terminator, spawnBullet) => {
     updatateCurrentDirection(directions.DOWN);
   });
 
-  // onUpdate("sarah", () => console.log(currentDirection));
-
-  //shooting function
+  //Call shooting function
   onKeyPress("space", () => {
     if (player.exists()) {
       spawnBullet(player.pos, currentDirection);
@@ -93,21 +95,23 @@ const spawnPlayer = (enemy, terminator, spawnBullet) => {
 function spawnPlayerBullet(bulletpos, currentDirection) {
   //player shooting
   const BULLET_SPEED = 400;
-  // set up starting point for bullets depending on direction
-  if (currentDirection == directions.LEFT) {
-    bulletpos = bulletpos.add(-30, 10);
-  } else if (currentDirection == directions.RIGHT) {
-    bulletpos = bulletpos.add(30, 10);
-  } else if (currentDirection == directions.UP) {
-    bulletpos = bulletpos.add(0, -30);
-  } else if (currentDirection == directions.DOWN) {
-    bulletpos = bulletpos.add(0, 30);
+
+  //set volicity of bullets depending on player direction
+  let bulletVelocity = vec2(0, 0);
+
+  if (currentDirection === directions.LEFT) {
+    bulletVelocity = vec2(-BULLET_SPEED, 0);
+  } else if (currentDirection === directions.RIGHT) {
+    bulletVelocity = vec2(BULLET_SPEED, 0);
+  } else if (currentDirection === directions.UP) {
+    bulletVelocity = vec2(0, -BULLET_SPEED);
+  } else if (currentDirection === directions.DOWN) {
+    bulletVelocity = vec2(0, BULLET_SPEED);
   }
 
-  //add bullet
-  add([
+  const playerBullet = add([
     sprite("bullet_yellow"),
-    scale(0.3),
+    scale(0.2),
     pos(bulletpos),
     origin("center"),
     color(255, 255, 255),
@@ -115,28 +119,19 @@ function spawnPlayerBullet(bulletpos, currentDirection) {
     area(),
     "playerBullet",
     {
-      bulletSpeed:
-        currentDirection === directions.LEFT ||
-        currentDirection === directions.UP
-          ? -1 * BULLET_SPEED
-          : BULLET_SPEED,
+      velocity: bulletVelocity,
     },
   ]);
-  onUpdate("playerBullet", (b) => {
-    if (
-      currentDirection === directions.LEFT ||
-      currentDirection === directions.RIGHT
-    ) {
-      b.move(b.bulletSpeed, 0);
-    } else {
-      b.move(0, b.bulletSpeed);
-    }
 
-    // check if bullets get removed
-    if (cleanup()) {
-      console.log("bullets removed");
-    }
-  });
+  if (!bulletUpdateSet) {
+    onUpdate("playerBullet", (b) => {
+      b.move(b.velocity.x, b.velocity.y);
+      if (cleanup()) {
+        console.log("bullets removed");
+      }
+    });
+    bulletUpdateSet = true;
+  }
 }
 
 // play("shoot", {
