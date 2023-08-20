@@ -259,6 +259,8 @@ const createGameScene = () => {
     onCollide("enemy", "playerBullet", (enemy, playerBullet) => {
       destroy(playerBullet);
       destroy(enemy);
+      score += 50;
+      scoreCount.text = `Score:${score}`
       addKaboom(playerBullet.pos);
     });
 
@@ -270,7 +272,7 @@ const createGameScene = () => {
     });
     
     // display score
-    add([
+    let scoreCount = add([
       text(`Score:${score}`),
       pos(width() * 0.01, 0),
       layer("ui"),
