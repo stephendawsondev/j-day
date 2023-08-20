@@ -274,10 +274,9 @@ const createGameScene = () => {
         addKaboom(playerBullet.pos);
       });
 
-      // Destroy terminator
+      // Destroy bullet hitting terminator
       onCollide("terminator", "playerBullet", (terminator, playerBullet) => {
         destroy(playerBullet);
-        destroy(terminator);
         addKaboom(playerBullet.pos);
       });
 
