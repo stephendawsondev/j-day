@@ -13,7 +13,7 @@ const spawnBasicEnemy = (spawnX, spawnY, player) => {
 
 
   // set the initial enemy speed
-  const enemySpeed = 10;
+  const enemySpeed = 30;
   
   // add randomness to enemy movement
   enemy.onUpdate(() => { 

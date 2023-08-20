@@ -225,7 +225,7 @@ const createGameScene = () => {
       }
     };
 
-    const spawnInterval = setInterval(spawnEnemyAndUpdateCounter, 2000);
+    const spawnInterval = setInterval(spawnEnemyAndUpdateCounter, 1500);
 
     // spawn terminator example
     spawnTerminatorEnemy(spawnPoints[randomIndexTerminator].x, spawnPoints[randomIndexTerminator].y, player);
