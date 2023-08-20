@@ -255,7 +255,7 @@ const createGameScene = () => {
       addKaboom(bullet.pos);
     });
 
-    // Destroy enemies
+    // Destroy enemies and add to score
     onCollide("enemy", "playerBullet", (enemy, playerBullet) => {
       destroy(playerBullet);
       destroy(enemy);
