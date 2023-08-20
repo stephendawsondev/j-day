@@ -44,6 +44,7 @@ const spawnTerminatorEnemy = (spawnX, spawnY, player) => {
     area(),
     pos(spawnX, spawnY),
     origin("center"),
+    area(),
     // This enemy cycle between 3 states, and start from "idle" state
     state("move", ["idle", "attack", "move"]),
     "enemy",
@@ -112,4 +113,3 @@ const spawnTerminatorEnemy = (spawnX, spawnY, player) => {
 
 // export the function so we have access to it in main.js
 export { spawnBasicEnemy, spawnTerminatorEnemy };
-
