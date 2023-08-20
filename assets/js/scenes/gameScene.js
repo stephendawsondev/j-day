@@ -251,6 +251,19 @@ const createGameScene = () => {
       layer("ui"),
       scale(0.4),
     ]);
+
+    // Mute game music
+    let muted = false
+
+    onKeyDown("m", () => {
+      if (muted == false) {
+        mainMusic.pause();
+        muted = true
+      } else {
+        mainMusic.play();
+        muted = false
+      }
+    });
   });
 };
 
