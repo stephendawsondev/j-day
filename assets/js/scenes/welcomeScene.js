@@ -1,5 +1,6 @@
 const createWelcomeScene = () => {
   const introMusic = play("intro_music", { loop: true, volume: 0.4 });
+  let isIntroMusicPaused = false;
   // add welcome screen
   return scene("welcome", () => {
     const welcomeBackground = add([
@@ -64,7 +65,7 @@ const createWelcomeScene = () => {
     addButton("Start", vec2(80, 350), () => {
       play("menu_select", { loop: false, volume: 1.0 });
       introMusic.stop();
-      go("game", { score: 0, livesLeft: 3 });
+      go("game", { score: 0, livesLeft: 3,isIntroMusicPaused: isIntroMusicPaused,});
     });
 
     addButton("How to play", vec2(80, 450), () => {
@@ -73,12 +74,14 @@ const createWelcomeScene = () => {
     });
 
     onClick("music-text", () => {
-      if (introMusic.isPaused()) {
+      if (isIntroMusicPaused) {
         introMusic.play();
       } else {
         introMusic.pause();
       }
+      isIntroMusicPaused = !isIntroMusicPaused; // Toggle the variable
     });
+    
     // reset cursor to default at frame start for easier cursor management
     onUpdate(() => cursor("default"));
 
