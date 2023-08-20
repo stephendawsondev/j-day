@@ -27,7 +27,7 @@ const spawnTerminatorEnemy = (spawnX, spawnY, player) => {
     origin("center"),
     // This enemy cycle between 3 states, and start from "idle" state
     state("move", ["idle", "attack", "move"]),
-    "enemy",
+    "terminator",
   ]);
 
   // When we enter "attack" state, we fire a bullet, and enter "move" state after 1 sec
@@ -39,7 +39,7 @@ const spawnTerminatorEnemy = (spawnX, spawnY, player) => {
       add([
         pos(enemy.pos),
         move(dir, BULLET_SPEED),
-        sprite("bullet_red"),
+        sprite("bullet"),
         scale(0.3),
         area(),
         cleanup(),
