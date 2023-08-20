@@ -90,7 +90,7 @@ The criteria suggested an old school emulator game with retro neon style appeara
 
   * Instructions Page - sourced from https://www.radiotimes.com/technology/gaming/terminator-survival-project-release-date/
 
-    ![Instructions Page](assets/images/readme_images/instructionsbg.png)
+  ![Instructions Page](assets/images/readme_images/instructionsbg.png)
 
   * Game Over page - sourced from https://news.sky.com/story/terminator-and-other-sci-fi-films-blamed-for-publics-concerns-about-ai-12895427
   
@@ -103,12 +103,14 @@ The criteria suggested an old school emulator game with retro neon style appeara
   ![Sarah Conner](assets/images/readme_images/Sarah.png)
   ![Terminator](assets/images/readme_images/Terminator.png)
 
+
   * The arcades and pinball machine was designed using a picture template from a google search
 
   ![Arcade Machine 1](assets/images/readme_images/arcade_machine1.png)
   ![Arcade Machine 2](assets/images/readme_images/arcade_machine2.png)
   ![Arcade Machine 3](assets/images/readme_images/arcade_machine3.png)
   ![Pinball Machine](assets/images/readme_images/pinballtemplate.png)
+
 
   * The carpet is similar to old style arcade amusement park carpets.
 
