@@ -248,6 +248,28 @@ const createGameScene = () => {
       layer("ui"),
       scale(0.4),
     ]);
+
+    // Toggle game music
+    let muted = false
+
+    onKeyDown("m", () => {
+      if (muted == false) {
+        mainMusic.pause();
+        muted = true
+      } else {
+        mainMusic.play();
+        muted = false
+      }
+    });
+
+    // Display Toggle Music Text
+    add([
+      text("M: Music"),
+      pos(width() * 0.8, 0),
+      pos(height() * 0.8, 0),
+      layer("ui"),
+      scale(0.4),
+    ]);
   });
 };
 
