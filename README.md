@@ -30,17 +30,24 @@ A retro game based on the Terminator franchise. A top down shooter game with int
 
 ## Goal
 
-The goal section provides a concise summary of the main objective or purpose of the project or software described in this README. It addresses the following aspects:
+The goal of this project is to pruduce a retro emulator game following the criteria set out by the hackathon facilitators and incorporating the hard work, skills and abilities of each team member while enjoying the process of learning to develop new and unique software.   The game will be aimed toward people born in the 70s and 80s who fondly remember playing old emulator games and any fans on the terminator franchise.
 
-- ➡️ Problem Statement
-- ➡️ Objective(s)
-- ➡️ Target Audience
-- ➡️ Benefits
+- ➡️ To organise a group of strangers with varying abilities to join together to create an emulator type retro game from scratch using a new language and modern techniques.
+- ➡️ The game will be disigned using a JavaScript frame work called Kaboom. It will be new to most of the team but will be a benificial learning curve for all involved.
+- ➡️ The game will be aimed toward people born in or brought up in the 70s and 80s who fondly remember playing old emulator games on arcade machines in seaside amusement parks and any fans of the terminator franchise who grew up following the story behind John and Sarah Connor in their timeless battle against SkyNet.
 
 ## Controls
 
-On starting the game the player can use either WSAD or the arrow keys to move the character around the screen all while avoiding enemies and enemy fire.
-Spacebar fires a projectile in the direction the player is facing.
+On starting the game the player will use W, S, A and D to move the character around the screen all while avoiding enemies and enemy fire. Spacebar fires a projectile in the direction the player is facing.
+
+| Button | Action      |
+| ------ | ----------- |
+| W      | Move Up     |
+| A      | Move Left   |
+| S      | Move Down   |
+| D      | Move Right  |
+| Space  | Fire        |
+
 
 ## Tech
 
