@@ -1,6 +1,8 @@
 import { spawnBasicEnemy, spawnTerminatorEnemy } from "../enemy.js";
 import { spawnPlayer } from "../player.js";
 
+
+
 // Spawn points for basic enemies
 const spawnPoints = [
   { x: 450, y: 520 },
@@ -13,10 +15,14 @@ const randomSpawnPoint = spawnPoints[randomIndex];
 
 const createGameScene = () => {
   // add the game scene
+
+  
   return scene("game", ({ score, livesLeft }) => {
     layers(["bg", "game", "ui"], "game");
 
     const mainMusic = play("main_music", { loop: true, volume: 0.4 });
+    
+    
 
     // add background tiles
     const generateFloorTiles = () => {
@@ -39,6 +45,8 @@ const createGameScene = () => {
     };
 
     generateFloorTiles();
+
+    
 
     const generateWallTiles = () => {
       const tileWidth = 34;
@@ -152,58 +160,49 @@ const createGameScene = () => {
     };
 
     generateWallTiles();
-    const animFrames = [
-      "arcade_1",
-      "arcade_2",
-      "arcade_3",
-      "arcade_4",
-      "arcade_5",
-      "arcade_6",
-      "arcade_7",
-      "arcade_8",
-      "arcade_9",
-      "arcade_10",
-      "arcade_11",
-      "arcade_12",
-      "arcade_13",
-      "arcade_14",
-      "arcade_15",
-      "arcade_16",
-    ];
-
-    const animatedObject = add([
-      sprite(animFrames[0]),
-      pos(80, 80),
-      scale(2),
-      layer("game"),
-    ]);
-
-    // Function to update animation frames
-    function updateAnimation() {
-      let currentFrameIndex = animFrames.indexOf(animatedObject.frame);
-      currentFrameIndex = (currentFrameIndex + 1) % animFrames.length;
-      animatedObject.use(animFrames[currentFrameIndex]);
-    }
-
-    // Update animation frames every 0.2 seconds
-    action(() => {
-      every(0.2, updateAnimation);
-    });
 
     const objectarea = [
-      { x: 400, y: 400, spriteName: "burger" },
-      { x: 200, y: 300, spriteName: "hotdog" },
       { x: 600, y: 10, spriteName: "pink_neon" },
       { x: 200, y: 10, spriteName: "green_neon" },
       { x: 600, y: 34, spriteName: "pinball" },
       { x: 650, y: 34, spriteName: "pinball" },
       { x: 700, y: 34, spriteName: "pinball" },
+      { x: 34, y: 15, spriteName: "arcade_machine1", scale: 1.2 },
+      { x: 84, y: 15, spriteName: "arcade_machine2" , scale: 1.2 },
+      { x: 134, y: 15, spriteName: "arcade_machine3", scale: 1.2  },
+      { x: 205, y: 450, spriteName: "table" },
+      { x: 180, y: 450, spriteName: "chair_left_side" },
+      { x: 180, y: 480, spriteName: "chair_left_side" },
+      { x: 255, y: 450, spriteName: "chair_right_side" },
+      { x: 255, y: 480, spriteName: "chair_right_side" },
+      { x: 230, y: 485, spriteName: "pizza" , scale: 0.6},
+      { x: 230, y: 460, spriteName: "burger" , scale: 0.6},
+      { x: 210, y: 470, spriteName: "mug", scale: 0.6 },
+      { x: 650, y: 460, spriteName: "standing_table", scale:1.4},
+      { x: 655, y: 455, spriteName: "can", scale: 0.6},
+      { x: 680, y: 465, spriteName: "can", scale: 0.6},
+      { x: 300, y: 60, spriteName: "table" },
+      { x: 275, y: 60, spriteName: "chair_left_side" },
+      { x: 275, y: 90, spriteName: "chair_left_side" },
+      { x: 350, y: 60, spriteName: "chair_right_side" },
+      { x: 350, y: 90, spriteName: "chair_right_side" },
+      { x: 310, y: 65, spriteName: "pizza" , scale: 0.6},
+      { x: 325, y: 100, spriteName: "pizza" , scale: 0.6},
+      { x: 305, y: 90, spriteName: "can", scale: 0.6 },
+      
 
-      // Add more objects as needed
+
+
+     
     ];
 
     for (const obj of objectarea) {
-      add([sprite(obj.spriteName), pos(obj.x, obj.y), scale(1), layer("bg")]);
+      const image = add([
+        sprite(obj.spriteName),
+        pos(obj.x, obj.y),
+        scale(obj.scale !== undefined ? obj.scale : 1), // Use the scale property if defined, or default to 1
+        layer("bg"),
+      ]);
     }
 
     // spawn player as placeholder
