@@ -244,23 +244,18 @@ const createGameScene = () => {
     });
 
     // Display Quit Game Text
-    add([
-      text("Esc: Quit"),
-      pos(width() * 0.8, 0),
-      layer("ui"),
-      scale(0.4),
-    ]);
+    add([text("Esc: Quit"), pos(width() * 0.8, 0), layer("ui"), scale(0.4)]);
 
     // Toggle game music
-    let muted = false
+    let muted = false;
 
     onKeyDown("m", () => {
       if (muted == false) {
         mainMusic.pause();
-        muted = true
+        muted = true;
       } else {
         mainMusic.play();
-        muted = false
+        muted = false;
       }
     });
 
@@ -272,6 +267,12 @@ const createGameScene = () => {
       layer("ui"),
       scale(0.4),
     ]);
+
+    // Game Over if lives hit 0
+    if (livesLeft == 0) {
+      mainMusic.stop();
+      go("game_over_scene", { final_score: `${score}` });
+    }
   });
 };
 
