@@ -8,8 +8,8 @@ const spawnPoints = [
   { x: 450, y: 40 },
   { x: 40, y: 290 }
 ];
-const randomIndex = Math.floor(Math.random() * spawnPoints.length);
-const randomSpawnPoint = spawnPoints[randomIndex];
+const randomIndexEnemy = Math.floor(Math.random() * spawnPoints.length);
+const randomIndexTerminator = Math.floor(Math.random() * spawnPoints.length);
 
 const createGameScene = () => {
   // add the game scene
@@ -232,10 +232,10 @@ const createGameScene = () => {
     // ]);
 
     // spawn basic enemy example
-    spawnBasicEnemy(randomSpawnPoint.x, randomSpawnPoint.y, player);
+    spawnBasicEnemy(spawnPoints[randomIndexEnemy].x, spawnPoints[randomIndexEnemy].y, player);
 
     // spawn terminator example
-    spawnTerminatorEnemy(randomSpawnPoint.x, randomSpawnPoint.y, player);
+    spawnTerminatorEnemy(spawnPoints[randomIndexTerminator].x, spawnPoints[randomIndexTerminator].y, player);
 
     // display score
     add([
