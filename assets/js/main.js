@@ -42,6 +42,9 @@ loadSprite("sarah_r", "Sarah_r.png");
 loadSprite("sarah_b", "Sarah_back.png");
 loadSprite("john", "John.png");
 loadSprite("terminator", "Terminator.png");
+loadSprite("enemy_l", "enemy.png")
+loadSprite("enemy_r", "enemy_r.png")
+loadSprite("enemy_b", "enemy_back.png")
 loadSprite("bullet_yellow", "bullet_y.png");
 loadSprite("bullet", "bullet.png");
 
