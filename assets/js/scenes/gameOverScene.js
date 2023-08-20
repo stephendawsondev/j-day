@@ -78,6 +78,7 @@ const createGameOverScene = () => {
 
     onKeyDown("enter", () => {
       play("menu_select", { loop: false, volume: 0.5 });
+      gameOverMusic.pause();
       go("game", { score: 0, livesLeft: 3 });
     });
   });
