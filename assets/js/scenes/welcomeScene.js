@@ -1,6 +1,7 @@
 const createWelcomeScene = () => {
   const introMusic = play("intro_music", { loop: true, volume: 0.4 });
   let isIntroMusicPaused = false;
+  let isMainMusicPaused = false;
   // add welcome screen
   return scene("welcome", () => {
     const welcomeBackground = add([
@@ -81,6 +82,22 @@ const createWelcomeScene = () => {
       }
       isIntroMusicPaused = !isIntroMusicPaused; // Toggle the variable
     });
+
+    onKeyDown("enter", () => {
+      if (isIntroMusicPaused) {
+        isMainMusicPaused = true; // Pause main music only if intro music was paused
+      }
+      introMusic.pause();
+      go("game", {
+        score: 0,
+        livesLeft: 3,
+        isIntroMusicPaused: isIntroMusicPaused,
+        isMainMusicPaused: isMainMusicPaused,
+      });
+    });
+    
+
+    
     
     // reset cursor to default at frame start for easier cursor management
     onUpdate(() => cursor("default"));
