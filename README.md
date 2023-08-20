@@ -99,20 +99,32 @@ The criteria suggested an old school emulator game with retro neon style appeara
 * Pixel Art
   * The pixel art was designed using https://www.pixilart.com/draw 
 
-  ![John Conner](assets/images/readme_images/John.png)
-  ![Sarah Conner](assets/images/readme_images/Sarah.png)
-  ![Terminator](assets/images/readme_images/Terminator.png)
+      ![John Conner](assets/images/readme_images/John.png)
+      ![Sarah Conner](assets/images/readme_images/Sarah.png)
+      ![Terminator](assets/images/readme_images/Terminator.png)
 
   * The arcades and pinball machine was designed using a picture template from a google search
 
-  ![Arcade Machine 1](assets/images/readme_images/arcade_machine1.png)
-  ![Arcade Machine 2](assets/images/readme_images/arcade_machine2.png)
-  ![Arcade Machine 3](assets/images/readme_images/arcade_machine3.png)
-  ![Pinball Machine](assets/images/readme_images/pinballtemplate.png)
+      ![Arcade Machine 1](assets/images/readme_images/arcade_machine1.png)
+      ![Arcade Machine 2](assets/images/readme_images/arcade_machine2.png)
+      ![Arcade Machine 3](assets/images/readme_images/arcade_machine3.png)
+      ![Pinball Machine](assets/images/readme_images/pinballtemplate.png)
 
   * The carpet is similar to old style arcade amusement park carpets.
 
-  ![Arcade Carpet](assets/images/readme_images/arcade_carpet.png)
+      ![Arcade Carpet](assets/images/readme_images/arcade_carpet.png)
+
+## Audio
+  - The music was designed by Kyle Clow (Terminal8tors team member) as well as game sounds and other sound effects.
+      * Music - created using the program https://www.ableton.com/en/
+             
+      * Wilhelm scream - sourced from https://bigsoundbank.com/
+
+        ![Wilhelm Scream](assets/images/readme_images/wilhelmscream.PNG)
+
+      * Gameover sound effect - sourced from https://opengameart.org/
+      
+      * Other sound effects - created using https://www.bfxr.net/
 
 
 ## Controls
