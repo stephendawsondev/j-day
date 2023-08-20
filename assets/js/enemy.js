@@ -31,13 +31,6 @@ const spawnTerminatorEnemy = (spawnX, spawnY, player) => {
     "enemy",
   ]);
 
-  // Run the callback once every time we enter "idle" state.
-  // Here we stay "idle" for 0.5 second, then enter "attack" state.
-  enemy.onStateEnter("idle", async () => {
-    await wait(0.5);
-    enemy.enterState("attack");
-  });
-
   // When we enter "attack" state, we fire a bullet, and enter "move" state after 1 sec
   enemy.onStateEnter("attack", async () => {
     // Don't do anything if player doesn't exist anymore
