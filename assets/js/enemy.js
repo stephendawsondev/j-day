@@ -10,7 +10,7 @@ const spawnBasicEnemy = (spawnX, spawnY) => {
     area(),
     "enemy", // tagged with enemy to reference later on
   ]);
-  
+
   return enemy;
 };
 
@@ -20,12 +20,11 @@ const spawnTerminatorEnemy = (spawnX, spawnY, player) => {
   const BULLET_SPEED = 30; //700
 
   const enemy = add([
-    rect(40, 80), // placeholder until we have a sprite
-    color(BLUE), // colour of the box until we have a sprite
+    sprite("terminator"), // placeholder until we have a sprite
     area(),
+    scale(1.7),
     pos(spawnX, spawnY),
     origin("center"),
-    area(),
     // This enemy cycle between 3 states, and start from "idle" state
     state("move", ["idle", "attack", "move"]),
     "enemy",
@@ -40,11 +39,11 @@ const spawnTerminatorEnemy = (spawnX, spawnY, player) => {
       add([
         pos(enemy.pos),
         move(dir, BULLET_SPEED),
-        rect(12, 12),
+        sprite("bullet_red"),
+        scale(0.3),
         area(),
         cleanup(),
         origin("center"),
-        color(BLUE),
         "bullet",
       ]);
     }
