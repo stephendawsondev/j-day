@@ -101,11 +101,6 @@ const createWelcomeScene = () => {
     
     // reset cursor to default at frame start for easier cursor management
     onUpdate(() => cursor("default"));
-
-    onKeyDown("enter", () => {
-      play("menu_select", { loop: false, volume: 0.5 });
-      go("game", { score: 0, livesLeft: 3 });
-    });
   });
 };
 
