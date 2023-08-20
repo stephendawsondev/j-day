@@ -129,7 +129,7 @@ On starting the game the player will use W, S, A and D to move the character aro
 
 ## Wireframes
 
-The Wireframe used to design the mockup for the game was www.figma.com 
+www.figma.com - Figma is a cloud-based design and prototyping tool that is widely used for creating user interfaces (UI) and user experience (UX) designs. 
 
 ![Figma Mock-up](assets/images/readme_images/figmamockup.PNG)
 
@@ -144,18 +144,28 @@ The Wireframe used to design the mockup for the game was www.figma.com
 
 ## Frameworks, libraries and programs used
 
+### Frameworks
+
 * [Github](https://github.com/) used to host repository.
+* [Github pages](https://pages.github.com/) used to deploy the website.
 * [Codeanywhere](https://app.codeanywhere.com/) used to develop project and organise version control.
 * [Gitpod](https://gitpod.io/) used to develop project and organise version control.
-* [Github pages](https://pages.github.com/) used to deploy the website.
+* [VScode](https://code.visualstudio.com/) free and open-source code editor and customizable tool for writing code.
+
+### Libraries
+
 * [VScode](https://code.visualstudio.com/) free and open-source code editor and customizable tool for writing code.
 * [Pixelart](https://www.pixelart.com/) used to design sprites.
-* [ChatGPT](https://chat.openai.com/) used to generate placeholder text and to verify code.
 * [StackOverflow](https://stackoverflow.com/) used to problem solve and deal with queries.
+
+### Programs
+
+* [ChatGPT](https://chat.openai.com/) used to generate placeholder text and to verify code.
+* [Slack](https://slack.com/intl/en-ie/) a widely-used cloud-based communication and collaboration platform designed to facilitate efficient communication and teamwork within organizations, teams, and communities.
+
 
 ## Credits
 
-We would like to give credit to the following individuals, organizations, and resources that have contributed to the project or provided inspiration:
 - **Thank you to all the team members for the hard work and cooperation.**
 
   - **Stephen Dawson** - [GitHub](https://github.com/stephendawsondev), [LinkedIn](https://www.linkedin.com/in/sdstephendawson/), [URL](http://www.stephendawson.ie)
