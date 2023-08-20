@@ -1,5 +1,5 @@
 import { spawnBasicEnemy, spawnTerminatorEnemy } from "../enemy.js";
-import { spawnPlayer } from "../player.js";
+import { spawnPlayer, spawnPlayerBullet } from "../player.js";
 
 const createGameScene = () => {
   // add the game scene
@@ -203,7 +203,7 @@ const createGameScene = () => {
     );
 
     // spawn player
-    const player = spawnPlayer();
+    const player = spawnPlayer(spawnPlayerBullet);
 
 
     const spawnEnemy = () => {
