@@ -35,6 +35,8 @@ loadSprite("pizza", "pizza_pixels.png");
 loadSprite("mug", "mug_pixels.png");
 loadSprite("standing_table", "standing_table.png");
 loadSprite("can", "can_pixels.png");
+loadSprite("audio_on", "audio_on.png");
+loadSprite("audio_off", "audio_off.png");
 
 // Load character sprites
 loadSprite("sarah_l", "Sarah.png");
@@ -66,6 +68,9 @@ loadRoot(`${relUrl}/scene_background_images/`);
 loadSprite("welcome_page", "welcome_img.png");
 loadSprite("instructions-page", "instructions.png");
 loadSprite("game_over", "game_over_background.png");
+
+
+
 
 generateScenes();
 
