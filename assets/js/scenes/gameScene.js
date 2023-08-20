@@ -252,7 +252,7 @@ const createGameScene = () => {
       scale(0.4),
     ]);
 
-    // Mute game music
+    // Toggle game music
     let muted = false
 
     onKeyDown("m", () => {
@@ -264,6 +264,15 @@ const createGameScene = () => {
         muted = false
       }
     });
+
+    // Display Toggle Music Text
+    add([
+      text("M: Music"),
+      pos(width() * 0.8, 0),
+      pos(height() * 0.8, 0),
+      layer("ui"),
+      scale(0.4),
+    ]);
   });
 };
 
