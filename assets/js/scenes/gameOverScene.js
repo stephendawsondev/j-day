@@ -11,11 +11,11 @@ const createGameOverScene = () => {
 
     const score = add([
         text(`Final Score:${final_score}`, {
-          size: 35,
+          size: 45,
           font: "sinko",
         }),
-        color(rgb(138, 43, 226)),
-        pos(40, 24),
+        color (rgb(255, 255, 255)),
+        pos(135, 385),
       ]);
 
     function addButton(txt, p, f) {

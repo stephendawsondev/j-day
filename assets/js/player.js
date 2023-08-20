@@ -1,6 +1,4 @@
-const spawnPlayer = (enemy, terminator) => {
-  console.log(terminator);
-  console.log(enemy);
+const spawnPlayer = () => {
   const player = add([
     sprite("sarah_l"),
     area(scale(0.6)),
@@ -72,7 +70,7 @@ const spawnPlayer = (enemy, terminator) => {
       play("shoot", {
         volume: 0.2,
         detune: rand(-1200, 1200),
-        });
+      });
     }
   });
 
@@ -106,8 +104,6 @@ const spawnPlayer = (enemy, terminator) => {
     ]);
   }
 
- 
-
   onUpdate("playerBullet", (b) => {
     if (
       current_direction === directions.LEFT ||
@@ -121,20 +117,6 @@ const spawnPlayer = (enemy, terminator) => {
     if (b.pos.x < 0 || b.pos.x > width()) {
       destroy(b);
     }
-  });
-
-  // Destroy enemies
-  onCollide("enemy", "playerBullet", (enemy, playerBullet) => {
-    destroy(playerBullet);
-    destroy(enemy);
-    addKaboom(playerBullet.pos);
-  });
-
-  // Destroy terminator
-  onCollide("terminator", "playerBullet", (terminator, playerBullet) => {
-    destroy(playerBullet);
-    destroy(terminator);
-    addKaboom(playerBullet.pos);
   });
 
   return player;
