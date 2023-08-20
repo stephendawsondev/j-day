@@ -12,6 +12,8 @@ const createGameScene = () => {
 
     if (isIntroMusicPaused) {
       mainMusic.pause();
+    } else if (isMainMusicPaused) {
+      mainMusic.pause();
     }
     
     
