@@ -9,7 +9,7 @@ let bulletUpdateSet = false;
 
 
 //Create player
-const spawnPlayer = (enemy, terminator, spawnBullet) => {
+const spawnPlayer = (spawnBullet) => {
   const player = add([
     sprite("sarah_l"),
     area(scale(0.6)),
@@ -73,20 +73,6 @@ const spawnPlayer = (enemy, terminator, spawnBullet) => {
     if (player.exists()) {
       spawnBullet(player.pos, currentDirection);
     }
-  });
-
-  // Destroy enemies
-  onCollide("enemy", "playerBullet", (enemy, playerBullet) => {
-    destroy(playerBullet);
-    destroy(enemy);
-    addKaboom(playerBullet.pos);
-  });
-
-  // Destroy terminator
-  onCollide("terminator", "playerBullet", (terminator, playerBullet) => {
-    destroy(playerBullet);
-    destroy(terminator);
-    addKaboom(playerBullet.pos);
   });
 
   return player;
