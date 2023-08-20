@@ -1,4 +1,5 @@
 const createWelcomeScene = () => {
+  const introMusic = play("intro_music", { loop: true, volume: 0.4 });
   // add welcome screen
   return scene("welcome", () => {
     const welcomeBackground = add([
@@ -7,8 +8,6 @@ const createWelcomeScene = () => {
       origin("topleft"),
       scale(3.6),
     ]);
-
-    const introMusic = play("intro_music", { loop: true, volume: 0.4 });
 
     const musicText = add([
       text("Toggle Music", {
