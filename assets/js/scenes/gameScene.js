@@ -243,6 +243,14 @@ const createGameScene = () => {
       mainMusic.stop();
       go("welcome");
     });
+
+    // Display Quit Game Text
+    add([
+      text("Esc: Quit"),
+      pos(width() * 0.8, 0),
+      layer("ui"),
+      scale(0.4),
+    ]);
   });
 };
 
