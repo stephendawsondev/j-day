@@ -36,7 +36,7 @@ const spawnBasicEnemy = (spawnX, spawnY, player) => {
 // Code taken from https://2000.kaboomjs.com/play?demo=ai
 const spawnTerminatorEnemy = (spawnX, spawnY, player) => {
   const ENEMY_SPEED = 10; //160
-  const BULLET_SPEED = 0; //700
+  const BULLET_SPEED = 30; //700
 
   const enemy = add([
     rect(40, 80), // placeholder until we have a sprite
@@ -109,6 +109,8 @@ const spawnTerminatorEnemy = (spawnX, spawnY, player) => {
     destroy(player);
     addKaboom(bullet.pos);
   });
+
+  
 };
 
 // export the function so we have access to it in main.js
