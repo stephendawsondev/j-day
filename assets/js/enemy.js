@@ -33,7 +33,7 @@ const spawnBasicEnemy = (spawnX, spawnY, player) => {
 // Code taken from https://2000.kaboomjs.com/play?demo=ai
 const spawnTerminatorEnemy = (spawnX, spawnY, player) => {
   const ENEMY_SPEED = 10; //160
-  const BULLET_SPEED = 0; //700
+  const BULLET_SPEED = 30; //700
 
   const enemy = add([
     rect(40, 80), // placeholder until we have a sprite
@@ -41,6 +41,7 @@ const spawnTerminatorEnemy = (spawnX, spawnY, player) => {
     area(),
     pos(spawnX, spawnY),
     origin("center"),
+    area(),
     // This enemy cycle between 3 states, and start from "idle" state
     state("move", ["idle", "attack", "move"]),
     "enemy",
@@ -100,12 +101,14 @@ const spawnTerminatorEnemy = (spawnX, spawnY, player) => {
 
   // Taking a bullet makes us disappear
   player.onCollide("bullet", (bullet) => {
+    
     destroy(bullet);
     destroy(player);
     addKaboom(bullet.pos);
   });
+
+  
 };
 
 // export the function so we have access to it in main.js
 export { spawnBasicEnemy, spawnTerminatorEnemy };
-
