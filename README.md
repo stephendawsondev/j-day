@@ -30,7 +30,7 @@ A retro game based on the Terminator franchise. A top down shooter game with int
 
 ## Goal
 
-The goal of this project is to pruduce a retro emulator game following the criteria set out by the hackathon facilitators and incorporating the hard work, skills and abilities of each team member while enjoying the process of learning to develop new and unique software.   The game will be aimed toward people born in the 70s and 80s who fondly remember playing old emulator games and any fans on the terminator franchise.
+The goal of this project is to produce a retro emulator game following the criteria set out by the hackathon facilitators and incorporating the hard work, skills and abilities of each team member while enjoying the process of learning to develop new and unique software.
 
 - ➡️ To organise a group of strangers with varying abilities to join together to create an emulator type retro game from scratch using a new language and modern techniques.
 - ➡️ The game will be disigned using a JavaScript frame work called Kaboom. It will be new to most of the team but will be a benificial learning curve for all involved.
