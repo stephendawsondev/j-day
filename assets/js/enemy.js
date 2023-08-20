@@ -2,7 +2,7 @@
  * creates an enemy object - the function is
  * imported and called in the main.js file
  */
-const spawnBasicEnemy = (spawnX, spawnY, player) => {
+const spawnBasicEnemy = (spawnX, spawnY) => {
   const enemy = add([
     rect(40, 40), // placeholder until we have a sprite
     color(GREEN), // colour of the box until we have a sprite
@@ -10,22 +10,6 @@ const spawnBasicEnemy = (spawnX, spawnY, player) => {
     area(),
     "enemy", // tagged with enemy to reference later on
   ]);
-
-  // set the initial enemy speed
-  const enemySpeed = 30;
-
-  // add randomness to enemy movement
-  enemy.onUpdate(() => {
-    const movementDirection = player.pos.sub(enemy.pos).unit();
-    if (player.exists()) {
-      enemy.move(movementDirection.scale(enemySpeed));
-    }
-  });
-
-  player.onCollide("enemy", (enemy) => {
-    destroy(player);
-    addKaboom(enemy.pos);
-  });
 
   return enemy;
 };
@@ -98,16 +82,6 @@ const spawnTerminatorEnemy = (spawnX, spawnY, player) => {
 
   // Have to manually call enterState() to trigger the onStateEnter("move") event we defined above.
   enemy.enterState("move");
-
-  // Taking a bullet makes us disappear
-  player.onCollide("bullet", (bullet) => {
-    
-    destroy(bullet);
-    destroy(player);
-    addKaboom(bullet.pos);
-  });
-
-  
 };
 
 // export the function so we have access to it in main.js
