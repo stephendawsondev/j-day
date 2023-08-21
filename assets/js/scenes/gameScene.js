@@ -1,5 +1,5 @@
 import { spawnBasicEnemy, spawnTerminatorEnemy } from "../enemy.js";
-import { spawnPlayer, spawnPlayerBullet } from "../player.js";
+import { spawnPlayer, resetBulletUpdateState } from "../player.js";
 
 const createGameScene = () => {
   // add the game scene
@@ -212,7 +212,7 @@ const createGameScene = () => {
       );
 
       // spawn player
-      const player = spawnPlayer(spawnPlayerBullet);
+      const player = spawnPlayer();
 
       const spawnEnemy = () => {
         if (!player.exists()) {
@@ -308,7 +308,13 @@ const createGameScene = () => {
       });
 
       // Display Quit Game Text
-      add([text("Esc: Quit"), color(YELLOW), pos(width() * 0.8, 0), layer("ui"), scale(0.4)]);
+      add([
+        text("Esc: Quit"),
+        color(YELLOW),
+        pos(width() * 0.8, 0),
+        layer("ui"),
+        scale(0.4),
+      ]);
 
       // Toggle game music
       let muted = false;
@@ -339,6 +345,7 @@ const createGameScene = () => {
         if (livesLeft <= 0) {
           mainMusic.stop();
           destroy(player);
+          resetBulletUpdateState();
           go("game_over_scene", { final_score: `${score}` });
         } else {
           lifeCount.text = `Lives left:${livesLeft}`;
