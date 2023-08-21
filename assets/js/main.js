@@ -44,7 +44,11 @@ loadSprite("sarah_r", "Sarah_r.png");
 loadSprite("sarah_b", "Sarah_back.png");
 loadSprite("john", "John.png");
 loadSprite("terminator", "Terminator.png");
+loadSprite("enemy_l", "enemy.png")
+loadSprite("enemy_r", "enemy_r.png")
+loadSprite("enemy_b", "enemy_back.png")
 loadSprite("bullet_yellow", "bullet_y.png");
+loadSprite("bullet", "bullet.png");
 
 //load sounds
 loadRoot(`${relUrl}/sounds/`);
@@ -58,8 +62,6 @@ loadSound("menu_select", "menu_select.wav");
 loadSound("shoot", "gun_sound_effect.wav");
 loadSound("death", "death.wav");
 loadSound("game_over_music", "game_over.wav");
-
-
 
 //load scene sprites
 loadRoot(`${relUrl}/scene_background_images/`);
