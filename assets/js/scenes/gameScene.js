@@ -310,6 +310,8 @@ const createGameScene = () => {
           }, "5000");
         } else {
           play("arnie-scream",{ loop: false, volume: 0.8 });
+          score += 50;
+          scoreCount.text = `Score:${score}`;
         }
       });
 
