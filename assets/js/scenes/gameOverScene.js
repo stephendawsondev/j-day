@@ -12,7 +12,8 @@ const createGameOverScene = () => {
     ]);
 
     const score = add([
-      text(`Final Score:${final_score}`, {
+      text(` Final Score:${final_score}`, {
+        //space before final score is intentional
         size: 45,
         font: "sinko",
       }),
