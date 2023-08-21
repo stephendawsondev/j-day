@@ -26,31 +26,31 @@ In this section, we will briefly discuss how our team addressed the applicable c
 
 ## Intro
 
-A retro game based on the Terminator franchise. A top down shooter game with interactive enemies, difficulty progression, arcade style music and game sounds. Using solely the kaboom.js framework to implement various functions and colliding objects that combines to give the user a unique game play as well as nostalgic experience.
+A retro game based on the Terminator franchise. A top-down shooter game with interactive enemies, difficulty progression, arcade style music and game sounds. Using solely the kaboom.js framework to implement various functions and colliding objects that combines to give the user a unique game play as well as nostalgic experience.
 
 ## Goal
 
 The goal of this project is to produce a retro emulator game following the criteria set out by the hackathon facilitators and incorporating the hard work, skills and abilities of each team member while enjoying the process of learning to develop new and unique software.
 
-- ➡️ To organise a group of strangers with varying abilities to join together to create an emulator type retro game from scratch using a new language and modern techniques.
-- ➡️ The game will be disigned using a JavaScript frame work called Kaboom. It will be new to most of the team but will be a benificial learning curve for all involved.
-- ➡️ The game will be aimed toward people born in or brought up in the 70s and 80s who fondly remember playing old emulator games on arcade machines in seaside amusement parks and any fans of the terminator franchise who grew up following the story behind John and Sarah Connor in their timeless battle against SkyNet.
+  - To organise a group of strangers with varying abilities to join together to create an emulator type retro game from scratch using a new language and modern techniques.
+  - The game will be designed using a JavaScript framework called Kaboom. It will be new to most of the team but will be a beneficial learning curve for all involved.
+  - The game will be aimed toward people born in or brought up in the 70s and 80s who fondly remember playing old emulator games on arcade machines in seaside amusement parks and any fans of the terminator franchise who grew up following the story behind John and Sarah Connor in their timeless battle against SkyNet.
 
 ## User Stories
 
 * As a user, I want to be able to see the overall theme of the game from the welcome page.
-    * The welcome page captures the over all theme and criteria, Retro style background, retro style neon flashing font.
+    * The welcome page captures the overall theme and criteria, Retro style background, retro style neon flashing font.
 * As a user, I want to be able to easily access the instructions on how to play the game.
-    * The instructions are clear and concise and the background is inline with the theme of the game.
-* As a user, I want to be able to toggle the music/sound incase I find the volume to be too low or too high.
+    * The instructions are clear and concise, and the background is in line with the theme of the game.
+* As a user, I want to be able to toggle the music/sound in case I find the volume to be too low or too high.
     * A toggle button was added to the welcome page for easy access to volume control.
 * As a user, I want to be able to see the details of the game such as my score and lives.
     *  The player is given clear information on the top of the screen it portrays the players points and players lives.
 * As a user, I want to be able to easily move around the scene and feel there is a progression in difficulty.
-    * There will one boss enemy that shoots and three basic enemies that chase player at different speeds the player will use the wsad keys to move about the scene while using the spacebar to shoot the enemies.
+    * There will one boss enemy that shoots and three basic enemies that chase player at different speeds the player will use the WSAD keys to move about the scene while using the spacebar to shoot the enemies.
 * As a user, I want to be able to feel a sense of achievement such as high score or end level boss fights.
     * Due to time constraints the team found it would be easier to achieve a high score rather than multiple levels and boss fights. This is a feature that could be implemented in future iterations.
-* As a user, I want to be able to pause and resume or quit the game if i so wish.
+* As a user, I want to be able to pause and resume or quit the game if I so wish.
     * To pause the game was too difficult to implement in the given time.
     
 A link to the repository user stories can be found here - https://github.com/stephendawsondev/j-day/issues?q=label%3A%22user+story%22+
@@ -65,13 +65,13 @@ The criteria suggested an old school emulator game with retro neon style appeara
 - Pixel Art Graphics: Emulate the retro arcade feel with pixel art graphics, using a limited color palette to mimic the visual style of old-school games.
 
 ### Level Design 
-- Arcade Amusement Environment: An urban environment that depicts an amuesment arcade park to provide even more nostalgia.
+- Arcade Amusement Environment: An urban environment that depicts an amuesement arcade park to provide even more nostalgia.
 
 ### Audio Design 
 - Retro Sound Effects: Use sound effects inspired by classic arcade games, such as pew-pew laser sounds and explosive booms and the famous Wilhelm death scream.
 
 ### Color Design 
-- Retro Neon Color: Incorporate many dark colors to entrench the apocolyptic scenario but apply neon colors such as yellow and bright purple to align with the criteria and arcade theme.
+- Retro Neon Color: Incorporate many dark colors to entrench the apocalyptic scenario but apply neon colors such as yellow and bright purple to align with the criteria and arcade theme.
 
 ### Gameplay Design 
 - Top down shooter: Design the game as a view of top down shooter, where players control a resistance fighter from above battling against waves of terminator enemies.
@@ -112,7 +112,7 @@ The criteria suggested an old school emulator game with retro neon style appeara
       ![Terminator](assets/images/readme_images/Terminator.png)
       ![Terminator Basic](assets/images/readme_images/enemy.png)
 
-  * The arcades and pinball machine was designed using a picture template from a google search
+  * The arcades and pinball machine were designed using a picture template from a google search
 
       ![Arcade Machine 1](assets/images/readme_images/arcade_machine1.png)
       ![Arcade Machine 2](assets/images/readme_images/arcade_machine2.png)
@@ -142,7 +142,7 @@ The criteria suggested an old school emulator game with retro neon style appeara
 
 ## Controls
 
-On starting the game the player will use W, S, A and D to move the character around the screen all while avoiding enemies and enemy fire. Spacebar fires a projectile in the direction the player is facing.
+On starting the game, the player will use W, S, A and D to move the character around the screen all while avoiding enemies and enemy fire. Spacebar fires a projectile in the direction the player is facing.
 
 | Button | Action      |
 | ------ | ----------- |
@@ -172,7 +172,7 @@ www.figma.com - Figma is a cloud-based design and prototyping tool that is widel
 The testing was completed mainly through team members having fun playing the game, which allowed us to identify various bugs that needed addressing.
 To identify the source of bugs we used the following tools: 
 - ESlint
-- Developer Tools in various browsers (Console, Network, Perfomance tabs)
+- Developer Tools in various browsers (Console, Network, Performance tabs)
 
 The game was tested on the following browsers: 
 - Firefox
@@ -196,20 +196,15 @@ MUSIC & SOUND ISSUES
 * Bug 1: Shooting sound loops over the life of bullet, making a continuous noise
     * Issue identified: function playing shooting sound played each time frame updated.
     * Fix: Moved code playing shooting sound to the function invoking `spawnPlayerBullet()` on keystroke.
-
-
 * Bug 2: The volume control text showed to be a different style to the other text and it seems to be overlapped.
-
     * Issue identified: adjust the style or ideally change that to a little volume icon (like a sprite) that will show no volume and volume when needed.
     * Fix: Change the volume sprite.
 
 JAVASCRIPT ISSUES
 
-* Bug 1: Some Javascript code seems to be generating something continuously but the item is not removed and therefore the stack seems to overflow
-
-    * Issue identified: The screenshot below shows that the loading issue is caused by : Largest Contentful Paint (LCP), this means it could be better to have the images and sound loading done in the CSS file, the fail of caching the sounds and images is a result of the above reason, this could be the behind freezing issues.
+* Bug 1: Some JavaScript code seems to be generating something continuously, but the item is not removed and therefore the stack seems to overflow.
+    * Issue identified: The screenshot below shows that the loading issue is caused by: Largest Content Paint (LCP), this means it could be better to have the images and sound loading done in the CSS file, the fail of caching the sounds and images is a result of the above reason, this could be the behind freezing issues.
     * Fix: Remove duplicated area on the terminator.
-
 * Bug 2: Move collision detection to game scene.
     * Issue identified: Collision issues with game scene and character sprites.
     * Fix: Moved the collision detection to the gameScene.js file so that we can more easily handle collisions, lives and score updates.
@@ -246,7 +241,7 @@ JAVASCRIPT ISSUES
   - **Stephen Dawson** - [GitHub](https://github.com/stephendawsondev), [LinkedIn](https://www.linkedin.com/in/sdstephendawson/), [URL](http://www.stephendawson.ie)
   Scrum Master/ Frontend / Documentation
   - **Kyle Clow** - [GitHub](https://github.com/KTC96), [LinkedIn](https://www.linkedin.com/in/kyle-clow-43471b130/)
-  Design/ Frontend / Documentation
+  Design/ Frontend / Documentationad
   - **Karolina Cisek-Ndlovu** - [GitHub](https://github.com/Koko-66), [LinkedIn](https://www.linkedin.com/in/k-c-n/)
   Design/ Frontend / Documentation
   - **Adam Gilroy** - [GitHub](https://github.com/adamgilroy22), [LinkedIn](https://www.linkedin.com/in/adamgilroy22/)
