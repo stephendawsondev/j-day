@@ -25,7 +25,7 @@ const createInstructionsScene = () => {
       text("Control movement with WASD keys.\n\n"
             +"Shoot with the spacebar.\n\n"
             +"Use M to toggle music and \nESC to quit.\n\n"
-            +"Killing Robots gains 50 points.\n\n"
+            +"Killing Robots gains 100 points.\n\n"
             +"Killing The Terminator\ngains 500 points.\n\n"
             +"Beware, he'll be back!", {
         size: 30,
