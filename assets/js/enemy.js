@@ -7,7 +7,9 @@ const spawnBasicEnemy = (spawnX, spawnY) => {
 
   const enemy = add([
     sprite(sprites[randi(0, 2)]),
-    scale(1.7),
+    scale(1.6),
+    origin("center"),
+    area(scale(0.1, 0.1)),
     pos(spawnX, spawnY),
     area(),
     "enemy", // tagged with enemy to reference later on
