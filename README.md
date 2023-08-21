@@ -101,9 +101,9 @@ The criteria suggested an old school emulator game with retro neon style appeara
 * Pixel Art
   * The pixel art was designed using https://www.pixilart.com/draw 
 
-      ![John Conner](assets/images/readme_images/John.png)
       ![Sarah Conner](assets/images/readme_images/Sarah.png)
       ![Terminator](assets/images/readme_images/Terminator.png)
+      ![Terminator Basic](assets/images/readme_images/enemy.png)
 
   * The arcades and pinball machine was designed using a picture template from a google search
 
@@ -160,6 +160,20 @@ www.figma.com - Figma is a cloud-based design and prototyping tool that is widel
 * Kaboom.js
 
 ![Languages](assets/images/readme_images/languages.png)
+
+## Testing
+The testing was completed mainly through team members fun playing the game, which allowed us to identify various bugs that needed addressing.
+To identify the source of bugs we used the following tools: 
+- ESlint 
+- Developer Tools in various browsers (Console, Network, Perfomance tabs)
+
+The game was tested on the following browsers: 
+- Firefox
+- Chrome
+- Safari
+
+## Bugs and fixes
+
 
 ## Programs Used
 
