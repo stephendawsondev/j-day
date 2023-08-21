@@ -77,6 +77,12 @@ const spawnPlayer = () => {
   onKeyPress("space", () => {
     if (player.exists()) {
       spawnPlayerBullet(player.pos, currentDirection);
+      // play shooting sound
+      play("shoot", {
+        loop: false,
+        volume: 0.1,
+        detune: rand(-1200, 1200),
+      });
     }
   });
 
@@ -86,7 +92,6 @@ const spawnPlayer = () => {
 // update to the player's position, which causes the bullet to change position following
 // player after spawining
 function spawnPlayerBullet(bulletpos, currentDirection) {
-  //player shooting
   const BULLET_SPEED = 400;
 
   //set volicity of bullets depending on player direction
@@ -119,11 +124,6 @@ function spawnPlayerBullet(bulletpos, currentDirection) {
   if (!bulletUpdateSet) {
     onUpdate("playerBullet", (b) => {
       b.move(b.velocity.x, b.velocity.y);
-      play("shoot", {
-        loop: false,
-        volume: 0.1,
-        detune: rand(-1200, 1200),
-      });
     });
     bulletUpdateSet = true;
   }
