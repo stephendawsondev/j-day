@@ -64,7 +64,7 @@ const spawnTerminatorEnemy = (spawnX, spawnY, player) => {
   });
 
   enemy.onStateEnter("move", async () => {
-    await wait(2);
+    await wait(0.5);
     enemy.enterState("idle");
   });
 
