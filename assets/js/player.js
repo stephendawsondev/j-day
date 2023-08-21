@@ -82,7 +82,9 @@ const spawnPlayer = () => {
 
   return player;
 };
-
+// has to be outside of player function to prevent bullet position updating along with
+// update to the player's position, which causes the bullet to change position following
+// player after spawining
 function spawnPlayerBullet(bulletpos, currentDirection) {
   //player shooting
   const BULLET_SPEED = 400;
@@ -117,9 +119,10 @@ function spawnPlayerBullet(bulletpos, currentDirection) {
   if (!bulletUpdateSet) {
     onUpdate("playerBullet", (b) => {
       b.move(b.velocity.x, b.velocity.y);
-      if (cleanup()) {
-        console.log("bullets removed");
-      }
+      play("shoot", {
+        volume: 0.1,
+        detune: rand(-1200, 1200),
+      });
     });
     bulletUpdateSet = true;
   }
