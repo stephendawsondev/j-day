@@ -50,15 +50,61 @@ The goal of this project is to produce a retro emulator game following the crite
 
 The criteria suggested an old school emulator game with retro neon style appearance. 
 
-Visual Design - Pixel Art Graphics: Emulate the retro arcade feel with pixel art graphics, using a limited color palette to mimic the visual style of old-school games.
-Level Design - Arcade Amusement Environment: An urban environment that depicts an amuesment arcade park to provide even more nostalgia.
-Audio Design - Retro Sound Effects: Use sound effects inspired by classic arcade games, such as pew-pew laser sounds and explosive booms and the famous Wilhelm death scream.
-Color Design - Retro Neon Color: Incorporate many dark colors to entrench the apocolyptic scenario but apply neon colors such as yellow and bright purple to align with the criteria and arcade theme.
-Gameplay Design - Top down shooter: Design the game as a view of top down shooter, where players control a resistance fighter from above battling against waves of terminator enemies.
+### Visual Design 
+- Pixel Art Graphics: Emulate the retro arcade feel with pixel art graphics, using a limited color palette to mimic the visual style of old-school games.
+
+### Level Design 
+- Arcade Amusement Environment: An urban environment that depicts an amuesment arcade park to provide even more nostalgia.
+
+### Audio Design 
+- Retro Sound Effects: Use sound effects inspired by classic arcade games, such as pew-pew laser sounds and explosive booms and the famous Wilhelm death scream.
+
+### Color Design 
+- Retro Neon Color: Incorporate many dark colors to entrench the apocolyptic scenario but apply neon colors such as yellow and bright purple to align with the criteria and arcade theme.
+
+### Gameplay Design 
+- Top down shooter: Design the game as a view of top down shooter, where players control a resistance fighter from above battling against waves of terminator enemies.
 
 ## Typography
 
-Kaboom.js has built in font, apl386, apl386o, sink, sinko
+- The font chosen for the welcome page was picked from Kaboom.js as it has built in font apl386 and it has a very emulator appearance.
+- The font chosen for the instructions page was picked to be a yellow "Comic-Sans MS" to be clear and stand out to the player. 
+
+## Imagery
+
+* Team Logo 
+  * Logo - Designed using https://www.canva.com 
+  
+  ![Team Logo](assets/images/readme_images/Terminal8tors.png)
+
+* Background Images
+  * Welcome page - sourced from https://www.pxfuel.com/en/query?q=terminator+for+android
+  ![Welcome Page](assets/images/readme_images/welcomepage.png)
+
+  * Instructions Page - sourced from https://www.radiotimes.com/technology/gaming/terminator-survival-project-release-date/
+  ![Instructions Page](assets/images/readme_images/instructionsbg.png)
+
+  * Game Over page - sourced from https://news.sky.com/story/terminator-and-other-sci-fi-films-blamed-for-publics-concerns-about-ai-12895427
+  
+    ![Game Over Page](assets/images/readme_images/gameover.png)
+
+* Pixel Art
+  * The pixel art was designed using https://www.pixilart.com/draw 
+
+  ![John Conner](assets/images/readme_images/John.png)
+  ![Sarah Conner](assets/images/readme_images/Sarah.png)
+  ![Terminator](assets/images/readme_images/Terminator.png)
+
+  ![Arcade Machine 1](assets/images/readme_images/arcade_machine1.png)
+  ![Arcade Machine 2](assets/images/readme_images/arcade_machine2.png)
+  ![Arcade Machine 3](assets/images/readme_images/arcade_machine3.png)
+  ![Pinball Machine](assets/images/readme_images/pinballtemplate.png)
+
+  ![Arcade Carpet](assets/images/readme_images/arcade_carpet.png)
+  
+
+
+
 
 
 ## Controls
