@@ -283,6 +283,7 @@ const createGameScene = () => {
       // display score
       let scoreCount = add([
         text(`Score:${score}`),
+        color(YELLOW),
         pos(width() * 0.01, 0),
         layer("ui"),
         scale(0.4),
@@ -291,6 +292,7 @@ const createGameScene = () => {
       // Display lives remaining
       let lifeCount = add([
         text(`Lives left:${livesLeft}`),
+        color(YELLOW),
         pos(width() * 0.3, 0),
         layer("ui"),
         scale(0.4),
@@ -303,7 +305,7 @@ const createGameScene = () => {
       });
 
       // Display Quit Game Text
-      add([text("Esc: Quit"), pos(width() * 0.8, 0), layer("ui"), scale(0.4)]);
+      add([text("Esc: Quit"), color(YELLOW), pos(width() * 0.8, 0), layer("ui"), scale(0.4)]);
 
       // Toggle game music
       let muted = false;
@@ -321,6 +323,7 @@ const createGameScene = () => {
       // Display Toggle Music Text
       add([
         text("M: Music"),
+        color(YELLOW),
         pos(width() * 0.8, 0),
         pos(height() * 0.8, 0),
         layer("ui"),
