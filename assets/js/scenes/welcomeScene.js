@@ -24,6 +24,7 @@ const createWelcomeScene = () => {
 
      const audioToggle = add([
       sprite("audio_on"),
+      color(YELLOW),
       pos(650, 480),
       scale(1),
       origin("center"),
