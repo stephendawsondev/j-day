@@ -42,7 +42,7 @@ const spawnPlayer = () => {
 
   // Define keyboard keys for the player movements
   onKeyDown("a", () => {
-    if (player.pos.x > 0) {
+    if (player.pos.x > PLAYER_WIDTH - 34) {
       player.use(sprite("sarah_l"));
       player.move(-speed, 0);
       facingR = false;
@@ -51,7 +51,7 @@ const spawnPlayer = () => {
   });
 
   onKeyDown("d", () => {
-    if (player.pos.x <= width() - PLAYER_WIDTH) {
+    if (player.pos.x <= width() - PLAYER_WIDTH + 34) {
       player.use(sprite("sarah_r"));
       player.move(speed, 0);
       facingR = true;
@@ -60,7 +60,7 @@ const spawnPlayer = () => {
   });
 
   onKeyDown("w", () => {
-    if (player.pos.y > 20) {
+    if (player.pos.y > 20 + 34) {
       player.use(sprite("sarah_b"));
       player.move(0, -speed);
       updatateCurrentDirection(directions.UP);
@@ -68,7 +68,7 @@ const spawnPlayer = () => {
   });
 
   onKeyDown("s", () => {
-    if (player.pos.y <= height() - PLAYER_HEIGHT) player.move(0, speed);
+    if (player.pos.y <= height() - 68) player.move(0, speed);
     facingR ? player.use(sprite("sarah_r")) : player.use(sprite("sarah_l"));
     updatateCurrentDirection(directions.DOWN);
   });
