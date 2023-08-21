@@ -201,10 +201,10 @@ const createGameScene = () => {
 
       // Spawn points for basic enemies and terminator
       const spawnPoints = [
-        { x: 450, y: 520 },
-        { x: 720, y: 290 },
-        { x: 450, y: 40 },
-        { x: 40, y: 290 },
+        { x: 430, y: 530 },
+        { x: 730, y: 260 },
+        { x: 430, y: 0 },
+        { x: 0, y: 260 },
       ];
 
       const randomIndexTerminator = Math.floor(
