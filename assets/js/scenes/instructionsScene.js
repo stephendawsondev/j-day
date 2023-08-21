@@ -7,7 +7,7 @@ const createInstructionsScene = () => {
       sprite("instructions-page"),
       pos(0, 0),
       origin("topleft"),
-      scale(1.2),
+      scale(1),
       "start-game",
     ]);
     // start game button
@@ -41,7 +41,7 @@ const createInstructionsScene = () => {
         });
       }
   
-    addButton("Go Back", vec2(80, 450), () => {
+    addButton("Go Back", vec2(60, 530), () => {
         go("welcome");
       });
 
