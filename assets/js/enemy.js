@@ -18,8 +18,8 @@ const spawnBasicEnemy = (spawnX, spawnY) => {
 
 // Code taken from https://2000.kaboomjs.com/play?demo=ai
 const spawnTerminatorEnemy = (spawnX, spawnY, player) => {
-  const ENEMY_SPEED = 50; //160
-  const BULLET_SPEED = 100; //700
+  const ENEMY_SPEED = 120;
+  const BULLET_SPEED = 200;
 
   const enemy = add([
     sprite("terminator"), // placeholder until we have a sprite
