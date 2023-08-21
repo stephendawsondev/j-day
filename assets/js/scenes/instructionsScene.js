@@ -10,6 +10,31 @@ const createInstructionsScene = () => {
       scale(1),
       "start-game",
     ]);
+
+    // Instructions text
+    const heading = add([
+      text("Instructions", {
+        size: 65,
+        font: "sinko",
+      }),
+      color(rgb(138, 43, 226)),
+      pos(90, 25),
+    ]);
+
+    const controls = add([
+      text("Control movement with WASD keys.\n\n"
+            +"Shoot with the spacebar.\n\n"
+            +"Use M to toggle music and \nESC to quit.\n\n"
+            +"Killing Robots gains 50 points.\n\n"
+            +"Killing The Terminator\ngains 500 points.\n\n"
+            +"Beware, he'll be back!", {
+        size: 30,
+        font: "sinko",
+      }),
+      color(WHITE),
+      pos(30, 100),
+    ]);
+
     // start game button
     function addButton(txt, p, f) {
         const btn = add([
@@ -42,8 +67,9 @@ const createInstructionsScene = () => {
       }
   
     addButton("Go Back", vec2(60, 530), () => {
-        go("welcome");
-      });
+      play("menu_select", { loop: false, volume: 1.0 });
+      go("welcome");
+    });
 
   });
 };
