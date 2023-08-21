@@ -47,7 +47,7 @@ The goal of this project is to produce a retro emulator game following the crite
 * As a user, I want to be able to see the details of the game such as my score and lives.
     *  The player is given clear information on the top of the screen it portrays the players points and players lives.
 * As a user, I want to be able to easily move around the scene and feel there is a progression in difficulty.
-    * 
+    * There will one boss enemy that shoots and three basic enemies that chase player at different speeds the player will use the wsad keys to move about the scene while using the spacebar to shoot the enemies.
 * As a user, I want to be able to feel a sense of achievement such as high score or end level boss fights.
     * Due to time constraints the team found it would be easier to achieve a high score rather than multiple levels and boss fights. This is a feature that could be implemented in future iterations.
 * As a user, I want to be able to pause and resume or quit the game if i so wish.
