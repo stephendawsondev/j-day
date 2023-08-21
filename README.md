@@ -45,7 +45,7 @@ The goal of this project is to produce a retro emulator game following the crite
 * As a user, I want to be able to toggle the music/sound incase I find the volume to be too low or too high.
     * A toggle button was added to the welcome page for easy access to volume control.
 * As a user, I want to be able to see the details of the game such as my score and lives.
-    * 
+    * On the top screen it portrays the players points and players lives.
 * As a user, I want to be able to easily move around the scene and feel there is a progression in difficulty.
     *
 * As a user, I want to be able to feel a sense of achievement such as high score or end level boss fights.
