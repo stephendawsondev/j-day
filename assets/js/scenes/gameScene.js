@@ -277,10 +277,30 @@ const createGameScene = () => {
         addKaboom(playerBullet.pos);
       });
 
-      // Destroy bullet hitting terminator
+      let terminatorLives = 3;
+
+      // Destroy terminator, add to score and respawn after 5 seconds
       onCollide("terminator", "playerBullet", (terminator, playerBullet) => {
         destroy(playerBullet);
-        // addKaboom(playerBullet.pos);
+        addKaboom(playerBullet.pos);
+        terminatorLives -= 1;
+        // Check if terminator lives are 0 and add to score if so
+        if (terminatorLives <= 0) {
+          score += 500;
+          scoreCount.text = `Score:${score}`;
+          destroy(terminator);
+          play("ill-be-back",{ loop: false, volume: 1 });
+          setTimeout(() => {
+            spawnTerminatorEnemy(
+              spawnPoints[randomIndexTerminator].x,
+              spawnPoints[randomIndexTerminator].y,
+              player
+            );
+            terminatorLives = 3;
+          }, "5000");
+        } else {
+          play("arnie-scream",{ loop: false, volume: 0.8 });
+        }
       });
 
       // display score
@@ -304,6 +324,7 @@ const createGameScene = () => {
       // Quit Game
       onKeyPress("escape", () => {
         mainMusic.stop();
+        play("hasta-la-vista",{ loop: false, volume: 0.8 });
         go("welcome");
       });
 
