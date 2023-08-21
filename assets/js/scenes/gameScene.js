@@ -291,12 +291,15 @@ const createGameScene = () => {
           destroy(terminator);
           play("ill-be-back",{ loop: false, volume: 1 });
           setTimeout(() => {
-            spawnTerminatorEnemy(
-              spawnPoints[randomIndexTerminator].x,
-              spawnPoints[randomIndexTerminator].y,
-              player
-            );
-            terminatorLives = 3;
+            // Respawn terminator if the player is on the screen still
+            if (player.exists()) {
+              spawnTerminatorEnemy(
+                spawnPoints[randomIndexTerminator].x,
+                spawnPoints[randomIndexTerminator].y,
+                player
+              );
+              terminatorLives = 3;
+            }
           }, "5000");
         } else {
           play("arnie-scream",{ loop: false, volume: 0.8 });
