@@ -1,3 +1,5 @@
+import { resetBulletUpdateState } from "../player.js";
+
 const createWelcomeScene = () => {
   const introMusic = play("intro_music", { loop: true, volume: 0.4 });
   let isIntroMusicPaused = false;
@@ -11,8 +13,6 @@ const createWelcomeScene = () => {
       scale(3.6),
     ]);
 
-   
-
     const heading = add([
       text("Judgement Day", {
         size: 65,
@@ -22,7 +22,7 @@ const createWelcomeScene = () => {
       pos(40, 24),
     ]);
 
-     const audioToggle = add([
+    const audioToggle = add([
       sprite("audio_on"),
       color(YELLOW),
       pos(650, 480),
@@ -65,7 +65,12 @@ const createWelcomeScene = () => {
     addButton("Start", vec2(80, 350), () => {
       play("menu_select", { loop: false, volume: 1.0 });
       introMusic.stop();
-      go("game", { score: 0, livesLeft: 3,isIntroMusicPaused: isIntroMusicPaused,});
+      resetBulletUpdateState();
+      go("game", {
+        score: 0,
+        livesLeft: 3,
+        isIntroMusicPaused: isIntroMusicPaused,
+      });
     });
 
     addButton("How to play", vec2(80, 450), () => {
@@ -89,6 +94,7 @@ const createWelcomeScene = () => {
         isMainMusicPaused = true; // Pause main music only if intro music was paused
       }
       introMusic.pause();
+      resetBulletUpdateState();
       go("game", {
         score: 0,
         livesLeft: 3,
@@ -96,15 +102,13 @@ const createWelcomeScene = () => {
         isMainMusicPaused: isMainMusicPaused,
       });
     });
-    
 
-    
-    
     // reset cursor to default at frame start for easier cursor management
     onUpdate(() => cursor("default"));
 
     onKeyDown("enter", () => {
       play("menu_select", { loop: false, volume: 0.5 });
+      resetBulletUpdateState();
       go("game", { score: 0, livesLeft: 3 });
     });
   });

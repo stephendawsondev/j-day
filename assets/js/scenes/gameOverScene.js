@@ -1,3 +1,5 @@
+import { resetBulletUpdateState } from "../player.js";
+
 const createGameOverScene = () => {
   // add game over screen
   return scene("game_over_scene", ({ final_score }) => {
@@ -10,13 +12,13 @@ const createGameOverScene = () => {
     ]);
 
     const score = add([
-        text(`Final Score:${final_score}`, {
-          size: 45,
-          font: "sinko",
-        }),
-        color (rgb(255, 255, 255)),
-        pos(135, 385),
-      ]);
+      text(`Final Score:${final_score}`, {
+        size: 45,
+        font: "sinko",
+      }),
+      color(rgb(255, 255, 255)),
+      pos(135, 385),
+    ]);
 
     function addButton(txt, p, f) {
       const btn = add([
@@ -51,6 +53,7 @@ const createGameOverScene = () => {
     addButton("Try Again", vec2(80, 500), () => {
       play("menu_select", { loop: false, volume: 1.0 });
       gameOverMusic.pause();
+      resetBulletUpdateState();
       go("game", { score: 0, livesLeft: 3 });
     });
 

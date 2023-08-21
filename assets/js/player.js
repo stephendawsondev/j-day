@@ -4,12 +4,17 @@ const directions = {
   UP: "up",
   DOWN: "down",
 };
+
+// Function to reset the bullet update state
+const resetBulletUpdateState = () => {
+  bulletUpdateSet = false;
+};
+
 // set variable to prevent all bullets updaingin the onUpdate function
 let bulletUpdateSet = false;
 
-
 //Create player
-const spawnPlayer = (spawnBullet) => {
+const spawnPlayer = () => {
   const player = add([
     sprite("sarah_l"),
     area(scale(0.6)),
@@ -71,7 +76,7 @@ const spawnPlayer = (spawnBullet) => {
   //Call shooting function
   onKeyPress("space", () => {
     if (player.exists()) {
-      spawnBullet(player.pos, currentDirection);
+      spawnPlayerBullet(player.pos, currentDirection);
     }
   });
 
@@ -120,9 +125,4 @@ function spawnPlayerBullet(bulletpos, currentDirection) {
   }
 }
 
-// play("shoot", {
-//   volume: 0.2,
-//   detune: rand(-1200, 1200),
-// });
-
-export { spawnPlayer, spawnPlayerBullet };
+export { spawnPlayer, resetBulletUpdateState };
