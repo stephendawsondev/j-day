@@ -124,6 +124,10 @@ The criteria suggested an old school emulator game with retro neon style appeara
 
         ![Wilhelm Scream](assets/images/readme_images/wilhelmscream.png)
 
+      * Scream when terminator is hit sound effect - sourced from https://www.youtube.com/watch?v=AZTFdO4a_ew&ab_channel=MatthewEhlerspresents
+      * I'll be back sound effect - sourced from https://www.youtube.com/watch?v=B1ULWx0eflM&ab_channel=ShortVidClips%2F%2FSVC
+      * Hasta la vista sound effect - sourced from https://www.youtube.com/watch?v=EIs4tQHEdxc&ab_channel=IfIamTheBass%3F
+
       * Gameover sound effect - sourced from https://opengameart.org/
       
       * Other sound effects - created using https://www.bfxr.net/
