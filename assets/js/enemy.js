@@ -3,10 +3,10 @@
  * imported and called in the main.js file
  */
 const spawnBasicEnemy = (spawnX, spawnY) => {
-  const sprites = ["enemy_l", "enemy_r", "enemy_b"];
+  const sprites = ["enemy_l", "enemy_r"];
 
   const enemy = add([
-    sprite(sprites[randi(0, 3)]),
+    sprite(sprites[randi(0, 2)]),
     scale(1.7),
     pos(spawnX, spawnY),
     area(),
