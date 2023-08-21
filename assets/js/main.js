@@ -52,10 +52,9 @@ loadSprite("bullet", "bullet.png");
 
 //load sounds
 loadRoot(`${relUrl}/sounds/`);
-loadSound("death_sound", "death.wav");
-loadSound("hurt_sound", "hit_hurt.wav");
+loadSound("life_lost_sound", "death.wav");
+loadSound("enemy_death", "hit_hurt.wav");
 loadSound("life_pickup", "life_pickup.wav");
-loadSound("powerup_sound", "powerup.wav");
 loadSound("intro_music", "intro.wav");
 loadSound("main_music", "main.wav");
 loadSound("menu_select", "menu_select.wav");

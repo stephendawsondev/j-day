@@ -114,6 +114,7 @@ function spawnPlayerBullet(bulletpos, currentDirection) {
     onUpdate("playerBullet", (b) => {
       b.move(b.velocity.x, b.velocity.y);
       play("shoot", {
+        loop: false,
         volume: 0.1,
         detune: rand(-1200, 1200),
       });
