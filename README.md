@@ -51,7 +51,9 @@ The goal of this project is to produce a retro emulator game following the crite
 * As a user, I want to be able to feel a sense of achievement such as high score or end level boss fights.
     * Due to time constraints the team found it would be easier to achieve a high score rather than multiple levels and boss fights. This is a feature that could be implemented in future iterations.
 * As a user, I want to be able to pause and resume or quit the game if i so wish.
-    * To pause the game was too difficult to implement in the given time. 
+    * To pause the game was too difficult to implement in the given time.
+    
+A link to the repository user stories can be found here - https://github.com/stephendawsondev/j-day/issues?q=label%3A%22user+story%22+
 
 ![Project Board](assets/images/readme_images/projectboard.png)
 
@@ -84,11 +86,11 @@ The criteria suggested an old school emulator game with retro neon style appeara
 * Team Logo 
   * Logo - Designed using https://www.canva.com 
 
-  ![Team Logo](assets/images/readme_images/Terminal8tors.png)
+    ![Team Logo](assets/images/readme_images/terminal8tors-readme.png)
 
 * Background Images
   * Welcome page - sourced from https://www.pxfuel.com/en/query?q=terminator+for+android
-  ![Welcome Page](assets/images/readme_images/welcomepage.png)
+    ![Welcome Page](assets/images/readme_images/welcomepage.png)
 
   * Instructions Page - sourced from https://www.radiotimes.com/technology/gaming/terminator-survival-project-release-date/
 
@@ -97,6 +99,11 @@ The criteria suggested an old school emulator game with retro neon style appeara
   * Game Over page - sourced from https://news.sky.com/story/terminator-and-other-sci-fi-films-blamed-for-publics-concerns-about-ai-12895427
   
     ![Game Over Page](assets/images/readme_images/gameover.png)
+  
+  * Favicon - sourced using https://favicon.io/favicon-converter/
+
+    ![Favicon](assets/images/readme_images/favicon-readme.png)
+  
 
 * Pixel Art
   * The pixel art was designed using https://www.pixilart.com/draw 
@@ -162,9 +169,9 @@ www.figma.com - Figma is a cloud-based design and prototyping tool that is widel
 ![Languages](assets/images/readme_images/languages.png)
 
 ## Testing
-The testing was completed mainly through team members fun playing the game, which allowed us to identify various bugs that needed addressing.
+The testing was completed mainly through team members having fun playing the game, which allowed us to identify various bugs that needed addressing.
 To identify the source of bugs we used the following tools: 
-- ESlint 
+- ESlint
 - Developer Tools in various browsers (Console, Network, Perfomance tabs)
 
 The game was tested on the following browsers: 
@@ -173,6 +180,39 @@ The game was tested on the following browsers:
 - Safari
 
 ## Bugs and fixes
+
+SHOOTING ISSUES
+* Bug 1: On player shooting bullets, the bullets change direction together with the player.
+   * Issue identified: the placement of the `spawnPlayerBullet()` function meant the position of the bullet was updated every time the player changed position.
+   * Fix: moved `spawnPlayerBullet()` to the outside of the `spawnPlayer()` function
+* Bug 2: On player changing direction to up or down the shooting direction changes to diagonal, without possibility to shoot left, right, up or down.
+    * Issue identified: the way the direction and update function were set up caused the `onUpdate` function to be called on all bullet, not only the one currently spawned, skewing their direction.
+    * Fix: rewrote the function to use `vec2` with x and y parameters to set direction and added `bulletUpdateSet` to control update behaviour
+* Bug 3: On loosing and hitting Try Again, player’s bullets lose the ability to move and stay in place.
+    * Issue identified: `bulletUpdateSet` variable did not update to false on loading the `gameScene` again.
+    * Fix: Added `resetBulletUpdateState()` function to the player.js file and used it in the function checking if the player is dead to force the variable reset.
+
+MUSIC & SOUND ISSUES
+* Bug 1: Shooting sound loops over the life of bullet, making a continuous noise
+    * Issue identified: function playing shooting sound played each time frame updated.
+    * Fix: Moved code playing shooting sound to the function invoking `spawnPlayerBullet()` on keystroke.
+
+
+* Bug 2: The volume control text showed to be a different style to the other text and it seems to be overlapped.
+
+    * Issue identified: adjust the style or ideally change that to a little volume icon (like a sprite) that will show no volume and volume when needed.
+    * Fix: Change the volume sprite.
+
+JAVASCRIPT ISSUES
+
+* Bug 1: Some Javascript code seems to be generating something continuously but the item is not removed and therefore the stack seems to overflow
+
+    * Issue identified: The screenshot below shows that the loading issue is caused by : Largest Contentful Paint (LCP), this means it could be better to have the images and sound loading done in the CSS file, the fail of caching the sounds and images is a result of the above reason, this could be the behind freezing issues.
+    * Fix: Remove duplicated area on the terminator.
+
+* Bug 2: Move collision detection to game scene.
+    * Issue identified: Collision issues with game scene and character sprites.
+    * Fix: Moved the collision detection to the gameScene.js file so that we can more easily handle collisions, lives and score updates.
 
 
 ## Programs Used
