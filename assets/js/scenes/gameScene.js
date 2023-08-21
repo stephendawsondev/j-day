@@ -254,7 +254,7 @@ const createGameScene = () => {
         });
       };
 
-      const spawnInterval = setInterval(spawnEnemy, 1500);
+      const spawnInterval = setInterval(spawnEnemy, 1000);
 
       // spawn terminator example
       const terminator = spawnTerminatorEnemy(
@@ -279,12 +279,12 @@ const createGameScene = () => {
         play("enemy_death",{ loop: false, volume: 0.4 });
         destroy(playerBullet);
         destroy(enemy);
-        score += 50;
+        score += 100;
         scoreCount.text = `Score:${score}`;
         addKaboom(playerBullet.pos);
       });
 
-      let terminatorLives = 3;
+      let terminatorLives = 6;
 
       // Destroy terminator, add to score and respawn after 5 seconds
       onCollide("terminator", "playerBullet", (terminator, playerBullet) => {
@@ -305,7 +305,7 @@ const createGameScene = () => {
                 spawnPoints[randomIndexTerminator].y,
                 player
               );
-              terminatorLives = 3;
+              terminatorLives = 6;
             }
           }, "5000");
         } else {
