@@ -296,7 +296,7 @@ const createGameScene = () => {
       let lifeCount = add([
         text(`Lives left:${livesLeft}`),
         color(YELLOW),
-        pos(width() * 0.3, 0),
+        pos(width() * 0.24, 0),
         layer("ui"),
         scale(0.4),
       ]);
@@ -308,7 +308,13 @@ const createGameScene = () => {
       });
 
       // Display Quit Game Text
-      add([text("Esc: Quit"), color(YELLOW), pos(width() * 0.8, 0), layer("ui"), scale(0.4)]);
+      add([
+        text("Quit:(Esc)"),
+        color(YELLOW),
+        pos(width() * 0.24, height() * 0.95),
+        layer("ui"),
+        scale(0.4),
+      ]);
 
       // Toggle game music
       let muted = false;
@@ -325,10 +331,9 @@ const createGameScene = () => {
 
       // Display Toggle Music Text
       add([
-        text("M: Music"),
+        text("Music:(M)"),
         color(YELLOW),
-        pos(width() * 0.8, 0),
-        pos(height() * 0.8, 0),
+        pos(width() * 0.01, height() * 0.95),
         layer("ui"),
         scale(0.4),
       ]);
