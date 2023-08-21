@@ -232,8 +232,6 @@ const createGameScene = () => {
             ? 120
             : (randomValue > mediumBotProbability ? 100 : 80);
 
-        console.log(enemySpeed);
-
         const enemy = spawnBasicEnemy(
           spawnPoints[randomIndexEnemy].x,
           spawnPoints[randomIndexEnemy].y
