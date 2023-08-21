@@ -299,7 +299,7 @@ const createGameScene = () => {
       ]);
 
       // Quit Game
-      onKeyDown("escape", () => {
+      onKeyPress("escape", () => {
         mainMusic.stop();
         go("welcome");
       });
@@ -310,7 +310,7 @@ const createGameScene = () => {
       // Toggle game music
       let muted = false;
 
-      onKeyDown("m", () => {
+      onKeyPress("m", () => {
         if (muted == false) {
           mainMusic.pause();
           muted = true;
