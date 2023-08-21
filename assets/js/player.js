@@ -17,7 +17,7 @@ let bulletUpdateSet = false;
 const spawnPlayer = () => {
   const player = add([
     sprite("sarah_l"),
-    area(scale(0.6)),
+    area(scale(0.1, 0.3)),
     scale(1.5),
     // position in the centre
     pos(width() / 2, height() / 2),
