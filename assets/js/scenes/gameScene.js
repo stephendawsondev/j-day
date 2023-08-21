@@ -223,7 +223,14 @@ const createGameScene = () => {
         let randomIndexEnemy = Math.floor(Math.random() * spawnPoints.length);
 
         // set the initial enemy speed
-        const enemySpeed = 30;
+
+        let fastBotProbability = 0.8;
+        let mediumBotProbability = 0.5
+
+        const randomValue = Math.random();
+        const enemySpeed = randomValue > fastBotProbability
+            ? 120
+            : (randomValue > mediumBotProbability ? 100 : 80);
 
         const enemy = spawnBasicEnemy(
           spawnPoints[randomIndexEnemy].x,
