@@ -1,6 +1,5 @@
 import { resetBulletUpdateState } from "../player.js";
 
-
 const createGameOverScene = () => {
   // add game over screen
   return scene("game_over_scene", ({ final_score }) => {
@@ -13,7 +12,8 @@ const createGameOverScene = () => {
     ]);
 
     const score = add([
-      text(` Final Score:${final_score}`, { //space before final score is intentional
+      text(` Final Score:${final_score}`, {
+        //space before final score is intentional
         size: 45,
         font: "sinko",
       }),
