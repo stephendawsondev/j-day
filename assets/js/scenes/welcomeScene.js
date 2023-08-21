@@ -89,12 +89,13 @@ const createWelcomeScene = () => {
       isIntroMusicPaused = !isIntroMusicPaused; // Toggle the variable
     });
 
-    onKeyDown("enter", () => {
+    onKeyPress("enter", () => {
       if (isIntroMusicPaused) {
         isMainMusicPaused = true; // Pause main music only if intro music was paused
       }
       introMusic.pause();
       resetBulletUpdateState();
+      play("menu_select", { loop: false, volume: 0.5 });
       go("game", {
         score: 0,
         livesLeft: 3,
@@ -105,12 +106,6 @@ const createWelcomeScene = () => {
 
     // reset cursor to default at frame start for easier cursor management
     onUpdate(() => cursor("default"));
-
-    onKeyDown("enter", () => {
-      play("menu_select", { loop: false, volume: 0.5 });
-      resetBulletUpdateState();
-      go("game", { score: 0, livesLeft: 3 });
-    });
   });
 };
 

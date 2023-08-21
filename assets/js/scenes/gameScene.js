@@ -239,6 +239,7 @@ const createGameScene = () => {
         });
 
         enemy.onCollide("sarah", (player) => {
+          play("life_lost_sound", { loop: false, volume: 0.4 })
           livesLeft--;
           checkIfDead(livesLeft);
           addKaboom(player.pos);
@@ -259,6 +260,7 @@ const createGameScene = () => {
 
       // Taking a bullet gives damage and makes us disappear
       player.onCollide("bullet", (bullet) => {
+        play("life_lost_sound", {loop: false, volume: 0.4} )
         livesLeft--;
         checkIfDead(livesLeft);
         destroy(bullet);
@@ -267,6 +269,7 @@ const createGameScene = () => {
 
       // Destroy enemies and add to score
       onCollide("enemy", "playerBullet", (enemy, playerBullet) => {
+        play("enemy_death",{ loop: false, volume: 0.4 });
         destroy(playerBullet);
         destroy(enemy);
         score += 50;
@@ -299,7 +302,7 @@ const createGameScene = () => {
       ]);
 
       // Quit Game
-      onKeyDown("escape", () => {
+      onKeyPress("escape", () => {
         mainMusic.stop();
         go("welcome");
       });
@@ -316,7 +319,7 @@ const createGameScene = () => {
       // Toggle game music
       let muted = false;
 
-      onKeyDown("m", () => {
+      onKeyPress("m", () => {
         if (muted == false) {
           mainMusic.pause();
           muted = true;
